@@ -1,0 +1,54 @@
+body {
+	padding: 0;
+	margin: 60px 0 }
+
+footer {
+	margin: 100px 0 }
+
+// General styles
+.margin-right {
+	margin-right: 10px }
+
+.margin-left {
+	margin-left: 10px }
+
+.margin-top {
+	margin-top: 10px }
+
+.margin-bottom {
+	margin-bottom: 10px }
+
+.section-header {
+	margin-top: 40px }
+
+.text-bold {
+	font-weight: 600 }
+
+.text-light {
+	font-weight: 100 }
+
+.text-italic {
+	font-style: italic }
+
+.text-done {
+	text-decoration: line-through }
+
+// #hello-container styles
+#hello-container {
+	margin-bottom: 60px }
+
+
+// #hello-container styles
+#hello-container .media-object {
+	max-height: 60px }
+
+
+// #creating-elements-container styles
+#creating-elements-container .btn-actions {
+	margin-bottom: 20px }
+
+#binding-container .btn-text-actions button {
+	margin-right: 10px }
+
+#binding-container .btn-text-actions {
+	margin-bottom: 20px }
