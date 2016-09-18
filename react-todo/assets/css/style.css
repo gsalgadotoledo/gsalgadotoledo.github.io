@@ -1,0 +1,123 @@
+@import url("http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic-ext");
+
+* { 
+	margin: 0;
+	padding: 0px;
+  font-family: 'Roboto Slab',Arial,sans-serif; }
+
+body { 
+	background: #fff; 
+	margin: 0; 
+	color: #696E74; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab',Arial,sans-serif;
+	font-weight: 700; }
+
+h5 {
+	font-weight: 400;
+	margin-top: 40px; }
+
+p { 
+	padding: 0; 
+	margin-bottom: 12px; 
+  font-family: 'Roboto Slab',Arial,sans-serif;
+	font-weight: 300;
+	font-size: 15px; 
+	line-height: 24px;
+	color: #696E74; 
+	margin-top: 10px; }
+
+html,
+body {
+	height: 100%; }
+
+header {
+	text-align: center; 
+	margin-top: 100px; }
+	 
+footer {
+	text-align: center; }
+
+input,
+input[type=text] {
+	font-size: 18px;
+	min-height: 60px;
+	border-radius: 40px;
+	line-height: 24px;
+	padding: 16px 30px 20px;
+	border: none;
+	margin-bottom: 10px;
+	background-color: #e9f0f2;
+	-webkit-transition: background-color 0.2s;
+	transition: background-color 0.2s; }
+
+.centered {text-align: center}
+.mt {margin-top: 50px;}
+.mb {margin-bottom: 50px;}
+.mtb {margin-top: 50px; margin-bottom: 50px;}
+
+::-moz-selection  {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31; }
+
+::selection {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31; }
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0; }
+
+.btn-green {
+	color: #fff;
+	font-size: 18px;
+	min-height: 60px;
+	border-radius: 40px;
+	text-decoration: none;
+	display: inline-block;
+	line-height: 24px;
+	padding: 16px 30px 20px;
+	z-index: 1;
+	position: relative;
+	border: none;
+	background: #1da083;
+	position: absolute;
+	right: 0;
+	padding-left: 28px; }
+
+.form-add .form-control {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.btn-green:hover {
+	background: #21b191;
+	color: white; }
+
+// Fade Animations
+.fade {
+	opacity: 1;
+	transition: opacity .5s ease-in; }
+
+.fade-enter {
+	opacity: 0;
+	transition: opacity .5s ease-in; }
+
+.fade-enter.fade-enter-active {
+	opacity: 1; }
+
+.fade-leave {
+	opacity: 1;
+	transition: opacity .5s ease-in; }
+
+.fade-leave.fade-leave-active {
+	opacity: 0; }

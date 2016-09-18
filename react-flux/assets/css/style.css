@@ -1,0 +1,118 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+
+* { 
+	margin: 0;
+	padding: 0px;
+  font-family: 'Lato', sans-serif; } 
+
+body { 
+	background: #fff; 
+	margin: 0; 
+	color: #444; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lato', sans-serif;
+	font-weight: 700; }
+
+p { 
+	padding: 0; 
+	margin-bottom: 12px; 
+  font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 25px; 
+	line-height: 34px;
+	color: #666; 
+	margin-top: 10px; }
+
+html,
+body {
+	height: 100%; }
+
+.mt {margin-top: 50px;}
+.mb {margin-bottom: 50px;}
+.mtb {margin-top: 50px; margin-bottom: 50px;}
+.ptb {padding-top: 80px; padding-bottom: 80px;}
+
+::-moz-selection  {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31; }
+
+::selection {
+	color: #fff;
+	text-shadow:none;
+	background:#2B2E31; }
+
+*,
+*:after,
+*:before {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0; }
+
+a { 
+	padding: 0;
+	margin: 0;
+	text-decoration: none; 
+	-webkit-transition: background-color .4s linear, color .4s linear;
+	-moz-transition: background-color .4s linear, color .4s linear;
+	-o-transition: background-color .4s linear, color .4s linear;
+	-ms-transition: background-color .4s linear, color .4s linear;
+	transition: background-color .4s linear, color .4s linear;
+}
+
+a:hover,
+a:focus {
+  text-decoration: none;
+  color:#696E74; }
+
+.navbar-inverse {
+	background: transparent;
+	border-color: transparent; }
+
+.navbar-inverse .navbar-nav > li > a {
+	color: #d9dbda; }
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: #979797; }
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+	color: #979797;
+	background-color: transparent; }
+
+.navbar-brand {
+	font-weight: 900;
+	color: #2f2f2f; }
+
+#main {
+	background: #ff6;
+	padding-top: 60px; }
+
+#main h1 {
+	font-size: 3.7em;
+	font-weight: 300;
+	line-height: 1;
+	color: #444; }
+
+#main h3 {
+	font-size: 2em;
+	font-weight: 900;
+	color: #444;
+	line-height: 1; }
+
+.search-form {
+	padding: 10px 30px;
+	border: 0;
+	background: transparent; 
+	width: 100%;
+	font-size: 30px; 
+	height: 60px; }
+
+footer {
+	margin-top: 0;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-color: #3a3a3a;
+	color: #999; }

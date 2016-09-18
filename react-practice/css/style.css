@@ -33,6 +33,9 @@ footer {
 .text-done {
 	text-decoration: line-through }
 
+span.label {
+	margin-right: 5px }
+
 // #hello-container styles
 #hello-container {
 	margin-bottom: 60px }
@@ -52,3 +55,18 @@ footer {
 
 #binding-container .btn-text-actions {
 	margin-bottom: 20px }
+
+// Fade Animations
+.fade-enter {
+	opacity: 0;
+	transition: opacity .5s ease-in; }
+
+.fade-enter.fade-enter-active {
+	opacity: 1; }
+
+.fade-leave {
+	opacity: 1;
+	transition: opacity .5s ease-in; }
+
+.fade-leave.fade-leave-active {
+	opacity: 0; }
