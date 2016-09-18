@@ -88,7 +88,8 @@ a:focus {
 
 #main {
 	background: #ff6;
-	padding-top: 60px; }
+	padding-top: 60px; 
+  min-height: 450px;}
 
 #main h1 {
 	font-size: 3.7em;
