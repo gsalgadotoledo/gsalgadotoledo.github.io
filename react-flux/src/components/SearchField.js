@@ -1,10 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import Reflux from 'reflux';
 
 class SearchField extends React.Component {
 	
 	componentDidMount() {
-	   this.refs.q.getDOMNode().focus(); 
+	   ReactDOM.findDOMNode(this.refs.q).focus();
 	}
 
 	render() {

@@ -21665,6 +21665,10 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactDom = __webpack_require__(34);
+
+	var _reactDom2 = _interopRequireDefault(_reactDom);
+
 	var _reflux = __webpack_require__(176);
 
 	var _reflux2 = _interopRequireDefault(_reflux);
@@ -21689,7 +21693,7 @@
 		_createClass(SearchField, [{
 			key: 'componentDidMount',
 			value: function componentDidMount() {
-				this.refs.q.getDOMNode().focus();
+				_reactDom2.default.findDOMNode(this.refs.q).focus();
 			}
 		}, {
 			key: 'render',
