@@ -21687,6 +21687,11 @@
 		}
 
 		_createClass(SearchField, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				this.refs.q.getDOMNode().focus();
+			}
+		}, {
 			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
@@ -21698,7 +21703,7 @@
 						_react2.default.createElement(
 							'form',
 							{ onSubmit: this.props._handleSubmit.bind(this) },
-							_react2.default.createElement('input', { type: 'text', name: 'q', className: 'search-form', placeholder: 'Type your search... and enter', required: true })
+							_react2.default.createElement('input', { type: 'text', ref: 'q', name: 'q', className: 'search-form', placeholder: 'Type your search... and enter', required: true })
 						)
 					)
 				);
