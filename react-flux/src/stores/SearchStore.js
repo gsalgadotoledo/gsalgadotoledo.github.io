@@ -13,7 +13,7 @@ var SearchStore = Reflux.createStore({
     retriveLinks: function(query) {
 
       if(query) {
-        this.trigger(this.results);
+        this.trigger({links: this.results, searching: true});
         $.ajax({
             url: `https://ajax.googleapis.com/ajax/services/feed/find?v=1.0&q=${query}`,
             dataType: 'jsonp',
@@ -21,7 +21,7 @@ var SearchStore = Reflux.createStore({
             context: this,
             success: function(data) {
               this.results = data.responseData.entries;
-              this.trigger(this.results);
+              this.trigger({links: this.results, searching: false});
             }
         });
       }

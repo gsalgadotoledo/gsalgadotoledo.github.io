@@ -23171,14 +23171,24 @@
 	  displayName: 'SearchRender',
 
 
-	  mixins: [_reflux2.default.connect(_SearchStore2.default, 'links')],
+	  mixins: [_reflux2.default.connect(_SearchStore2.default, 'results')],
 
 	  render: function render() {
-	    if (this.state.links) {
+	    if (!this.state.results) {
+	      return null;
+	    }
+	    if (this.state.results.searching) {
+	      return _react2.default.createElement(
+	        'h3',
+	        null,
+	        'Loading...'
+	      );
+	    }
+	    if (this.state.results.links) {
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'row mb' },
-	        this.state.links.map(function (data, index) {
+	        this.state.results.links.map(function (data, index) {
 	          return _react2.default.createElement(
 	            'div',
 	            { key: index, className: 'col-md-12 mt' },
@@ -23200,8 +23210,6 @@
 	          );
 	        })
 	      );
-	    } else {
-	      return null;
 	    }
 	  }
 	});
@@ -23243,7 +23251,7 @@
 	    retriveLinks: function retriveLinks(query) {
 
 	        if (query) {
-	            this.trigger(this.results);
+	            this.trigger({ links: this.results, searching: true });
 	            _jquery2.default.ajax({
 	                url: 'https://ajax.googleapis.com/ajax/services/feed/find?v=1.0&q=' + query,
 	                dataType: 'jsonp',
@@ -23251,7 +23259,7 @@
 	                context: this,
 	                success: function success(data) {
 	                    this.results = data.responseData.entries;
-	                    this.trigger(this.results);
+	                    this.trigger({ links: this.results, searching: false });
 	                }
 	            });
 	        }
