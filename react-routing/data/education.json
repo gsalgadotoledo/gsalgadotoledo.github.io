@@ -1,0 +1,15 @@
+{
+	"status": "success",
+	"items": [
+		{
+			"id": 1,
+			"title": "Universidad Nacional Abierta y a Distancia",
+			"degree": "Software engineering"
+		},
+		{
+			"id": 2,
+			"title": "Corporación Universitaria Empresarial Alexander von Humboldt",
+			"degree": "Web & Graphic Design"
+		}
+	]
+}

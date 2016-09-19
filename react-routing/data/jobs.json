@@ -1,0 +1,35 @@
+{
+	"status": "success",
+	"items": [
+		{
+			"id": 1,
+			"image": "https://media.licdn.com/media/p/8/005/0b4/2b4/12467a2.png",
+			"title": "SSA UI Developer",
+			"description": "He has been working at this company in analyze and develop of new features and software maintenance using good and clean coding practices as member a team with people from Argentina, Mexico, Uruguay and India, using scrum methodology.",
+			"projects": [
+				{
+					"title": "NatGeo events",
+					"description": "NatGeo events – in development stage (Current): Frontend development of a website to show and allow to users search about National Geographic available events. It’s a redesign of the current page. Technologies used: Jade, SASS, Gulp, Node.js, Mocha, Chai, Express.js, Bower, Twitter Bootstrap, Git."
+				},{
+					"title": "Frontend Developer for Handerr",
+					"description": "Frontend Developer for Handerr http://www.test.handerr.com  (April - 2015): It's a shopping platform to sale products or services between users. This is and Start-up environment project built from zero with an agile rhythm and using last stable tools. Technologies used: Angular.js, Angular-Material, Restangular, NPM, Gulp, SASS, Node.JS, Express, Jasmine, Bower, Git (Stash as Git server and code review process), JSHint, Babel, Lodash and MomentJS. Others tools so useful for teamwork and QA like Jira, Slack, Browserstack etc."
+				}
+			]
+		},
+		{
+			"id": 2,
+			"image": "https://media.licdn.com/media/p/5/005/014/2f5/3f2599a.png",
+			"title": "Senior front end developer",
+			"description": "He was working supporting junior members team and developing frontend and backend for major brands on Latin America and interacting and exchanging experience with teams in different parts of the world as UK, India, China, France, Costa Rica.",
+			"projects": [
+				{
+					"title": "NodeJS Developer Booking",
+					"description": "NodeJS Developer Booking parking app project (Jan 2016): It's a Booking mobile platform to allow optimize parking builds use, you can book your parking for some days of the week or just ask for a free space to park even before you enter to the building. Technologies used: REST, OAuth, NodeJS, NPM, Express, ApidocJS, JSHint, Mocha, Chai, Async, Lodash, Mongodb, MomentJS, Git(Stash as Git server and code review process)."
+				},{
+					"title": "Developer for “Helios alliance”",
+					"description": "Developer for “Helios alliance” (July 2015): https://www.renault.com.co/, https://www.renault.co.uk/, https://www.renault.co.in/, http://www.infiniti.com.cn/, https://www.datsun.com/, This is a project for a major brands vehicle alliance, specifically goal is build the Renault, Nissan Infinity and Datsun website developing frontend generic modules for the main site and customizing for the alliance brands according to UI and UX Designer team defined, always using most height quality code standards. Technologies used: Grunt, Backbone.js, VanillaJS, Jasmine, SCSS, Bower, RequireJS, Git."
+				}
+			]
+		}
+	]
+}

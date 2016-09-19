@@ -31,12 +31,12 @@ class SectionAjax extends React.Component {
 			<table className="table table-striped">
 				<thead>
 					<tr>
-						<th>id</th>
-						<th>first_name</th>
-						<th>last_name</th>
-						<th>email</th>
-						<th>gender</th>
-						<th>ip_address</th>
+						<th>ID</th>
+						<th>FIRST_NAME</th>
+						<th>LAST_NAME</th>
+						<th>EMAIL</th>
+						<th>GENDER</th>
+						<th>IP_ADDRESS</th>
 					</tr>
 				</thead>
 				<tbody>

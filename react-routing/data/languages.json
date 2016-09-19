@@ -1,0 +1,15 @@
+{
+	"status": "success",
+	"items": [
+		{
+			"id": 1,
+			"title": "English",
+			"level": "Professional working proficienty"
+		},
+		{
+			"id": 2,
+			"title": "Spanish",
+			"level": "Native or bilingual proficienty"
+		}
+	]
+}
