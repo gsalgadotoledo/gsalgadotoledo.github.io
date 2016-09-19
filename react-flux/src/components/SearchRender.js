@@ -20,7 +20,7 @@ var SearchRender = React.createClass({
         </div>
       );
     } else {
-        return null;
+        return <h3>Loading...</h3>;
     }
   }
 });
