@@ -259,3 +259,6 @@ hr {
 
 #f .subscribe-submit {
 	right: 0; }
+
+.loading-container {
+	min-height: 460px }
