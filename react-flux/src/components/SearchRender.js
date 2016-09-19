@@ -3,7 +3,9 @@ import Reflux from 'reflux';
 import SearchStore from '../stores/SearchStore';
 
 var SearchRender = React.createClass({
+
   mixins: [Reflux.connect(SearchStore, 'links')],
+  
   render: function() {
     if (this.state.links) {
       return (
@@ -20,7 +22,7 @@ var SearchRender = React.createClass({
         </div>
       );
     } else {
-        return <h3>Loading...</h3>;
+        return null;
     }
   }
 });

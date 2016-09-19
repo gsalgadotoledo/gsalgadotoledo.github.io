@@ -13,6 +13,7 @@ var SearchStore = Reflux.createStore({
     retriveLinks: function(query) {
 
       if(query) {
+        this.trigger(this.results);
         $.ajax({
             url: `https://ajax.googleapis.com/ajax/services/feed/find?v=1.0&q=${query}`,
             dataType: 'jsonp',

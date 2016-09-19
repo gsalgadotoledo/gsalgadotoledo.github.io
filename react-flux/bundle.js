@@ -21700,7 +21700,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					'div',
-					{ className: 'row mb' },
+					{ className: 'row' },
 					_react2.default.createElement(
 						'div',
 						{ className: 'col-md-12' },
@@ -23170,7 +23170,9 @@
 	var SearchRender = _react2.default.createClass({
 	  displayName: 'SearchRender',
 
+
 	  mixins: [_reflux2.default.connect(_SearchStore2.default, 'links')],
+
 	  render: function render() {
 	    if (this.state.links) {
 	      return _react2.default.createElement(
@@ -23241,6 +23243,7 @@
 	    retriveLinks: function retriveLinks(query) {
 
 	        if (query) {
+	            this.trigger(this.results);
 	            _jquery2.default.ajax({
 	                url: 'https://ajax.googleapis.com/ajax/services/feed/find?v=1.0&q=' + query,
 	                dataType: 'jsonp',
