@@ -4,7 +4,7 @@ class Loading extends React.Component {
 	
 	render() {
 		return (
-			<div>
+			<div className="centered">
 				<h6>Loading data...</h6>
 				<hr className="aligncenter" />
 			</div>

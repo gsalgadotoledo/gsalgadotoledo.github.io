@@ -23,7 +23,7 @@ var JobsStore = Reflux.createStore({
 
     getCallAjax: function(endpoint) {
       $.ajax({
-        url: `/data/${endpoint}.json`,
+        url: `data/${endpoint}.json`,
         dataType: 'json',
         cache: false,
         context: this,

@@ -29085,7 +29085,7 @@
 
 	  getCallAjax: function getCallAjax(endpoint) {
 	    _jquery2.default.ajax({
-	      url: '/data/' + endpoint + '.json',
+	      url: 'data/' + endpoint + '.json',
 	      dataType: 'json',
 	      cache: false,
 	      context: this,
@@ -39236,7 +39236,7 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					null,
+					{ className: "centered" },
 					_react2.default.createElement(
 						"h6",
 						null,
