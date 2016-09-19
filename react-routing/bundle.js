@@ -39236,21 +39236,13 @@
 			value: function render() {
 				return _react2.default.createElement(
 					"div",
-					{ id: "w" },
+					null,
 					_react2.default.createElement(
-						"div",
-						{ className: "container" },
-						_react2.default.createElement(
-							"div",
-							{ className: "row centered" },
-							_react2.default.createElement(
-								"h6",
-								null,
-								"Loading data..."
-							),
-							_react2.default.createElement("hr", { className: "aligncenter" })
-						)
-					)
+						"h6",
+						null,
+						"Loading data..."
+					),
+					_react2.default.createElement("hr", { className: "aligncenter" })
 				);
 			}
 		}]);
