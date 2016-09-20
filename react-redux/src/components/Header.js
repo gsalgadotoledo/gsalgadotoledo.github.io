@@ -31,4 +31,12 @@ class Header extends React.Component {
 	}
 }
 
+Header.propTypes = { 
+  about: React.PropTypes.string
+}
+
+Header.defaultProps = {
+  about: '...'
+}
+
 export default Header

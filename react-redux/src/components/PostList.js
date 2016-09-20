@@ -46,4 +46,14 @@ class PostList extends React.Component {
 	}
 }
 
+PostList.propTypes = { 
+  loading: React.PropTypes.bool,
+  posts: React.PropTypes.array
+}
+
+PostList.defaultProps = {
+  loading: false,
+  posts: []
+}
+
 export default PostList
