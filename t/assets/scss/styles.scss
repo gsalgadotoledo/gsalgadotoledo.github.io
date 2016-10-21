@@ -1,0 +1,9 @@
+@import 'variables';
+
+// General layout styles
+@import 'layout';
+
+// Loading components
+@import '../components/counter/counter.scss';
+@import '../components/table/table.scss';
+@import '../components/button/button.scss';

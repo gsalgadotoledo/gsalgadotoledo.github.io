@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Netcentric challenge">
+    <meta name="author" content="Gustavo Salgado">
+    <title>Netcentric shop</title>
+
+    <!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700" rel="stylesheet"> -->
+    <link href="assets/css/styles.css" rel="stylesheet">
+
+  </head>
+  <body>
+    
+    <header>
+      <img src="assets/img/netcentric-logo.png" 
+        alt="Netcentric enterprise web excellence." 
+        title="Netcentric enterprise web excellence.">
+    </header>
+
+    <section>
+
+      <div class="padding">
+        <h1>Your Basket</h1>
+        <p>
+          Items you have added to your basket are shown below. <br>
+          Adjust the quantities or remove items before continuing your purchase.
+        </p>
+      </div>
+      
+      <div data-target="table"></div>
+      
+    </section>
+
+    <footer>
+      &copy; Netcentric - Enterprise Web Excellence
+    </footer>
+
+    <script src="assets/components/util/util.js"></script>
+    <script src="assets/components/counter/counter.js"></script>
+    <script src="assets/components/models/basket.js"></script>
+    <script src="assets/components/table/table.js"></script>
+    <script>
+      window.onload = function() {
+        App.Table.init({
+          model: App.Basket,
+          counter: App.Counter
+        });
+      }
+    </script>
+  </body>
+</html>

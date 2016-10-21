@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  padding: 170px 0 0;
+  font-family: "Droid Serif", serif;
+  font-size: 14px;
+  background: linear-gradient(#ffffff, #dadada);
+  height: auto;
+  -webkit-font-smoothing: antialiased !important; }
+
+header {
+  margin: 0 auto;
+  padding: 0 10px 0; }
+
+section,
+header {
+  width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  content: "";
+  display: table;
+  clear: both; }
+  @media only screen and (max-width: 599px) {
+    section,
+    header {
+      width: 85%;
+      margin: 0 15px; } }
+
+section {
+  padding: 20px 0; }
+
+h1 {
+  font-size: 2.1em;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 2px 2px 2px #ccc;
+  letter-spacing: -0.04em;
+  margin: 0; }
+
+p {
+  line-height: 1.25;
+  margin: 0.7em 0;
+  font-size: 1em;
+  letter-spacing: -0.05em; }
+
+a {
+  color: #010066;
+  cursor: pointer; }
+  a:hover {
+    text-decoration: underline; }
+
+footer {
+  text-align: center;
+  font-family: "Droid Sans", sans-serif;
+  font-size: 0.8em;
+  font-weight: 100;
+  background: #666666;
+  color: white;
+  border-top: 1px solid black;
+  padding: 14px 0 15px;
+  margin-top: 105px;
+  letter-spacing: -0.05em; }
+
+.padding {
+  padding-left: 20px;
+  padding-right: 20px; }
+
+[data-target="counter"] {
+  display: inline-block;
+  width: 60px; }
+  [data-target="counter"] > input {
+    font-family: "Droid Serif", serif;
+    font-size: 1.1em;
+    text-align: right;
+    padding: 2px;
+    border: 1px solid #9a9a9a;
+    float: left;
+    width: 70%;
+    box-sizing: border-box; }
+  [data-target="counter"] a {
+    float: right;
+    display: block;
+    width: 25%;
+    color: white;
+    background: #9a9a9a;
+    height: 14px;
+    text-align: center;
+    cursor: pointer;
+    line-height: 0.9; }
+    [data-target="counter"] a.plus {
+      margin-bottom: 1px; }
+    [data-target="counter"] a.minus {
+      margin-top: 1px; }
+
+[data-target="table"] table {
+  width: 100%;
+  margin-top: 3.9em;
+  font-size: 1.22em;
+  border-spacing: 0;
+  border-collapse: collapse;
+  letter-spacing: -0.03em; }
+  [data-target="table"] table tr td:last-child,
+  [data-target="table"] table tr th:last-child {
+    padding-right: 20px; }
+  [data-target="table"] table tr td:first-child,
+  [data-target="table"] table tr th:first-child {
+    padding-left: 20px; }
+  [data-target="table"] table th:first-child {
+    text-align: left; }
+  [data-target="table"] table th {
+    border-bottom: 2px solid #000;
+    padding: 0;
+    text-align: right;
+    line-height: 0.9; }
+  [data-target="table"] table td {
+    padding: 7px 0;
+    text-align: right; }
+    [data-target="table"] table td:first-child {
+      text-align: left; }
+  @media only screen and (max-width: 599px) {
+    [data-target="table"] table td.hidden-mobile,
+    [data-target="table"] table th.hidden-mobile {
+      display: none; } }
+  [data-target="table"] table tbody tr:first-child td {
+    padding-top: 23px; }
+  [data-target="table"] table tbody tr td:last-child {
+    position: relative; }
+  [data-target="table"] table tbody tr td:last-child a[data-action="delete"] {
+    display: block;
+    width: 25px;
+    position: absolute;
+    right: -30px;
+    top: 12px;
+    cursor: pointer; }
+  [data-target="table"] table tbody tr:first-child td:last-child a {
+    top: 26px; }
+  [data-target="table"] table tbody tr td:last-child a img {
+    width: 100%; }
+  [data-target="table"] table tbody tr:nth-child(even) {
+    background: #ddd; }
+  [data-target="table"] table tfoot td {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: #9a9a9a; }
+  [data-target="table"] table tfoot tr:last-child td {
+    padding-top: 26px;
+    color: inherit;
+    font-weight: 700; }
+  [data-target="table"] table tfoot tr:first-child td {
+    padding-top: 38px; }
+
+[data-target="button"] {
+  font-family: "Droid Sans", sans-serif;
+  margin: 52px 20px;
+  float: right;
+  font-size: 1.71em;
+  padding: 11px 6px 12px 8px;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  background-color: #010066;
+  color: white;
+  box-shadow: 4px 4px 5px #777777;
+  cursor: pointer; }
+  [data-target="button"]:not([disabled]):hover {
+    background-color: white;
+    color: #010066;
+    box-shadow: -2px -2px 8px #777777, 2px 2px 8px #777777; }
+  [data-target="button"][disabled] {
+    background-color: #9a9a9a;
+    cursor: not-allowed; }

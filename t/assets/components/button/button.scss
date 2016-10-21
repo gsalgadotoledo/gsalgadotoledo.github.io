@@ -1,0 +1,26 @@
+[data-target="button"] {
+  font-family: $droid-sans;
+  margin: 52px 20px;
+  float: right;
+  font-size: 1.71em;
+  padding: 11px 6px 12px 8px;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  background-color: $blue;
+  color: white;
+  box-shadow: 4px 4px 5px $gray-shadow;
+  cursor: pointer;
+
+  &:not([disabled]):hover {
+    background-color: white;
+    color: $blue;
+    box-shadow: -2px -2px 8px $gray-shadow, 2px 2px 8px $gray-shadow;
+  }
+
+  &[disabled] {
+    background-color: $gray;
+    cursor: not-allowed;
+  }
+}

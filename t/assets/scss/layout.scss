@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 170px 0 0;
+  font-family: $droid-serif;
+  font-size: 14px;
+  background: linear-gradient($white-bg, $blue-bg);
+  height: auto;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+header {
+  margin: 0 auto;
+  padding: 0 10px 0;
+}
+
+section,
+header {
+  width: 500px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  content: "";
+  display: table;
+  clear: both;
+  
+  @media only screen and (max-width : 599px) {
+    width: 85%;
+    margin: 0 15px;
+  }
+}
+
+section {
+  padding: 20px 0;
+}
+
+h1 {
+  font-size: 2.1em;
+  font-weight: 700;
+  line-height: 1.2;
+  text-shadow: 2px 2px 2px $gray-text-shadow;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+p {
+  line-height: 1.25;
+  margin: 0.7em 0;
+  font-size: 1em;
+  letter-spacing: -0.05em;
+}
+
+a {
+  color: $blue;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+footer {
+  text-align: center;
+  font-family: $droid-sans;
+  font-size: 0.8em;
+  font-weight: 100;
+  background: $gray-bg-footer;
+  color: white;
+  border-top: 1px solid black;
+  padding: 14px 0 15px;
+  margin-top: 105px;
+  letter-spacing: -0.05em;
+}
+
+.padding {
+  padding-left: 20px;
+  padding-right: 20px;
+}
