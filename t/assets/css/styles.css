@@ -32,7 +32,7 @@ h1 {
   font-size: 2.1em;
   font-weight: 700;
   line-height: 1.2;
-  text-shadow: 2px 2px 2px #ccc;
+  text-shadow: 2px 2px 2px #cccccc;
   letter-spacing: -0.04em;
   margin: 0; }
 
@@ -43,7 +43,7 @@ p {
   letter-spacing: -0.05em; }
 
 a {
-  color: #010066;
+  color: #000066;
   cursor: pointer; }
   a:hover {
     text-decoration: underline; }
@@ -72,7 +72,7 @@ footer {
     font-size: 1.1em;
     text-align: right;
     padding: 2px;
-    border: 1px solid #9a9a9a;
+    border: 1px solid #999999;
     float: left;
     width: 70%;
     box-sizing: border-box; }
@@ -81,7 +81,7 @@ footer {
     display: block;
     width: 25%;
     color: white;
-    background: #9a9a9a;
+    background: #999999;
     height: 14px;
     text-align: center;
     cursor: pointer;
@@ -107,7 +107,7 @@ footer {
   [data-target="table"] table th:first-child {
     text-align: left; }
   [data-target="table"] table th {
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid black;
     padding: 0;
     text-align: right;
     line-height: 0.9; }
@@ -136,11 +136,11 @@ footer {
   [data-target="table"] table tbody tr td:last-child a img {
     width: 100%; }
   [data-target="table"] table tbody tr:nth-child(even) {
-    background: #ddd; }
+    background: #dddddd; }
   [data-target="table"] table tfoot td {
     padding-top: 2px;
     padding-bottom: 2px;
-    color: #9a9a9a; }
+    color: #999999; }
   [data-target="table"] table tfoot tr:last-child td {
     padding-top: 26px;
     color: inherit;
@@ -158,14 +158,14 @@ footer {
   border: 0;
   font-weight: 700;
   letter-spacing: -0.05em;
-  background-color: #010066;
+  background-color: #000066;
   color: white;
   box-shadow: 4px 4px 5px #777777;
   cursor: pointer; }
   [data-target="button"]:not([disabled]):hover {
     background-color: white;
-    color: #010066;
+    color: #000066;
     box-shadow: -2px -2px 8px #777777, 2px 2px 8px #777777; }
   [data-target="button"][disabled] {
-    background-color: #9a9a9a;
+    background-color: #999999;
     cursor: not-allowed; }

@@ -1,7 +1,7 @@
 window.App = {};
 window.App.util = (function(){
   
-  var _storage;
+  var _storage = {};
 
   function merge(originalValues, newValues) {
     for (var field in newValues) {
@@ -11,6 +11,7 @@ window.App.util = (function(){
   }
 
   function storage(key, value) {
+    
     try {
       if(!value) {
         return JSON.parse(localStorage.getItem(key));
@@ -18,7 +19,7 @@ window.App.util = (function(){
       localStorage.setItem(key, JSON.stringify(value));
     } catch (e) {
       if(!value) { 
-        return _storage[key] || null;
+        return _storage[key] ? _storage[key] : null;
       }
       _storage[key] = value;
     }
