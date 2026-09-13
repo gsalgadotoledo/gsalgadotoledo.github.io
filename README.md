@@ -42,10 +42,10 @@ npm run format
 
 ## Decisiones
 
-| Decisión              | Alternativas                                    | Elegida                                          | Por qué                                                            |
-| --------------------- | ----------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------ |
-| Cómo se publica       | Next.js/SSR · SPA con rutas · páginas estáticas | Páginas estáticas en GitHub Pages                | No hace falta backend; cada URL es un HTML real, sin trucos de 404 |
-| Generador             | Astro · Vite multi-page · CRA                   | Vite multi-page con React + TypeScript           | Un `index.html` por página, mismo stack que el home                |
-| Lint y formato        | ESLint + Prettier · oxlint + Prettier           | oxlint (lo trae la plantilla de Vite) + Prettier | Rápido, sin config que mantener                                    |
-| HTML con contenido | cascarón vacío que pinta React · prerender en build · Astro | prerender en build con `react-dom/server` + hidratación | páginas estáticas de verdad: se leen sin JS, SEO, la etiqueta del año está en el HTML |
-| Textos del portafolio | en JSX · JSON por año                           | `src/data/years/<año>.json`                      | Cambiar contenido es editar JSON                                   |
+| Decisión              | Alternativas                                                | Elegida                                                 | Por qué                                                                               |
+| --------------------- | ----------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| Cómo se publica       | Next.js/SSR · SPA con rutas · páginas estáticas             | Páginas estáticas en GitHub Pages                       | No hace falta backend; cada URL es un HTML real, sin trucos de 404                    |
+| Generador             | Astro · Vite multi-page · CRA                               | Vite multi-page con React + TypeScript                  | Un `index.html` por página, mismo stack que el home                                   |
+| Lint y formato        | ESLint + Prettier · oxlint + Prettier                       | oxlint (lo trae la plantilla de Vite) + Prettier        | Rápido, sin config que mantener                                                       |
+| HTML con contenido    | cascarón vacío que pinta React · prerender en build · Astro | prerender en build con `react-dom/server` + hidratación | páginas estáticas de verdad: se leen sin JS, SEO, la etiqueta del año está en el HTML |
+| Textos del portafolio | en JSX · JSON por año                                       | `src/data/years/<año>.json`                             | Cambiar contenido es editar JSON                                                      |
