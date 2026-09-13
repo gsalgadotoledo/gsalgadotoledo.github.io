@@ -606,7 +606,8 @@
   text-decoration: none;
 }
 .year-nav__link--off {
-  opacity: 0.35;
+  color: #6b6480;
+  border-style: dashed;
 }
 @media (max-width: 30rem) {
   .year-nav {
@@ -618,4 +619,19 @@
     flex-basis: 100%;
     text-align: center;
   }
+}
+
+/* enlace para saltar al contenido: solo visible con foco */
+.skip {
+  position: absolute;
+  left: var(--sp-4);
+  top: -100px;
+  z-index: 20;
+  padding: var(--sp-2) var(--sp-4);
+  background: var(--text);
+  color: var(--bg);
+  border-radius: var(--radius-sm);
+}
+.skip:focus {
+  top: var(--sp-4);
 }

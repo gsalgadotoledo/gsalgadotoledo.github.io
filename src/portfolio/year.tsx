@@ -41,13 +41,16 @@ export function renderYear(data: YearData, art: YearArt = {}) {
   ].filter((s): s is { label: string; href: string } => Boolean(s))
   return (
     <div className={`year year-${data.year}`}>
+      <a className="skip" href="#main">
+        Saltar al contenido
+      </a>
       <Nav
         brand={initials(data.hero.name)}
         links={sections}
         cta={contact ? { label: 'Hablemos', href: '#contact' } : undefined}
       />
       <Hero data={data} aside={<div className="hero__art">{art.hero}</div>} />
-      <main>
+      <main id="main">
         {about ? (
           <Section id="about" kicker="Quién soy" title="Sobre mí">
             <div className="about">

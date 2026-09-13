@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://gsalgadotoledo.github.io/sitemap.xml
