@@ -6,6 +6,7 @@ export function ProjectCard({ project, art }: { project: Project; art?: ReactNod
   return (
     <article className={project.featured ? 'card card--featured' : 'card'}>
       {art ? <div className="card__art">{art}</div> : null}
+      {project.featured ? <span className="card__badge">Destacado</span> : null}
       <h3 className="card__title">{project.title}</h3>
       <p className="card__text">{project.description}</p>
       <ul className="tags">

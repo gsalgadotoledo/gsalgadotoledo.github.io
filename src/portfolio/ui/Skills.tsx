@@ -20,7 +20,10 @@ export function Skills({ groups }: { groups: SkillGroup[] }) {
                   aria-valuenow={s.level}
                   aria-label={s.name}
                 >
-                  <span className="skill__fill" style={{ width: `${s.level}%` }} />
+                  <span
+                    className="skill__fill"
+                    style={{ width: `${s.level}%`, ['--w' as string]: `${s.level}%` }}
+                  />
                 </span>
               </li>
             ))}

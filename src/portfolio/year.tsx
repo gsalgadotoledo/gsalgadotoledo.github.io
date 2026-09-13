@@ -1,10 +1,12 @@
 import type { ReactNode } from 'react'
 import type { YearData } from './types'
+import { Interactions } from './interactions'
 import {
+  BackToTop,
   Footer,
   Hero,
   Nav,
-  ProjectCard,
+  Projects,
   Section,
   Skills,
   Stats,
@@ -70,15 +72,7 @@ export function renderYear(data: YearData, art: YearArt = {}) {
         ) : null}
         {projects?.length ? (
           <Section id="projects" kicker="Qué construí" title="Proyectos" alt>
-            <div className="grid">
-              {projects.map((p) => (
-                <ProjectCard
-                  project={p}
-                  key={p.title}
-                  art={p.illustration && art.project ? art.project(p.illustration) : undefined}
-                />
-              ))}
-            </div>
+            <Projects projects={projects} art={art.project} />
           </Section>
         ) : null}
         {education?.length || certifications?.length ? (
@@ -150,6 +144,8 @@ export function renderYear(data: YearData, art: YearArt = {}) {
       </main>
       <YearNav year={data.year} />
       <Footer year={data.year} social={data.social} />
+      <BackToTop />
+      <Interactions />
     </div>
   )
 }

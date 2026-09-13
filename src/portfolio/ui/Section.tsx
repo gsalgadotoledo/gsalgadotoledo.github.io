@@ -11,7 +11,7 @@ interface SectionProps {
 
 export function Section({ id, title, kicker, children, alt }: SectionProps) {
   return (
-    <section className={alt ? 'section section--alt' : 'section'} id={id}>
+    <section className={alt ? 'section section--alt reveal' : 'section reveal'} id={id}>
       <div className="container">
         {kicker ? <p className="section__kicker">{kicker}</p> : null}
         <h2 className="section__title">{title}</h2>

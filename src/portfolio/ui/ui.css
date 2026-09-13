@@ -517,3 +517,129 @@ a.years__card:hover {
   max-width: 22rem;
   justify-self: center;
 }
+
+/* interacciones: reveal, barras, contadores (solo con JS y sin reduced-motion) */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 600ms var(--ease),
+    transform 600ms var(--ease);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.js .skill .skill__fill {
+  width: 0 !important;
+  transition: width 1000ms var(--ease);
+}
+.js .skill.is-visible .skill__fill {
+  width: var(--w) !important;
+}
+.skill:nth-child(2) .skill__fill {
+  transition-delay: 80ms;
+}
+.skill:nth-child(3) .skill__fill {
+  transition-delay: 160ms;
+}
+.skill:nth-child(4) .skill__fill {
+  transition-delay: 240ms;
+}
+.skill:nth-child(5) .skill__fill {
+  transition-delay: 320ms;
+}
+
+/* filtros de proyectos */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-8);
+}
+.chip {
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition:
+    background var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+.chip:hover {
+  color: var(--text);
+}
+.chip.is-active {
+  background: var(--primary);
+  border-color: transparent;
+  color: var(--primary-contrast);
+}
+.card {
+  position: relative;
+}
+.card__badge {
+  position: absolute;
+  top: var(--sp-4);
+  right: var(--sp-4);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-pill);
+}
+
+/* testimonios: comilla grande */
+.quote {
+  position: relative;
+  padding-top: var(--sp-12);
+}
+.quote::before {
+  content: '“';
+  position: absolute;
+  top: var(--sp-2);
+  left: var(--sp-6);
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--primary);
+  opacity: 0.25;
+}
+
+/* botón subir */
+.to-top {
+  position: fixed;
+  right: var(--sp-6);
+  bottom: var(--sp-6);
+  width: 3rem;
+  height: 3rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--primary-contrast);
+  box-shadow: var(--shadow-md);
+  font-size: var(--fs-lg);
+  opacity: 0;
+  translate: 0 12px;
+  pointer-events: none;
+  transition:
+    opacity var(--dur) var(--ease),
+    translate var(--dur) var(--ease);
+  z-index: 9;
+}
+.to-top.is-shown {
+  opacity: 1;
+  translate: 0 0;
+  pointer-events: auto;
+}
+.to-top:hover {
+  text-decoration: none;
+}

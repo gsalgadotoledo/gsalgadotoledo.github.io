@@ -372,3 +372,18 @@
       -30px 160px;
   }
 }
+
+/* interacciones con el look 2018 */
+.year-2018 .chip.is-active {
+  background: var(--gradient-soft);
+}
+.year-2018 .card__badge {
+  background: var(--gradient-soft);
+}
+.year-2018 .to-top {
+  background: var(--gradient-soft);
+  box-shadow: 0 10px 24px rgb(124 58 237 / 0.35);
+}
+.year-2018 .quote::before {
+  color: var(--primary-2);
+}
