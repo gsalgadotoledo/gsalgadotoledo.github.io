@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import type { YearData } from './types'
 import { Interactions } from './interactions'
+import { years } from './years'
 import {
   BackToTop,
   Footer,
@@ -142,7 +143,7 @@ export function renderYear(data: YearData, art: YearArt = {}) {
           </Section>
         ) : null}
       </main>
-      <YearNav year={data.year} />
+      <YearNav year={data.year} available={years.filter((y) => y.available).map((y) => y.year)} />
       <Footer year={data.year} social={data.social} />
       <BackToTop />
       <Interactions />

@@ -106,4 +106,8 @@ export interface YearSummary {
   label: string
   title?: string
   available: boolean
+  /** Una pincelada del tema del año para su tarjeta en el resumen (CSS: color o gradiente). */
+  swatch?: string
+  /** El estilo de la época, en tres palabras. */
+  era?: string
 }

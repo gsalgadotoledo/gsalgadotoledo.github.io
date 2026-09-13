@@ -1,0 +1,155 @@
+/* El resumen: el hub neutro y actual que enlaza los nueve años. */
+.summary {
+  --primary: #111827;
+  --accent: #6366f1;
+  --bg-alt: #f5f5f7;
+}
+.summary__hero {
+  padding-block: var(--sp-24) var(--sp-16);
+  background: var(--bg-alt);
+}
+.summary__kicker {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.summary__title {
+  font-size: clamp(var(--fs-2xl), 7vw, 4.5rem);
+  letter-spacing: -0.03em;
+  max-width: 14ch;
+}
+.summary__title span {
+  color: var(--text-muted);
+}
+.summary__lead {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+  max-width: 52ch;
+}
+.summary__count {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--accent);
+}
+.summary__main {
+  padding-block: var(--sp-16);
+}
+
+/* línea de tiempo horizontal */
+.tl {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0 0 var(--sp-16);
+  padding: 0;
+  position: relative;
+  overflow-x: auto;
+  gap: var(--sp-4);
+}
+.tl::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 9px;
+  height: 2px;
+  background: var(--line);
+}
+.tl__item {
+  position: relative;
+  flex: 0 0 auto;
+}
+.tl__dot {
+  display: grid;
+  justify-items: center;
+  gap: var(--sp-2);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+}
+.tl__dot::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--line);
+}
+.is-on .tl__dot {
+  color: var(--text);
+  font-weight: 600;
+}
+.is-on .tl__dot::before {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+a.tl__dot:hover {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+/* tarjetas */
+.years {
+  display: grid;
+  gap: var(--sp-6);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.years__card {
+  display: grid;
+  gap: var(--sp-2);
+  height: 100%;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  color: inherit;
+  background: var(--surface);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+a.years__card:hover {
+  text-decoration: none;
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+.years__swatch {
+  display: block;
+  height: 6rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-alt);
+  margin-bottom: var(--sp-2);
+}
+.years__card--soon {
+  color: var(--text-muted);
+}
+.years__card--soon .years__swatch {
+  background: repeating-linear-gradient(-45deg, var(--bg-alt) 0 8px, var(--surface) 8px 16px);
+}
+.years__year {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.years__title {
+  color: var(--text-muted);
+  margin: 0;
+}
+.years__era {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  margin: 0;
+}
+.years__go {
+  margin-top: auto;
+  padding-top: var(--sp-4);
+  font-weight: 600;
+  color: var(--accent);
+}

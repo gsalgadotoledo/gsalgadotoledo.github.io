@@ -387,3 +387,23 @@
 .year-2018 .quote::before {
   color: var(--primary-2);
 }
+
+/* móvil: hero más compacto, ilustración debajo */
+@media (max-width: 48rem) {
+  .year-2018 {
+    --cut: 2.5rem;
+  }
+  .year-2018 .hero {
+    padding-block: var(--sp-12) calc(var(--sp-12) + var(--cut));
+  }
+  .year-2018 .hero__art {
+    min-height: 0;
+  }
+  .year-2018 .hero__inner::after {
+    top: -1rem;
+    right: 6%;
+  }
+  .year-2018 .nav__links {
+    padding-bottom: var(--sp-4);
+  }
+}
