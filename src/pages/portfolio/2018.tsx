@@ -1,6 +1,5 @@
-import data from '../../data/years/2018.json'
+import { y2018 as data } from '../../data/years'
 import { renderYear } from '../../portfolio/year'
-import type { YearData } from '../../portfolio/types'
 import '../../portfolio/themes/2018.css'
 
-export const page = () => renderYear(data as YearData)
+export const page = () => renderYear(data)

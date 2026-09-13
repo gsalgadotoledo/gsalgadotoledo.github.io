@@ -221,3 +221,193 @@ a.years__card:hover {
   color: var(--text-muted);
   margin: var(--sp-2) 0 0;
 }
+
+/* botones */
+.btn {
+  display: inline-block;
+  padding: var(--sp-3) var(--sp-6);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  color: var(--text);
+  font-weight: 600;
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+.btn:hover {
+  text-decoration: none;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.btn--primary {
+  background: var(--primary);
+  border-color: transparent;
+  color: var(--primary-contrast);
+}
+.hero__name {
+  font-weight: 600;
+  margin-bottom: var(--sp-2);
+}
+.hero__role {
+  color: var(--text-muted);
+  font-weight: normal;
+}
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+.hero__meta {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* sobre mí */
+.about {
+  display: grid;
+  gap: var(--sp-8);
+}
+@media (min-width: 48rem) {
+  .about {
+    grid-template-columns: 3fr 2fr;
+    align-items: start;
+  }
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.stat {
+  background: var(--bg-alt);
+  border-radius: var(--radius-md);
+  padding: var(--sp-4);
+}
+.stat__value {
+  display: block;
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: 700;
+  color: var(--primary);
+}
+.stat__label {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* skills */
+.skills {
+  display: grid;
+  gap: var(--sp-8);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+}
+.skills__title {
+  font-size: var(--fs-lg);
+}
+.skills__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-3);
+}
+.skill {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--sp-1) var(--sp-2);
+  font-size: var(--fs-sm);
+}
+.skill__level {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.skill__bar {
+  grid-column: 1 / -1;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--line);
+  overflow: hidden;
+}
+.skill__fill {
+  display: block;
+  height: 100%;
+  background: var(--gradient);
+  border-radius: inherit;
+}
+
+.timeline__bullets {
+  margin: var(--sp-2) 0 0;
+  padding-left: 1.2em;
+  color: var(--text-muted);
+  display: grid;
+  gap: var(--sp-1);
+}
+
+/* educación */
+.education {
+  display: grid;
+  gap: var(--sp-8);
+}
+@media (min-width: 48rem) {
+  .education {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.education__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--sp-6);
+}
+.education__title {
+  font-size: var(--fs-lg);
+  margin: var(--sp-1) 0;
+}
+.education__sub {
+  font-size: var(--fs-lg);
+  margin-bottom: var(--sp-6);
+}
+.education__where,
+.education__detail {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* testimonios */
+.quote {
+  margin: 0;
+}
+.quote__text {
+  margin: 0 0 var(--sp-4);
+  font-size: var(--fs-lg);
+  font-style: italic;
+}
+.quote__author {
+  font-weight: 600;
+}
+.quote__author span {
+  color: var(--text-muted);
+  font-weight: normal;
+}
+
+/* contacto */
+.contact__blurb {
+  font-size: var(--fs-lg);
+  max-width: 48ch;
+}
+.contact__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+.footer__social {
+  display: flex;
+  gap: var(--sp-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}

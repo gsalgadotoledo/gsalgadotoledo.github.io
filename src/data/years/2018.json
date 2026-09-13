@@ -1,32 +1,207 @@
 {
   "year": 2018,
   "label": "Portfolio 2018",
-  "title": "[ejemplo] El año en que todo fue frontend",
-  "summary": "[ejemplo] Interfaces web con React, primeros dashboards y un e-commerce de punta a punta. Resumen de ejemplo hasta que llegue la hoja de vida.",
-  "roles": [
+  "note": "[ejemplo] Datos moqueados con forma de hoja de vida actual; se reemplazan con la real en el paso 14.",
+  "title": "Construyo productos web de punta a punta",
+  "summary": "Full Stack Engineer con foco en React y Node. En 2018 pasé de hacer interfaces a diseñar el producto completo: descubrimiento, datos, API y frontend.",
+  "hero": {
+    "name": "Gustavo Salgado",
+    "role": "Full Stack Engineer · Product-minded",
+    "location": "Bogotá, Colombia · remoto",
+    "availability": "Abierto a proyectos freelance",
+    "ctas": [
+      { "label": "Ver proyectos", "href": "#projects" },
+      { "label": "Contáctame", "href": "#contact" }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "Ingeniero de software con seis años construyendo aplicaciones web para e-commerce, fintech y educación. Me gusta el borde entre producto e ingeniería: entender el problema, medirlo y resolverlo con código que otros puedan mantener.",
+      "En 2018 lideré el frontend de una plataforma de pagos con más de 200 000 usuarios activos, migré una app de jQuery a React y armé el sistema de diseño que hoy usan tres equipos.",
+      "Cuando no programo, doy charlas en meetups de JavaScript, escribo sobre performance web y entreno para media maratón."
+    ],
+    "stats": [
+      { "value": "6+", "label": "años de experiencia" },
+      { "value": "24", "label": "proyectos entregados" },
+      { "value": "11", "label": "clientes felices" },
+      { "value": "3", "label": "charlas dadas" }
+    ]
+  },
+  "skills": [
     {
-      "title": "[ejemplo] Frontend Developer",
-      "company": "Empresa de ejemplo",
-      "period": "2018",
-      "summary": "[ejemplo] Componentes React, diseño responsive y accesibilidad para el producto principal."
+      "group": "Frontend",
+      "items": [
+        { "name": "JavaScript (ES2018)", "level": 92 },
+        { "name": "React + Redux", "level": 88 },
+        { "name": "HTML semántico y accesibilidad", "level": 85 },
+        { "name": "Sass / CSS Grid", "level": 84 },
+        { "name": "Webpack", "level": 70 }
+      ]
+    },
+    {
+      "group": "Backend",
+      "items": [
+        { "name": "Node.js + Express", "level": 80 },
+        { "name": "PostgreSQL", "level": 72 },
+        { "name": "REST y GraphQL", "level": 75 },
+        { "name": "Firebase", "level": 65 }
+      ]
+    },
+    {
+      "group": "Herramientas y producto",
+      "items": [
+        { "name": "Git y GitHub", "level": 90 },
+        { "name": "Jest + Testing Library", "level": 78 },
+        { "name": "Sketch y Zeplin", "level": 60 },
+        { "name": "Scrum / Jira", "level": 74 }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Frontend Engineer",
+      "company": "PagaYa",
+      "period": "Mar 2018 – Dic 2018",
+      "location": "Bogotá",
+      "summary": "Plataforma de pagos para comercios pequeños.",
+      "bullets": [
+        "Lideré la migración del checkout de jQuery a React: −38 % en tiempo de carga y +12 % en conversión.",
+        "Diseñé el sistema de componentes (32 componentes, Storybook) que adoptaron tres equipos.",
+        "Implementé pagos con PSE y tarjeta, con pruebas end-to-end en Cypress."
+      ]
+    },
+    {
+      "title": "Full Stack Developer",
+      "company": "Aula Digital",
+      "period": "Ene 2017 – Feb 2018",
+      "location": "Remoto",
+      "summary": "Plataforma de cursos en línea para universidades.",
+      "bullets": [
+        "API REST en Node y PostgreSQL para 40 000 estudiantes; caché con Redis.",
+        "Reproductor de video con subtítulos y notas sincronizadas en React.",
+        "Reduje el costo de infraestructura un 25 % moviendo assets a S3 + CloudFront."
+      ]
+    },
+    {
+      "title": "Frontend Developer",
+      "company": "Estudio Pixel",
+      "period": "2015 – 2016",
+      "location": "Bogotá",
+      "summary": "Agencia digital: sitios y landings para marcas.",
+      "bullets": [
+        "Más de 20 sitios responsive con WordPress y JavaScript a medida.",
+        "Animaciones y micro-interacciones con GSAP."
+      ]
     }
   ],
   "projects": [
     {
-      "title": "[ejemplo] Tienda en línea",
-      "description": "[ejemplo] Catálogo, carrito y checkout con React y Redux.",
-      "stack": ["React", "Redux", "Sass"],
-      "links": [{ "label": "Repo", "href": "https://github.com/gsalgadotoledo" }]
+      "title": "Checkout PagaYa",
+      "description": "Flujo de pago en tres pasos con validación en vivo, guardado de tarjetas y modo offline. La pieza central de la plataforma en 2018.",
+      "stack": ["React", "Redux", "Node", "PostgreSQL", "Cypress"],
+      "illustration": "ecommerce",
+      "featured": true,
+      "links": [{ "label": "Caso de estudio", "href": "#", "kind": "web" }]
     },
     {
-      "title": "[ejemplo] Dashboard de ventas",
-      "description": "[ejemplo] Gráficas en tiempo real y filtros por región.",
-      "stack": ["React", "D3", "Node"]
+      "title": "Kanban Live",
+      "description": "Tablero colaborativo en tiempo real con WebSockets, arrastrar y soltar y comentarios. Proyecto personal que llegó a 1 200 usuarios.",
+      "stack": ["React", "Socket.io", "Express", "MongoDB"],
+      "illustration": "dashboard",
+      "featured": true,
+      "links": [
+        { "label": "Repo", "href": "https://github.com/gsalgadotoledo", "kind": "github" },
+        { "label": "Demo", "href": "#", "kind": "web" }
+      ]
+    },
+    {
+      "title": "Aula Player",
+      "description": "Reproductor de video para cursos con subtítulos, marcadores y notas sincronizadas al segundo.",
+      "stack": ["React", "HLS.js", "Sass"],
+      "illustration": "video",
+      "links": [{ "label": "Repo", "href": "https://github.com/gsalgadotoledo", "kind": "github" }]
+    },
+    {
+      "title": "Clima Bogotá",
+      "description": "PWA con el pronóstico por localidad, instalable y offline. Primer proyecto con service workers.",
+      "stack": ["JavaScript", "PWA", "OpenWeather API"],
+      "illustration": "mobile",
+      "links": [{ "label": "Repo", "href": "https://github.com/gsalgadotoledo", "kind": "github" }]
+    },
+    {
+      "title": "Chatbot de soporte",
+      "description": "Bot para Facebook Messenger que resuelve el 60 % de las preguntas frecuentes de una tienda.",
+      "stack": ["Node", "Dialogflow", "Messenger API"],
+      "illustration": "chat",
+      "links": [{ "label": "Repo", "href": "https://github.com/gsalgadotoledo", "kind": "github" }]
+    },
+    {
+      "title": "API de inventario",
+      "description": "API GraphQL con autenticación JWT y documentación viva para una cadena de tiendas.",
+      "stack": ["Node", "GraphQL", "PostgreSQL", "Docker"],
+      "illustration": "api",
+      "links": [{ "label": "Repo", "href": "https://github.com/gsalgadotoledo", "kind": "github" }]
     }
   ],
-  "stack": ["JavaScript", "React", "Redux", "Sass", "Node", "Git"],
+  "education": [
+    {
+      "title": "Ingeniería de Sistemas",
+      "institution": "Universidad de ejemplo",
+      "period": "2010 – 2015",
+      "detail": "Tesis: sistema de recomendación para una biblioteca universitaria."
+    },
+    {
+      "title": "Nanodegree Front End Web Developer",
+      "institution": "Udacity",
+      "period": "2017"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "year": "2018"
+    },
+    { "title": "Scrum Master Certified", "issuer": "Scrum Alliance", "year": "2017" }
+  ],
   "highlights": [
-    "[ejemplo] Primer proyecto con React en producción.",
-    "[ejemplo] Aprendí a medir performance con Lighthouse."
+    "Charla \"React en producción sin miedo\" en BogotáJS, 180 asistentes.",
+    "Sistema de diseño adoptado por tres equipos.",
+    "Primer proyecto personal con más de 1 000 usuarios (Kanban Live).",
+    "Media maratón de Bogotá en 1:58."
+  ],
+  "testimonials": [
+    {
+      "quote": "Gustavo entiende el negocio tan bien como el código. El checkout nuevo pagó su desarrollo en dos meses.",
+      "author": "Laura Méndez",
+      "role": "CPO, PagaYa"
+    },
+    {
+      "quote": "Documenta, prueba y explica. El tipo de ingeniero que hace mejor al equipo entero.",
+      "author": "Andrés Rojas",
+      "role": "Tech Lead, Aula Digital"
+    }
+  ],
+  "contact": {
+    "email": "gsalgadotoledo@gmail.com",
+    "blurb": "¿Tienes un producto que construir o un frontend que rescatar? Escríbeme.",
+    "links": [
+      { "label": "GitHub", "href": "https://github.com/gsalgadotoledo", "kind": "github" },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "kind": "linkedin"
+      },
+      { "label": "Descargar CV", "href": "#", "kind": "cv" }
+    ]
+  },
+  "social": [
+    { "label": "GitHub", "href": "https://github.com/gsalgadotoledo", "kind": "github" },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "kind": "linkedin"
+    },
+    { "label": "Twitter", "href": "https://twitter.com/gsalgadotoledo", "kind": "twitter" }
   ]
 }

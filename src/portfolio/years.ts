@@ -1,5 +1,5 @@
 import type { YearSummary } from './types'
-import y2018 from '../data/years/2018.json'
+import { y2018 } from '../data/years'
 
 /** Los años que ya tienen página. Cada iteración agrega el suyo. */
 export const years: YearSummary[] = [
