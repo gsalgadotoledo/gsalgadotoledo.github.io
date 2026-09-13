@@ -635,3 +635,6 @@
 .skip:focus {
   top: var(--sp-4);
 }
+.footer__social {
+  margin-right: 4rem; /* deja sitio al botón "subir" */
+}
