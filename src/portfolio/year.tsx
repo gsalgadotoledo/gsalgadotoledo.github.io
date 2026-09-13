@@ -2,6 +2,7 @@ import type { YearData } from './types'
 import {
   Footer,
   Hero,
+  Nav,
   ProjectCard,
   Section,
   Skills,
@@ -18,9 +19,22 @@ import '../design/tokens.css'
 export function renderYear(data: YearData) {
   const { about, skills, experience, projects, education, certifications } = data
   const { highlights, testimonials, contact } = data
+  const sections = [
+    about && { label: 'Sobre mí', href: '#about' },
+    skills?.length && { label: 'Skills', href: '#skills' },
+    experience?.length && { label: 'Experiencia', href: '#experience' },
+    projects?.length && { label: 'Proyectos', href: '#projects' },
+    education?.length && { label: 'Educación', href: '#education' },
+    contact && { label: 'Contacto', href: '#contact' },
+  ].filter((s): s is { label: string; href: string } => Boolean(s))
   return (
     <div className={`year year-${data.year}`}>
-      <Hero data={data} />
+      <Nav
+        brand={initials(data.hero.name)}
+        links={sections}
+        cta={contact ? { label: 'Hablemos', href: '#contact' } : undefined}
+      />
+      <Hero data={data} aside={<div className="hero__art" aria-hidden="true" />} />
       <main>
         {about ? (
           <Section id="about" kicker="Quién soy" title="Sobre mí">
@@ -118,5 +132,15 @@ export function renderYear(data: YearData) {
       <YearNav year={data.year} />
       <Footer year={data.year} social={data.social} />
     </div>
+  )
+}
+
+function initials(name: string) {
+  return (
+    name
+      .split(/\s+/)
+      .map((w) => w[0])
+      .join('')
+      .toUpperCase() + '.'
   )
 }

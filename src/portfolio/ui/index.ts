@@ -1,5 +1,6 @@
 export { YearLabel } from './YearLabel'
 export { Hero } from './Hero'
+export { Nav } from './Nav'
 export { Section } from './Section'
 export { Stats } from './Stats'
 export { Skills } from './Skills'

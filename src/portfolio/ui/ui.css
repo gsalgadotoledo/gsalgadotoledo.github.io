@@ -411,3 +411,71 @@ a.years__card:hover {
   margin: 0;
   padding: 0;
 }
+
+/* nav */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  min-height: 3.75rem;
+  flex-wrap: wrap;
+}
+.nav__brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-lg);
+  color: var(--text);
+}
+.nav__links {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav__links a {
+  color: var(--text);
+  font-weight: 600;
+  font-size: var(--fs-sm);
+}
+.nav__toggle,
+.nav__burger {
+  display: none;
+}
+.btn--sm {
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-sm);
+}
+@media (max-width: 48rem) {
+  .nav__burger {
+    display: grid;
+    gap: 5px;
+    padding: var(--sp-2);
+    cursor: pointer;
+  }
+  .nav__burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+  }
+  .nav__links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: var(--sp-4);
+  }
+  .nav__toggle:checked ~ .nav__links {
+    display: flex;
+  }
+}

@@ -1,6 +1,350 @@
-/* Tema 2018: solo las variables que cambia. El paso 4 del plan lo viste de verdad. */
+/* Tema 2018 — lo que estaba de moda ese año: gradiente violeta→magenta→coral, Poppins bold,
+   formas geométricas flotando, partículas en el hero, cortes diagonales entre secciones,
+   sombras largas y suaves, botones pill con gradiente. Todo bajo .year-2018. */
+@import '@fontsource/poppins/600.css';
+@import '@fontsource/poppins/700.css';
+@import '@fontsource/poppins/800.css';
+@import '@fontsource/open-sans/400.css';
+@import '@fontsource/open-sans/600.css';
+
 .year-2018 {
+  --font-display: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
   --primary: #6d28d9;
-  --accent: #f43f5e;
-  --bg-alt: #f8f5ff;
+  --primary-2: #c026d3;
+  --coral: #fb7185;
+  --accent: #14b8a6;
+  --bg-alt: #f7f3ff;
+  --text: #1f1235;
+  --text-muted: #5b5470;
+  --line: #ebe6f5;
+  --gradient: linear-gradient(135deg, #5b21b6 0%, #9333ea 40%, #db2777 75%, #fb7185 100%);
+  --gradient-soft: linear-gradient(135deg, #7c3aed, #ec4899);
+  --shadow-md: 0 14px 30px rgb(91 33 182 / 0.12);
+  --shadow-lg: 0 30px 60px rgb(91 33 182 / 0.18);
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --cut: 4.5rem; /* alto del corte diagonal */
+  font-family: var(--font-body);
+  color: var(--text);
+  overflow-x: clip;
+}
+
+.year-2018 h1,
+.year-2018 h2,
+.year-2018 h3,
+.year-2018 .stat__value,
+.year-2018 .years__year {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+/* nav: blanca translúcida, marca con gradiente */
+.year-2018 .nav {
+  background: rgb(255 255 255 / 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 0;
+  box-shadow: 0 1px 0 rgb(91 33 182 / 0.08);
+}
+.year-2018 .nav__brand {
+  background: var(--gradient-soft);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-size: var(--fs-xl);
+}
+.year-2018 .nav__links a:not(.btn) {
+  position: relative;
+  color: var(--text);
+}
+.year-2018 .nav__links a:not(.btn)::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--gradient-soft);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--dur) var(--ease);
+}
+.year-2018 .nav__links a:not(.btn):hover {
+  text-decoration: none;
+}
+.year-2018 .nav__links a:not(.btn):hover::after {
+  transform: scaleX(1);
+}
+
+/* botones pill con gradiente */
+.year-2018 .btn {
+  border-radius: var(--radius-pill);
+  font-family: var(--font-display);
+  font-weight: 600;
+  border: 2px solid transparent;
+}
+.year-2018 .btn--primary {
+  background: var(--gradient-soft);
+  color: #fff;
+  box-shadow: 0 10px 24px rgb(124 58 237 / 0.35);
+}
+.year-2018 .btn--primary:hover {
+  box-shadow: 0 16px 32px rgb(124 58 237 / 0.45);
+}
+.year-2018 .btn:not(.btn--primary) {
+  border-color: rgb(255 255 255 / 0.7);
+  color: inherit;
+}
+
+/* hero: gradiente a sangre, texto blanco, partículas y formas, corte diagonal abajo */
+.year-2018 .hero {
+  position: relative;
+  background: var(--gradient);
+  color: #fff;
+  padding-block: var(--sp-24) calc(var(--sp-24) + var(--cut));
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--cut)), 0 100%);
+  isolation: isolate;
+}
+.year-2018 .hero::before {
+  /* partículas: puntos blancos a dos escalas */
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(circle, rgb(255 255 255 / 0.35) 1.5px, transparent 2px),
+    radial-gradient(circle, rgb(255 255 255 / 0.2) 1px, transparent 1.5px);
+  background-size:
+    120px 120px,
+    60px 60px;
+  background-position:
+    0 0,
+    30px 40px;
+  animation: drift-2018 40s linear infinite;
+  opacity: 0.9;
+}
+.year-2018 .hero .year-label {
+  color: #fff;
+  border-color: rgb(255 255 255 / 0.6);
+  background: rgb(255 255 255 / 0.12);
+}
+.year-2018 .hero__name,
+.year-2018 .hero__meta {
+  color: rgb(255 255 255 / 0.85);
+}
+.year-2018 .hero__role {
+  color: rgb(255 255 255 / 0.7);
+}
+.year-2018 .hero__title {
+  color: #fff;
+  font-size: clamp(2.4rem, 6.5vw, 4.5rem);
+}
+.year-2018 .hero__summary {
+  color: rgb(255 255 255 / 0.85);
+  font-size: var(--fs-lg);
+}
+.year-2018 .hero .btn:not(.btn--primary) {
+  color: #fff;
+}
+.year-2018 .hero .btn--primary {
+  background: #fff;
+  color: var(--primary);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 0.15);
+}
+
+/* formas geométricas flotando (círculo, anillo, triángulo, cuadrado girado) */
+.year-2018 .hero__art {
+  position: relative;
+  min-height: 22rem;
+}
+.year-2018 .hero__art::before,
+.year-2018 .hero__art::after,
+.year-2018 .hero__inner::before,
+.year-2018 .hero__inner::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+  animation: float-2018 7s ease-in-out infinite;
+}
+.year-2018 .hero__art::before {
+  /* círculo grande */
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 0.14);
+  right: 8%;
+  top: 10%;
+}
+.year-2018 .hero__art::after {
+  /* anillo */
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  border: 14px solid rgb(255 255 255 / 0.3);
+  left: 6%;
+  bottom: 6%;
+  animation-delay: -3s;
+}
+.year-2018 .hero__inner {
+  position: relative;
+}
+.year-2018 .hero__inner::before {
+  /* triángulo */
+  width: 0;
+  height: 0;
+  border-left: 2.2rem solid transparent;
+  border-right: 2.2rem solid transparent;
+  border-bottom: 3.8rem solid rgb(20 184 166 / 0.7);
+  right: 4%;
+  bottom: 0;
+  animation-delay: -1.5s;
+  animation-duration: 9s;
+}
+.year-2018 .hero__inner::after {
+  /* cuadrado girado */
+  width: 3rem;
+  height: 3rem;
+  border-radius: 8px;
+  background: rgb(251 113 133 / 0.8);
+  right: 38%;
+  top: -3rem;
+  transform: rotate(20deg);
+  animation-delay: -5s;
+  animation-duration: 11s;
+}
+
+/* secciones: cortes diagonales alternos y título con subrayado gradiente */
+.year-2018 .section {
+  padding-block: var(--sp-16);
+}
+.year-2018 .section--alt {
+  background: var(--bg-alt);
+  padding-block: calc(var(--sp-16) + var(--cut) / 2);
+  clip-path: polygon(0 0, 100% var(--cut), 100% 100%, 0 calc(100% - var(--cut)));
+  margin-block: calc(-1 * var(--cut) / 2);
+}
+.year-2018 .section__kicker {
+  color: var(--primary-2);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+.year-2018 .section__title {
+  position: relative;
+  padding-bottom: var(--sp-3);
+}
+.year-2018 .section__title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 4rem;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--gradient-soft);
+}
+
+/* tarjetas: radios grandes, sombra larga, hover que levanta más */
+.year-2018 .card,
+.year-2018 .years__card,
+.year-2018 .stat {
+  border: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  background: #fff;
+}
+.year-2018 .card:hover,
+.year-2018 a.years__card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+.year-2018 .tag {
+  background: var(--bg-alt);
+  color: var(--primary);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+.year-2018 .stat__value {
+  background: var(--gradient-soft);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.year-2018 .skill__bar {
+  height: 10px;
+  background: #ece7f7;
+}
+.year-2018 .skill__fill {
+  background: var(--gradient-soft);
+}
+.year-2018 .timeline {
+  border-left-color: #ddd3f3;
+}
+.year-2018 .timeline__item::before {
+  background: var(--gradient-soft);
+  box-shadow: 0 0 0 5px #fff;
+  width: 14px;
+  height: 14px;
+}
+.year-2018 .year-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+/* contacto: bloque gradiente con texto blanco */
+.year-2018 #contact {
+  background: var(--gradient);
+  color: #fff;
+  clip-path: polygon(0 var(--cut), 100% 0, 100% 100%, 0 100%);
+  padding-block: calc(var(--sp-16) + var(--cut)) var(--sp-16);
+  margin-top: calc(-1 * var(--cut) / 2);
+}
+.year-2018 #contact .section__kicker,
+.year-2018 #contact .section__title {
+  color: #fff;
+}
+.year-2018 #contact .section__title::after {
+  background: #fff;
+}
+.year-2018 #contact .btn--primary {
+  background: #fff;
+  color: var(--primary);
+}
+.year-2018 #contact .btn:not(.btn--primary) {
+  color: #fff;
+}
+.year-2018 .year-nav {
+  border-top: 0;
+}
+.year-2018 .year-nav__link {
+  font-family: var(--font-display);
+  font-weight: 600;
+  border-color: #e4dcf5;
+}
+.year-2018 .footer {
+  background: #1f1235;
+}
+
+@keyframes float-2018 {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -18px;
+  }
+}
+@keyframes drift-2018 {
+  from {
+    background-position:
+      0 0,
+      30px 40px;
+  }
+  to {
+    background-position:
+      120px 240px,
+      -30px 160px;
+  }
 }
