@@ -1,0 +1,32 @@
+{
+  "year": 2018,
+  "label": "Portfolio 2018",
+  "title": "[ejemplo] El año en que todo fue frontend",
+  "summary": "[ejemplo] Interfaces web con React, primeros dashboards y un e-commerce de punta a punta. Resumen de ejemplo hasta que llegue la hoja de vida.",
+  "roles": [
+    {
+      "title": "[ejemplo] Frontend Developer",
+      "company": "Empresa de ejemplo",
+      "period": "2018",
+      "summary": "[ejemplo] Componentes React, diseño responsive y accesibilidad para el producto principal."
+    }
+  ],
+  "projects": [
+    {
+      "title": "[ejemplo] Tienda en línea",
+      "description": "[ejemplo] Catálogo, carrito y checkout con React y Redux.",
+      "stack": ["React", "Redux", "Sass"],
+      "links": [{ "label": "Repo", "href": "https://github.com/gsalgadotoledo" }]
+    },
+    {
+      "title": "[ejemplo] Dashboard de ventas",
+      "description": "[ejemplo] Gráficas en tiempo real y filtros por región.",
+      "stack": ["React", "D3", "Node"]
+    }
+  ],
+  "stack": ["JavaScript", "React", "Redux", "Sass", "Node", "Git"],
+  "highlights": [
+    "[ejemplo] Primer proyecto con React en producción.",
+    "[ejemplo] Aprendí a medir performance con Lighthouse."
+  ]
+}

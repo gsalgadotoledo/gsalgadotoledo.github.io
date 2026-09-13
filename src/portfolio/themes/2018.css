@@ -1,0 +1,6 @@
+/* Tema 2018: solo las variables que cambia. El paso 4 del plan lo viste de verdad. */
+.year-2018 {
+  --primary: #6d28d9;
+  --accent: #f43f5e;
+  --bg-alt: #f8f5ff;
+}

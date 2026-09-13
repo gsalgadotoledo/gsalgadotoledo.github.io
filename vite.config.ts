@@ -1,7 +1,19 @@
 import react from '@vitejs/plugin-react'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 
-// https://vite.dev/config/
+// Sitio estático multi-page: un index.html por página. El prerender (scripts/prerender.mjs)
+// corre después del build y deja el HTML de cada página con su contenido ya pintado.
 export default defineConfig({
   plugins: [react()],
+  appType: 'mpa',
+  build: {
+    rollupOptions: {
+      input: {
+        home: resolve(import.meta.dirname, 'index.html'),
+        portfolio: resolve(import.meta.dirname, 'portfolio/index.html'),
+        y2018: resolve(import.meta.dirname, 'portfolio/2018/index.html'),
+      },
+    },
+  },
 })
