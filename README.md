@@ -9,6 +9,8 @@ Todo es estático: Vite genera HTML real por página, sin servidor.
 - `/portfolio/` — resumen del portafolio por años, con una página por año en
   `/portfolio/2018/` … `/portfolio/2026/` (T-3 · Portafolio anual).
 
+Progreso: ver [roadmap.md](roadmap.md) — un checkbox por paso y por año.
+
 <!-- screenshot: pendiente hasta que exista la primera página -->
 
 ## Cómo está hecho
