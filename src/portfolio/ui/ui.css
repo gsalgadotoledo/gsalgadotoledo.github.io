@@ -479,3 +479,41 @@ a.years__card:hover {
     display: flex;
   }
 }
+
+/* ilustraciones en las secciones */
+.hero__art {
+  position: relative;
+}
+.card__art {
+  margin: calc(-1 * var(--sp-6)) calc(-1 * var(--sp-6)) var(--sp-4);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  overflow: hidden;
+}
+.card__art .ill {
+  border-radius: 0;
+}
+.about__art {
+  grid-row: 1 / 3;
+}
+@media (min-width: 48rem) {
+  .about {
+    grid-template-columns: 2fr 3fr 2fr;
+  }
+  .about__art {
+    grid-row: auto;
+  }
+}
+.contact {
+  display: grid;
+  gap: var(--sp-8);
+  align-items: center;
+}
+@media (min-width: 48rem) {
+  .contact {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+.contact__art {
+  max-width: 22rem;
+  justify-self: center;
+}

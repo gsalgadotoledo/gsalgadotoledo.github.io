@@ -1,0 +1,78 @@
+/* Paleta de las ilustraciones: por defecto sale del tema del año. */
+.ill {
+  --ill-accent: var(--primary);
+  --ill-accent-2: var(--accent);
+  --ill-accent-light: color-mix(in srgb, var(--primary) 18%, #fff);
+  --ill-light: var(--bg-alt);
+  --ill-skin: #f2b89b;
+  --ill-dark: #2a1d4a;
+  --ill-muted: #e6e1f2;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ill__accent {
+  fill: var(--ill-accent);
+}
+.ill__accent-2 {
+  fill: var(--ill-accent-2);
+}
+.ill__accent-light {
+  fill: var(--ill-accent-light);
+}
+.ill__light {
+  fill: var(--ill-light);
+}
+.ill__white {
+  fill: #fff;
+}
+.ill__dark {
+  fill: var(--ill-dark);
+}
+.ill__skin {
+  fill: var(--ill-skin);
+}
+.ill__muted {
+  fill: var(--ill-muted);
+}
+.ill__shadow {
+  fill: rgb(0 0 0 / 0.08);
+}
+.ill__leaf {
+  fill: #34d399;
+}
+.ill__line {
+  fill: none;
+  stroke: var(--ill-accent);
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ill__white-stroke {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.ill__steam {
+  fill: none;
+  stroke: var(--ill-muted);
+  stroke-width: 3;
+  stroke-linecap: round;
+}
+.ill__screen {
+  animation: ill-float 6s ease-in-out infinite;
+}
+.ill__screen--2 {
+  animation-delay: -3s;
+}
+@keyframes ill-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react'
 import type { YearData } from './types'
 import {
   Footer,
@@ -13,10 +14,18 @@ import {
 } from './ui'
 import '../design/tokens.css'
 
+/** Las ilustraciones de un año: cada tema trae las suyas (o ninguna). */
+export interface YearArt {
+  hero?: ReactNode
+  about?: ReactNode
+  contact?: ReactNode
+  project?: (name: string) => ReactNode
+}
+
 /** Arma la página de un año a partir de sus datos. El tema (themes/<año>.css) lo
  *  importa la entrada de la página; aquí solo hay estructura. Las secciones sin datos
  *  no se pintan. */
-export function renderYear(data: YearData) {
+export function renderYear(data: YearData, art: YearArt = {}) {
   const { about, skills, experience, projects, education, certifications } = data
   const { highlights, testimonials, contact } = data
   const sections = [
@@ -34,11 +43,12 @@ export function renderYear(data: YearData) {
         links={sections}
         cta={contact ? { label: 'Hablemos', href: '#contact' } : undefined}
       />
-      <Hero data={data} aside={<div className="hero__art" aria-hidden="true" />} />
+      <Hero data={data} aside={<div className="hero__art">{art.hero}</div>} />
       <main>
         {about ? (
           <Section id="about" kicker="Quién soy" title="Sobre mí">
             <div className="about">
+              {art.about ? <div className="about__art">{art.about}</div> : null}
               <div className="about__text">
                 {about.paragraphs.map((p) => (
                   <p key={p}>{p}</p>
@@ -62,7 +72,11 @@ export function renderYear(data: YearData) {
           <Section id="projects" kicker="Qué construí" title="Proyectos" alt>
             <div className="grid">
               {projects.map((p) => (
-                <ProjectCard project={p} key={p.title} />
+                <ProjectCard
+                  project={p}
+                  key={p.title}
+                  art={p.illustration && art.project ? art.project(p.illustration) : undefined}
+                />
               ))}
             </div>
           </Section>
@@ -115,17 +129,22 @@ export function renderYear(data: YearData) {
         ) : null}
         {contact ? (
           <Section id="contact" kicker="Hablemos" title="Contacto" alt>
-            {contact.blurb ? <p className="contact__blurb">{contact.blurb}</p> : null}
-            <p className="contact__actions">
-              <a className="btn btn--primary" href={`mailto:${contact.email}`}>
-                {contact.email}
-              </a>
-              {contact.links?.map((l) => (
-                <a className="btn" href={l.href} key={l.label}>
-                  {l.label}
-                </a>
-              ))}
-            </p>
+            <div className="contact">
+              <div>
+                {contact.blurb ? <p className="contact__blurb">{contact.blurb}</p> : null}
+                <p className="contact__actions">
+                  <a className="btn btn--primary" href={`mailto:${contact.email}`}>
+                    {contact.email}
+                  </a>
+                  {contact.links?.map((l) => (
+                    <a className="btn" href={l.href} key={l.label}>
+                      {l.label}
+                    </a>
+                  ))}
+                </p>
+              </div>
+              {art.contact ? <div className="contact__art">{art.contact}</div> : null}
+            </div>
           </Section>
         ) : null}
       </main>

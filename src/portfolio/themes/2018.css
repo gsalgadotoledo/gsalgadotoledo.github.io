@@ -159,6 +159,30 @@
   position: relative;
   min-height: 22rem;
 }
+.year-2018 .hero__art .ill {
+  position: relative;
+  z-index: 1;
+  --ill-light: rgb(255 255 255 / 0.12);
+  --ill-accent: #fff;
+  --ill-accent-2: #14b8a6;
+  --ill-accent-light: #fde2e8;
+  --ill-muted: #d9c9f5;
+  filter: drop-shadow(0 24px 30px rgb(0 0 0 / 0.2));
+}
+.year-2018 .about__art .ill,
+.year-2018 .contact__art .ill {
+  --ill-accent-2: #ec4899;
+}
+.year-2018 #contact .ill {
+  --ill-light: rgb(255 255 255 / 0.12);
+  --ill-accent-light: #ede9fe;
+  --ill-accent: #6d28d9;
+  --ill-accent-2: #14b8a6;
+}
+.year-2018 .card__art .ill {
+  --ill-light: #f3eefc;
+  --ill-accent-2: #ec4899;
+}
 .year-2018 .hero__art::before,
 .year-2018 .hero__art::after,
 .year-2018 .hero__inner::before,
