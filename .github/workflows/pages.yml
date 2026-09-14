@@ -1,0 +1,50 @@
+# Publica el sitio en GitHub Pages. Source = GitHub Actions (no una rama gh-pages).
+# Corre en push a la rama principal y a la rama de la task, para ver el portafolio en línea
+# antes del PR. El build es el mismo de local: tsc + vite + el prerender, que deja el HTML
+# de cada página ya pintado en dist/.
+name: pages
+
+on:
+  push:
+    branches: [main, task/T-3-portfolio-anual]
+  workflow_dispatch:
+
+# Solo lectura del repo; el token de Pages lo piden los pasos de deploy.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un despliegue a la vez; los push encadenados esperan en vez de pisarse.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run build
+      - name: Auditoría de cohesión de las diez páginas
+        run: npm run audit:cohesion
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
