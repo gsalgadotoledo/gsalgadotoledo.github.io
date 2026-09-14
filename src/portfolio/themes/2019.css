@@ -1,0 +1,458 @@
+/* Tema 2019 — oscuro · vidrio · Inter. Lo que estaba de moda ese año (ROADMAP.md): modo oscuro
+   como look (azul-noche, no negro), paneles de vidrio con desenfoque sobre manchas de color,
+   gradiente sobrio azul→violeta con Living Coral (Pantone 2019) de acento, titulares enormes
+   con tipografía en contorno, luz en vez de sombra. Fijo: no mira prefers-color-scheme.
+   Todo bajo .year-2019. */
+@import '@fontsource/dm-sans/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+
+.year-2019 {
+  --font-display: 'DM Sans', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --bg: #0b1020;
+  --bg-alt: #0f1630;
+  --surface: rgb(255 255 255 / 0.05);
+  --glass: rgb(255 255 255 / 0.06);
+  --glass-line: rgb(255 255 255 / 0.14);
+  --text: #eef1ff;
+  --text-muted: #aab3d6; /* 8.5:1 sobre #0b1020 */
+  --line: rgb(255 255 255 / 0.1);
+  --primary: #8b9cff; /* 8.3:1 sobre #0b1020 */
+  --primary-deep: #6366f1;
+  --primary-contrast: #0b1020;
+  --violet: #a855f7;
+  --coral: #ff6f61; /* Living Coral, Pantone 2019 */
+  --accent: #ff8a7f; /* coral aclarado: 7.1:1 sobre #0b1020 */
+  --gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 55%, #ff6f61 100%);
+  --gradient-soft: linear-gradient(135deg, #6366f1, #a855f7);
+  --glow: 0 0 0 1px rgb(255 255 255 / 0.08), 0 0 40px rgb(99 102 241 / 0.35);
+  --glow-coral: 0 0 0 1px rgb(255 255 255 / 0.1), 0 0 36px rgb(255 111 97 / 0.45);
+  --shadow-sm: none;
+  --shadow-md: var(--glow);
+  --shadow-lg: 0 0 0 1px rgb(255 255 255 / 0.14), 0 0 60px rgb(168 85 247 / 0.45);
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: clip;
+}
+
+.year-2019 h1,
+.year-2019 h2,
+.year-2019 h3,
+.year-2019 .stat__value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+.year-2019 a {
+  color: var(--primary);
+}
+.year-2019 :focus-visible {
+  outline-color: var(--accent);
+}
+
+/* nav: vidrio oscuro sobre la página */
+.year-2019 .nav {
+  background: rgb(11 16 32 / 0.7);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid var(--glass-line);
+}
+.year-2019 .nav__brand {
+  color: #fff;
+  font-size: var(--fs-xl);
+}
+.year-2019 .nav__links a:not(.btn) {
+  color: var(--text-muted);
+  transition: color var(--dur) var(--ease);
+}
+.year-2019 .nav__links a:not(.btn):hover {
+  color: #fff;
+  text-decoration: none;
+}
+.year-2019 .nav__burger span {
+  background: #fff;
+}
+
+/* botones: el primario brilla, el secundario es vidrio */
+.year-2019 .btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: 1px solid var(--glass-line);
+  background: var(--glass);
+  color: #fff;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.year-2019 .btn:hover {
+  border-color: rgb(255 255 255 / 0.3);
+  box-shadow: 0 0 24px rgb(255 255 255 / 0.08);
+}
+.year-2019 .btn--primary {
+  background: var(--coral);
+  border-color: transparent;
+  color: #1a0b09; /* 8.1:1 sobre coral */
+  box-shadow: var(--glow-coral);
+}
+.year-2019 .btn--primary:hover {
+  box-shadow:
+    0 0 0 1px rgb(255 255 255 / 0.2),
+    0 0 48px rgb(255 111 97 / 0.6);
+}
+
+/* hero: manchas de color borrosas al fondo, "2019" en contorno detrás del texto */
+.year-2019 .hero {
+  position: relative;
+  background: var(--bg);
+  color: var(--text);
+  padding-block: var(--sp-24) var(--sp-16);
+  isolation: isolate;
+  overflow: hidden;
+}
+.year-2019 .hero::before,
+.year-2019 .hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: breathe-2019 12s ease-in-out infinite;
+}
+.year-2019 .hero::before {
+  width: 40rem;
+  height: 40rem;
+  left: -12rem;
+  top: -14rem;
+  background: radial-gradient(circle, rgb(99 102 241 / 0.55), transparent 65%);
+}
+.year-2019 .hero::after {
+  width: 34rem;
+  height: 34rem;
+  right: -10rem;
+  bottom: -14rem;
+  background: radial-gradient(circle, rgb(255 111 97 / 0.4), transparent 65%);
+  animation-delay: -6s;
+}
+.year-2019 .hero__inner {
+  position: relative;
+}
+.year-2019 .hero__inner::before {
+  /* el año en contorno, decorativo */
+  content: '2019';
+  position: absolute;
+  right: -0.05em;
+  top: -0.55em;
+  z-index: -1;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(8rem, 26vw, 20rem);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgb(255 255 255 / 0.14);
+  pointer-events: none;
+  user-select: none;
+}
+.year-2019 .hero .year-label {
+  color: var(--accent);
+  border-color: rgb(255 138 127 / 0.5);
+  background: rgb(255 111 97 / 0.1);
+}
+.year-2019 .hero__name,
+.year-2019 .hero__meta,
+.year-2019 .hero__role {
+  color: var(--text-muted);
+}
+.year-2019 .hero__title {
+  color: #fff;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.02;
+}
+.year-2019 .hero__summary {
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+}
+
+/* ilustraciones compartidas, recoloreadas para el fondo oscuro */
+.year-2019 .hero__art {
+  position: relative;
+  min-height: 22rem;
+}
+.year-2019 .hero__art .ill,
+.year-2019 .about__art .ill,
+.year-2019 .contact__art .ill,
+.year-2019 .card__art .ill {
+  --ill-accent: #8b9cff;
+  --ill-accent-2: #ff6f61;
+  --ill-accent-light: #c7d2fe;
+  --ill-light: rgb(255 255 255 / 0.06);
+  --ill-dark: #1e2a5a;
+  --ill-muted: #3b4a8c;
+  --ill-skin: #f2b89b;
+}
+.year-2019 .hero__art .ill {
+  filter: drop-shadow(0 0 40px rgb(99 102 241 / 0.35));
+}
+.year-2019 .ill__white {
+  fill: #e0e7ff;
+}
+.year-2019 .ill__shadow {
+  fill: rgb(99 102 241 / 0.2);
+}
+.year-2019 .card__art {
+  background: rgb(255 255 255 / 0.03);
+  border-bottom: 1px solid var(--glass-line);
+}
+
+/* secciones: alternan noche y noche-más-clara; kicker coral, título con una línea de luz */
+.year-2019 .section {
+  padding-block: var(--sp-16);
+  position: relative;
+}
+.year-2019 .section--alt {
+  background: var(--bg-alt);
+  border-block: 1px solid var(--line);
+}
+.year-2019 .section__kicker {
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+}
+.year-2019 .section__title {
+  color: #fff;
+  position: relative;
+  padding-bottom: var(--sp-3);
+}
+.year-2019 .section__title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 3.5rem;
+  height: 2px;
+  background: var(--gradient);
+  box-shadow: 0 0 16px rgb(168 85 247 / 0.7);
+}
+
+/* tarjetas de vidrio: borde fino translúcido, desenfoque, luz al pasar */
+.year-2019 .card,
+.year-2019 .stat,
+.year-2019 .quote {
+  background: var(--glass);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.year-2019 .card:hover {
+  transform: translateY(-6px);
+  border-color: rgb(255 255 255 / 0.28);
+  box-shadow: var(--glow);
+}
+.year-2019 .card__title,
+.year-2019 .quote__author {
+  color: #fff;
+}
+.year-2019 .card__text,
+.year-2019 .stat__label,
+.year-2019 .quote__author span,
+.year-2019 .timeline__text,
+.year-2019 .timeline__bullets,
+.year-2019 .timeline__company,
+.year-2019 .education__where,
+.year-2019 .education__detail,
+.year-2019 .skill__level {
+  color: var(--text-muted);
+}
+.year-2019 .card__badge {
+  background: var(--coral);
+  color: #1a0b09;
+  box-shadow: 0 0 20px rgb(255 111 97 / 0.5);
+}
+.year-2019 .tag {
+  background: rgb(139 156 255 / 0.12);
+  color: #c7d2fe;
+  border: 1px solid rgb(139 156 255 / 0.25);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+.year-2019 .chip {
+  background: var(--glass);
+  border-color: var(--glass-line);
+  color: var(--text-muted);
+}
+.year-2019 .chip:hover {
+  color: #fff;
+}
+.year-2019 .chip.is-active {
+  background: var(--coral);
+  color: #1a0b09;
+  box-shadow: 0 0 20px rgb(255 111 97 / 0.45);
+}
+
+/* cifras y skills: números en gradiente, barras que brillan */
+.year-2019 .stat__value {
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.year-2019 .skills__title,
+.year-2019 .education__title,
+.year-2019 .education__sub,
+.year-2019 .timeline__title {
+  color: #fff;
+}
+.year-2019 .skill__bar {
+  height: 8px;
+  background: rgb(255 255 255 / 0.08);
+}
+.year-2019 .skill__fill {
+  background: var(--gradient);
+  box-shadow: 0 0 14px rgb(168 85 247 / 0.6);
+}
+
+/* timeline: línea tenue, puntos que brillan */
+.year-2019 .timeline {
+  border-left-color: rgb(255 255 255 / 0.12);
+}
+.year-2019 .timeline__item::before {
+  background: var(--coral);
+  box-shadow:
+    0 0 0 4px var(--bg),
+    0 0 18px rgb(255 111 97 / 0.7);
+}
+.year-2019 .timeline__period {
+  color: var(--accent);
+}
+.year-2019 .highlights li::marker {
+  color: var(--accent);
+}
+.year-2019 .quote {
+  padding: var(--sp-12) var(--sp-6) var(--sp-6);
+}
+.year-2019 .quote::before {
+  color: var(--violet);
+  opacity: 0.6;
+}
+.year-2019 .year-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* contacto: panel de vidrio sobre la mancha de color, borde iluminado */
+.year-2019 #contact {
+  background: var(--bg);
+  border-block: 0;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.year-2019 #contact::before {
+  content: '';
+  position: absolute;
+  inset: auto -10rem -16rem auto;
+  width: 40rem;
+  height: 30rem;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(168 85 247 / 0.45), transparent 65%);
+  filter: blur(80px);
+  pointer-events: none;
+}
+.year-2019 #contact .container {
+  background: var(--glass);
+  border: 1px solid var(--glass-line);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-12) var(--gutter);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--glow);
+}
+.year-2019 .contact__blurb {
+  color: var(--text-muted);
+}
+
+/* navegación entre años, footer y botón subir */
+.year-2019 .year-nav {
+  border-top: 1px solid var(--line);
+  background: var(--bg-alt);
+}
+.year-2019 .year-nav__link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-color: var(--glass-line);
+  background: var(--glass);
+  color: #fff;
+}
+.year-2019 .year-nav__link:hover {
+  text-decoration: none;
+  border-color: rgb(255 255 255 / 0.3);
+  box-shadow: var(--glow);
+}
+.year-2019 .year-nav__link--all {
+  color: var(--text-muted);
+}
+.year-2019 .year-nav__link--off {
+  color: #6b7399;
+  border-style: dashed;
+  background: transparent;
+}
+.year-2019 .footer {
+  background: #060912;
+  color: var(--text-muted);
+  border-top: 1px solid var(--line);
+}
+.year-2019 .to-top {
+  background: var(--coral);
+  color: #1a0b09;
+  box-shadow: var(--glow-coral);
+}
+.year-2019 .skip {
+  background: var(--coral);
+  color: #1a0b09;
+}
+
+@keyframes breathe-2019 {
+  0%,
+  100% {
+    transform: scale(1) translate(0, 0);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.12) translate(2rem, -1rem);
+    opacity: 1;
+  }
+}
+
+/* móvil: hero más compacto, el año en contorno más chico */
+@media (max-width: 48rem) {
+  .year-2019 .hero {
+    padding-block: var(--sp-12) var(--sp-12);
+  }
+  .year-2019 .hero__art {
+    min-height: 0;
+  }
+  .year-2019 .hero__inner::before {
+    font-size: 7rem;
+    top: -0.7em;
+    right: 0;
+  }
+  .year-2019 .nav__links {
+    padding-bottom: var(--sp-4);
+  }
+  .year-2019 #contact .container {
+    padding: var(--sp-8) var(--sp-6);
+  }
+}

@@ -1,0 +1,280 @@
+{
+  "year": 2021,
+  "label": "Portfolio 2021",
+  "note": "[ejemplo] Datos moqueados con forma de hoja de vida actual; se reemplazan con la real en el paso 15.",
+  "title": "Producto, datos y un equipo que crece",
+  "summary": "En 2021 volví al producto: pasé de construir la plataforma a decidir qué se construye. Engineering manager de ocho personas y dueño de un roadmap con métricas.",
+  "hero": {
+    "name": "Gustavo Salgado",
+    "role": "Engineering Manager · Producto",
+    "location": "Remoto · Bogotá / Ciudad de México",
+    "availability": "Mentorías abiertas",
+    "ctas": [
+      {
+        "label": "Ver proyectos",
+        "href": "#projects"
+      },
+      {
+        "label": "Contáctame",
+        "href": "#contact"
+      }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "Este año dejé de medir mi semana en pull requests y empecé a medirla en decisiones: qué entra al roadmap, qué se corta, a quién contratamos y cómo crece cada persona del equipo.",
+      "Construimos el producto de analítica de Ruta Logística desde cero: eventos, warehouse, dashboards para clientes y un experimento de precios que subió el margen 9 %.",
+      "Sigo programando los viernes: prototipos, herramientas internas y el blog. Empecé a dar mentorías a ingenieros que quieren pasar a producto."
+    ],
+    "stats": [
+      {
+        "value": "8",
+        "label": "personas en el equipo"
+      },
+      {
+        "value": "+9 %",
+        "label": "margen por experimento de precios"
+      },
+      {
+        "value": "14",
+        "label": "clientes en el producto de analítica"
+      },
+      {
+        "value": "12",
+        "label": "mentorías"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "group": "Producto",
+      "items": [
+        {
+          "name": "Discovery y entrevistas",
+          "level": 80
+        },
+        {
+          "name": "Métricas y experimentos",
+          "level": 82
+        },
+        {
+          "name": "Roadmaps y OKR",
+          "level": 84
+        },
+        {
+          "name": "Figma",
+          "level": 66
+        }
+      ]
+    },
+    {
+      "group": "Datos",
+      "items": [
+        {
+          "name": "SQL y dbt",
+          "level": 78
+        },
+        {
+          "name": "BigQuery",
+          "level": 72
+        },
+        {
+          "name": "Eventos (Segment)",
+          "level": 76
+        },
+        {
+          "name": "Metabase / Looker",
+          "level": 74
+        }
+      ]
+    },
+    {
+      "group": "Ingeniería",
+      "items": [
+        {
+          "name": "TypeScript",
+          "level": 88
+        },
+        {
+          "name": "React + Next.js",
+          "level": 86
+        },
+        {
+          "name": "Node.js",
+          "level": 84
+        },
+        {
+          "name": "AWS",
+          "level": 76
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Engineering Manager",
+      "company": "Ruta Logística",
+      "period": "Ene 2021 – Dic 2021",
+      "location": "Remoto",
+      "summary": "Equipo de producto de analítica para clientes.",
+      "bullets": [
+        "Lancé el producto de analítica: 14 clientes pagando en seis meses.",
+        "Experimento de precios con dbt + Metabase: +9 % de margen.",
+        "Equipo de 4 a 8 personas; dos promociones a senior."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Analítica para clientes",
+      "description": "Dashboards de entregas, tiempos y costos por cliente, con eventos en Segment, warehouse en BigQuery y modelos en dbt.",
+      "stack": ["dbt", "BigQuery", "Next.js", "Segment"],
+      "illustration": "dashboard",
+      "featured": true,
+      "links": [
+        {
+          "label": "Caso de estudio",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Experimento de precios",
+      "description": "Prueba A/B de tarifas por zona con análisis de margen; el resultado cambió la política de precios de la empresa.",
+      "stack": ["SQL", "dbt", "Metabase"],
+      "illustration": "api",
+      "featured": true,
+      "links": [
+        {
+          "label": "Resumen",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Portal de clientes",
+      "description": "Sitio para que los clientes vean sus envíos, descarguen facturas y abran tickets; tarjetas de vidrio sobre fondo pastel (era 2021).",
+      "stack": ["Next.js", "TypeScript", "Tailwind"],
+      "illustration": "ecommerce",
+      "links": [
+        {
+          "label": "Demo",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "App de seguimiento",
+      "description": "Seguimiento del paquete en el celular con mapa y notificaciones push.",
+      "stack": ["React Native", "Expo", "Push"],
+      "illustration": "mobile",
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    },
+    {
+      "title": "Guía de mentorías",
+      "description": "Sitio con las notas de 12 mentorías: cómo pasar de ingeniería a producto.",
+      "stack": ["Astro", "Markdown"],
+      "illustration": "video",
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    },
+    {
+      "title": "Asistente de soporte",
+      "description": "Chat que clasifica tickets y sugiere respuestas al equipo de soporte.",
+      "stack": ["Node", "OpenAI API", "Slack"],
+      "illustration": "chat",
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Product Management Certificate",
+      "institution": "Reforge (ejemplo)",
+      "period": "2021",
+      "detail": "Growth y experimentación."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "dbt Analytics Engineering",
+      "issuer": "dbt Labs",
+      "year": "2021"
+    }
+  ],
+  "highlights": [
+    "Producto de analítica de cero a 14 clientes.",
+    "Equipo de 4 a 8, dos promociones.",
+    "Primera charla sobre producto para ingenieros (ProductCamp Bogotá).",
+    "12 mentorías; tres personas cambiaron de rol."
+  ],
+  "testimonials": [
+    {
+      "quote": "Gustavo convirtió datos que nadie miraba en el producto que más margen deja.",
+      "author": "Diego Pardo",
+      "role": "CTO, Ruta Logística"
+    },
+    {
+      "quote": "Como manager te da contexto, no tareas. Se nota que fue ingeniero.",
+      "author": "Sofía Ramírez",
+      "role": "Senior Engineer, Ruta Logística"
+    }
+  ],
+  "contact": {
+    "email": "gsalgadotoledo@gmail.com",
+    "blurb": "¿Un producto que necesita datos o un ingeniero que quiere pasar a producto? Escríbeme.",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/gsalgadotoledo",
+        "kind": "github"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "kind": "linkedin"
+      },
+      {
+        "label": "Descargar CV",
+        "href": "#",
+        "kind": "cv"
+      }
+    ]
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/gsalgadotoledo",
+      "kind": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "kind": "linkedin"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/gsalgadotoledo",
+      "kind": "twitter"
+    }
+  ]
+}

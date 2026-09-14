@@ -26,7 +26,7 @@ tarjeta activa en `/portfolio/`. Se da por hecho cuando `dist/portfolio/<año>/i
 con la etiqueta "Portfolio <año>" y hay captura.
 
 - [x] 2018 — gradientes · flat · Poppins — **publicado** (en `dist/`; Pages llega en el paso 13)
-- [ ] 2019 — por investigar (candidato: modo oscuro y primer glassmorphism)
+- [x] 2019 — oscuro · vidrio · Inter — hecho (fondo azul-noche, tarjetas de vidrio, Living Coral, DM Sans + Inter)
 - [ ] 2020 — por investigar (candidato: neumorfismo, monoespaciado)
 - [ ] 2021 — por investigar (candidato: pastel y tarjetas grandes)
 - [ ] 2022 — por investigar (candidato: brutalista)

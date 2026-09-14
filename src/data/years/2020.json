@@ -1,0 +1,289 @@
+{
+  "year": 2020,
+  "label": "Portfolio 2020",
+  "note": "[ejemplo] Datos moqueados con forma de hoja de vida actual; se reemplazan con la real en el paso 15.",
+  "title": "Todo remoto, todo en la nube",
+  "summary": "2020 me sacó de la oficina y me metió en la infraestructura: Kubernetes, terminal y equipos distribuidos en tres zonas horarias. Menos pixeles, más sistemas.",
+  "hero": {
+    "name": "Gustavo Salgado",
+    "role": "Senior Engineer · Plataforma",
+    "location": "Remoto desde Bogotá",
+    "availability": "En equipo, tiempo completo",
+    "ctas": [
+      {
+        "label": "Ver proyectos",
+        "href": "#projects"
+      },
+      {
+        "label": "Contáctame",
+        "href": "#contact"
+      }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "El año de la pandemia lo pasé construyendo la plataforma interna de una startup de logística: pipelines, clusters, y un CLI que el equipo usaba más que la web.",
+      "Aprendí Go, Terraform y a escribir runbooks que alguien pudiera seguir a las tres de la mañana. Automatizamos despliegues de 40 minutos a 4.",
+      "Trabajar remoto me hizo escribir más y hablar menos: documentos de diseño, RFC y un blog interno con 30 entradas."
+    ],
+    "stats": [
+      {
+        "value": "4 min",
+        "label": "despliegue (antes 40)"
+      },
+      {
+        "value": "99.95 %",
+        "label": "disponibilidad"
+      },
+      {
+        "value": "30",
+        "label": "entradas de blog interno"
+      },
+      {
+        "value": "3",
+        "label": "zonas horarias"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "group": "Plataforma",
+      "items": [
+        {
+          "name": "Kubernetes",
+          "level": 78
+        },
+        {
+          "name": "Terraform",
+          "level": 76
+        },
+        {
+          "name": "AWS (EKS, RDS, SQS)",
+          "level": 80
+        },
+        {
+          "name": "GitHub Actions",
+          "level": 88
+        }
+      ]
+    },
+    {
+      "group": "Backend",
+      "items": [
+        {
+          "name": "Go",
+          "level": 70
+        },
+        {
+          "name": "Node.js",
+          "level": 86
+        },
+        {
+          "name": "PostgreSQL",
+          "level": 82
+        },
+        {
+          "name": "gRPC y colas",
+          "level": 72
+        }
+      ]
+    },
+    {
+      "group": "Frontend",
+      "items": [
+        {
+          "name": "React + TypeScript",
+          "level": 88
+        },
+        {
+          "name": "Vite",
+          "level": 74
+        },
+        {
+          "name": "Testing Library + Playwright",
+          "level": 80
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Senior Platform Engineer",
+      "company": "Ruta Logística",
+      "period": "Feb 2020 – Dic 2020",
+      "location": "Remoto",
+      "summary": "Startup de logística de última milla.",
+      "bullets": [
+        "Migré 12 servicios a Kubernetes con Terraform; despliegue de 40 min a 4.",
+        "CLI interno en Go para entornos efímeros por PR, usado por 20 ingenieros.",
+        "Runbooks y guardias: disponibilidad 99.95 % en el pico de diciembre."
+      ]
+    },
+    {
+      "title": "Tech Lead",
+      "company": "PagaYa",
+      "period": "Ene 2020",
+      "location": "Bogotá",
+      "summary": "Cierre y transición del equipo.",
+      "bullets": ["Documenté la arquitectura y entregué el equipo a mi sucesor."]
+    }
+  ],
+  "projects": [
+    {
+      "title": "envctl",
+      "description": "CLI en Go que levanta un entorno completo por pull request en Kubernetes y lo destruye al cerrar. Terminal, colores y cero clics.",
+      "stack": ["Go", "Kubernetes", "Helm", "GitHub Actions"],
+      "illustration": "api",
+      "featured": true,
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    },
+    {
+      "title": "Torre de control",
+      "description": "Panel de rutas y repartidores en tiempo real con mapas y alertas; React con WebSockets y modo oscuro por defecto.",
+      "stack": ["React", "TypeScript", "Mapbox", "WebSockets"],
+      "illustration": "dashboard",
+      "featured": true,
+      "links": [
+        {
+          "label": "Demo",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Runbooks",
+      "description": "Sitio estático con los procedimientos de guardia, buscable y con checklists interactivos.",
+      "stack": ["Markdown", "Vite", "Pagefind"],
+      "illustration": "video",
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    },
+    {
+      "title": "App del repartidor",
+      "description": "PWA offline-first para escanear paquetes y confirmar entregas sin señal.",
+      "stack": ["React", "PWA", "IndexedDB"],
+      "illustration": "mobile",
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    },
+    {
+      "title": "Bot de incidentes",
+      "description": "Bot de Slack que abre el canal, pega el runbook y escribe el postmortem base.",
+      "stack": ["Node", "Slack API", "PagerDuty"],
+      "illustration": "chat",
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    },
+    {
+      "title": "Tienda de barrio",
+      "description": "Proyecto solidario: catálogo y pedidos por WhatsApp para tiendas cerradas en cuarentena.",
+      "stack": ["Next.js", "Supabase", "WhatsApp"],
+      "illustration": "ecommerce",
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Especialización en Arquitectura de Software",
+      "institution": "Universidad de ejemplo",
+      "period": "2019 – 2020",
+      "detail": "Trabajo final: plataforma de entornos efímeros."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Certified Kubernetes Application Developer",
+      "issuer": "CNCF",
+      "year": "2020"
+    },
+    {
+      "title": "HashiCorp Terraform Associate",
+      "issuer": "HashiCorp",
+      "year": "2020"
+    }
+  ],
+  "highlights": [
+    "Despliegues de 40 minutos a 4.",
+    "Tienda de barrio: 60 tiendas vendiendo por WhatsApp en cuarentena.",
+    "Primer año 100 % remoto; 30 entradas en el blog interno.",
+    "Aprendí Go en producción."
+  ],
+  "testimonials": [
+    {
+      "quote": "envctl nos cambió la forma de trabajar: probar un PR pasó de una tarde a un comando.",
+      "author": "Diego Pardo",
+      "role": "CTO, Ruta Logística"
+    },
+    {
+      "quote": "Sus runbooks se leen a las 3 a. m. sin pensar. Eso es un arte.",
+      "author": "Mariana Cely",
+      "role": "SRE, Ruta Logística"
+    }
+  ],
+  "contact": {
+    "email": "gsalgadotoledo@gmail.com",
+    "blurb": "$ mail gsalgadotoledo — para plataformas, pipelines y equipos remotos.",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/gsalgadotoledo",
+        "kind": "github"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "kind": "linkedin"
+      },
+      {
+        "label": "Descargar CV",
+        "href": "#",
+        "kind": "cv"
+      }
+    ]
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/gsalgadotoledo",
+      "kind": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "kind": "linkedin"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/gsalgadotoledo",
+      "kind": "twitter"
+    }
+  ]
+}
