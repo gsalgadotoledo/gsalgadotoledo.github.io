@@ -621,9 +621,10 @@
   }
 }
 
-/* enlace para saltar al contenido: solo visible con foco */
+/* enlace para saltar al contenido: solo visible con foco. `fixed` y no `absolute` para que
+   caiga en el mismo sitio en las diez páginas, tenga o no el contenedor del año un `position`. */
 .skip {
-  position: absolute;
+  position: fixed;
   left: var(--sp-4);
   top: -100px;
   z-index: 20;

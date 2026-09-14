@@ -51,7 +51,13 @@ src/data/years/<año>.json      el contenido del año
 src/portfolio/themes/<año>.css el tema (solo variables y estilos bajo .year-<año>)
 src/portfolio/illustrations/   las ilustraciones del año, como componentes SVG
 portfolio/<año>/index.html     la página; scripts/prerender.mjs la deja con el contenido pintado
+scripts/audit.mjs              el auditor de cohesión: las diez páginas, el mismo esqueleto
 ```
+
+`npm run audit:cohesion` (sobre `dist/`) exige que las diez páginas compartan idioma, título,
+meta y Open Graph propios, `canonical` correcto, favicon, enlace de salto a `#main`, un solo
+`<h1>`, encabezados sin saltos, enlaces con texto y la misma `YearNav` y las mismas secciones
+en el mismo orden.
 
 El detalle de cada paso vive en la task T-3 del proyecto Remote Code (PLAN.md); aquí está el
 progreso que se ve desde GitHub.

@@ -9,6 +9,9 @@ export function renderSummary(years: YearSummary[]) {
   const done = years.filter((y) => y.available).length
   return (
     <div className="summary">
+      <a className="skip" href="#main">
+        Saltar al contenido
+      </a>
       <header className="summary__hero" id="hero">
         <div className="container">
           <p className="summary__kicker">Gustavo Salgado</p>
@@ -24,7 +27,7 @@ export function renderSummary(years: YearSummary[]) {
           </p>
         </div>
       </header>
-      <main className="container summary__main">
+      <main className="container summary__main" id="main">
         <ol className="tl" aria-label="Línea de tiempo">
           {YEARS.map((year) => {
             const y = byYear.get(year)
