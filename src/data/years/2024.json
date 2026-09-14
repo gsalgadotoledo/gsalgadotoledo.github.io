@@ -1,0 +1,309 @@
+{
+  "year": 2024,
+  "label": "Portfolio 2024",
+  "note": "[ejemplo] Datos moqueados con forma de hoja de vida actual; se reemplazan con la real en el paso 15.",
+  "title": "El año en que la IA se volvió plataforma",
+  "summary": "2024 fue quitar cosas. Los tres asistentes de 2023 se convirtieron en una sola plataforma de agentes con herramientas, la práctica de evals pasó a ser el proceso de release de toda la empresa y el coste por consulta bajó 71 %. Menos demos, menos pantallas, más producto: la misma disciplina que tiene esta página.",
+  "hero": {
+    "name": "Gustavo Salgado",
+    "role": "Head of AI Product · Full Stack",
+    "location": "Remoto · Ciudad de México",
+    "availability": "Abierto a plataformas de IA",
+    "ctas": [
+      {
+        "label": "Ver proyectos",
+        "href": "#projects"
+      },
+      {
+        "label": "Contáctame",
+        "href": "#contact"
+      }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "En 2023 la pregunta era qué de esto es producto. En 2024 fue qué de esto sobra. Los tres asistentes que habíamos lanzado compartían el 80 % de la fontanería —recuperación, herramientas, permisos, trazas— y cada equipo la estaba reescribiendo a su manera. Los junté en una plataforma con un solo runtime de agentes y me quedé con el encargo de que nadie volviera a empezar de cero.",
+      "Lo que hizo que funcionara no fue el modelo sino el proceso: ningún agente sale sin su set de evaluación, su umbral de apagado y su presupuesto por consulta. Cuando el CFO pudo ver el coste por conversación junto a la exactitud en el mismo panel, la discusión dejó de ser religiosa y pasó a ser de producto.",
+      "Y en noviembre vendimos la primera API de IA a un cliente externo: el mismo motor de disputas que usábamos dentro, documentado y con contrato de latencia. Fue la prueba de que la plataforma era plataforma y no un departamento con buena prensa."
+    ],
+    "stats": [
+      {
+        "value": "-71 %",
+        "label": "coste por consulta"
+      },
+      {
+        "value": "9",
+        "label": "agentes en la plataforma"
+      },
+      {
+        "value": "4.8 M",
+        "label": "consultas atendidas"
+      },
+      {
+        "value": "14",
+        "label": "personas en el equipo"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "group": "Producto con IA",
+      "items": [
+        {
+          "name": "Estrategia y roadmap de plataforma",
+          "level": 92
+        },
+        {
+          "name": "Evaluación de modelos (evals)",
+          "level": 90
+        },
+        {
+          "name": "Diseño de agentes y herramientas",
+          "level": 88
+        },
+        {
+          "name": "Coste, latencia y unit economics",
+          "level": 86
+        }
+      ]
+    },
+    {
+      "group": "IA e ingeniería de datos",
+      "items": [
+        {
+          "name": "LLMs (GPT-4o, Claude 3.5)",
+          "level": 90
+        },
+        {
+          "name": "RAG, reranking y evaluación",
+          "level": 86
+        },
+        {
+          "name": "Function calling y orquestación",
+          "level": 84
+        },
+        {
+          "name": "Observabilidad y trazas",
+          "level": 80
+        }
+      ]
+    },
+    {
+      "group": "Ingeniería",
+      "items": [
+        {
+          "name": "TypeScript",
+          "level": 92
+        },
+        {
+          "name": "React + Next.js",
+          "level": 88
+        },
+        {
+          "name": "Node.js y APIs públicas",
+          "level": 88
+        },
+        {
+          "name": "GCP, Cloud Run y Terraform",
+          "level": 80
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Head of AI Product",
+      "company": "Nube Pagos",
+      "period": "Jun 2024 – Dic 2024",
+      "location": "Remoto",
+      "summary": "La plataforma de IA como producto interno y, desde noviembre, también externo.",
+      "bullets": [
+        "Plataforma única de agentes: nueve casos de uso sobre un solo runtime, sin fontanería repetida.",
+        "Coste por consulta -71 % (modelos más pequeños, caché de contexto y rutas por dificultad).",
+        "Primera API de IA vendida a un cliente externo, con SLA de latencia y su propio set de evals.",
+        "Equipo de 6 a 14 personas: producto, datos e ingeniería de plataforma en una sola cadencia."
+      ]
+    },
+    {
+      "title": "AI Product Manager",
+      "company": "Nube Pagos",
+      "period": "Ene 2023 – May 2024",
+      "location": "Remoto",
+      "summary": "Dueño del producto de IA: asistentes, RAG y la práctica de evaluación.",
+      "bullets": [
+        "Tres asistentes en producción y 1.2 M de consultas en 2023.",
+        "Práctica de evals de cero: baseline por release y panel semanal de calidad.",
+        "Tiempo de primera respuesta de soporte -38 % sin bajar la satisfacción."
+      ]
+    },
+    {
+      "title": "Product Lead",
+      "company": "Nube Pagos",
+      "period": "Feb 2022 – Dic 2022",
+      "location": "Remoto",
+      "summary": "Tres squads: onboarding, riesgo y conciliación.",
+      "bullets": [
+        "Primer modelo de riesgo en producción: +11 puntos de aprobación con el fraude estable."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Plataforma de agentes",
+      "description": "Un runtime, nueve casos de uso. Herramientas declaradas una vez, permisos por rol, trazas de cada llamada y despliegue con canario. Un equipo nuevo pone un agente en producción en dos semanas en vez de dos trimestres.",
+      "stack": ["TypeScript", "GPT-4o", "Cloud Run", "OpenTelemetry"],
+      "illustration": "api",
+      "featured": true,
+      "links": [
+        {
+          "label": "Caso de estudio",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "API pública de disputas",
+      "description": "El motor de disputas, documentado y abierto a clientes: arma el expediente, propone la evidencia y responde con su nivel de confianza. Primer contrato firmado en noviembre, con SLA de latencia y evals propios.",
+      "stack": ["Node.js", "OpenAPI", "Postgres", "Stripe-like"],
+      "illustration": "ecommerce",
+      "featured": true,
+      "links": [
+        {
+          "label": "Documentación",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Panel de coste y calidad",
+      "description": "Exactitud, alucinación, latencia y dólares por conversación en la misma pantalla, por agente y por release. Es la herramienta que convirtió la discusión sobre IA en una discusión de producto.",
+      "stack": ["Next.js", "BigQuery", "dbt"],
+      "illustration": "dashboard",
+      "featured": true,
+      "links": [
+        {
+          "label": "Resumen",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Evals como proceso de release",
+      "description": "El set de casos reales dejó de ser cosa del equipo de IA: hoy cualquier feature con modelo pasa por él en CI, con umbral de bloqueo y comparación contra el baseline anterior.",
+      "stack": ["Python", "GitHub Actions", "Evals"],
+      "illustration": "video",
+      "links": [
+        {
+          "label": "Notas",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Asistente de comercios en el móvil",
+      "description": "El onboarding conversacional de 2023 llevado a la app: la cámara lee los documentos, el agente pregunta solo lo que falta y el comercio queda activo en una sesión.",
+      "stack": ["React Native", "GPT-4o", "OCR"],
+      "illustration": "mobile",
+      "links": [
+        {
+          "label": "Demo",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Guía interna de IA responsable",
+      "description": "Una página, siete reglas: qué datos salen, qué decide una persona, cómo se apaga un agente y qué se le dice al usuario. Escrita con legal y seguridad, y adoptada por las otras dos unidades de negocio.",
+      "stack": ["Notion", "Política", "Seguridad"],
+      "illustration": "chat",
+      "links": [
+        {
+          "label": "Resumen",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "AI Product Management Program",
+      "institution": "Reforge (ejemplo)",
+      "period": "2024",
+      "detail": "Estrategia de producto con modelos: evaluación, coste unitario y defensibilidad."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Professional Machine Learning Engineer",
+      "issuer": "Google Cloud",
+      "year": "2022"
+    },
+    {
+      "title": "Generative AI with Large Language Models",
+      "issuer": "DeepLearning.AI · AWS",
+      "year": "2023"
+    }
+  ],
+  "highlights": [
+    "Nueve agentes sobre una sola plataforma: se acabó la fontanería repetida.",
+    "Coste por consulta -71 % con la calidad igual o mejor que el año anterior.",
+    "Primera API de IA vendida fuera: la plataforma dejó de ser un gasto interno.",
+    "Ascenso a Head of AI Product y equipo de 6 a 14 personas."
+  ],
+  "testimonials": [
+    {
+      "quote": "Gustavo hizo lo más difícil del año: convencernos de apagar cosas. Tres productos se volvieron uno y por fin entendimos cuánto cuesta cada conversación.",
+      "author": "Laura Méndez",
+      "role": "CEO, Nube Pagos"
+    },
+    {
+      "quote": "Trabajar con una plataforma que ya trae evals, trazas y permisos nos ahorró un trimestre entero. Es la clase de infraestructura que solo se nota cuando falta.",
+      "author": "Daniela Ríos",
+      "role": "Staff Engineer, Nube Pagos"
+    }
+  ],
+  "contact": {
+    "email": "gsalgadotoledo@gmail.com",
+    "blurb": "¿Una plataforma de IA que tenga que sostener varios productos, con coste y calidad medidos? De eso hablo con gusto.",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/gsalgadotoledo",
+        "kind": "github"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "kind": "linkedin"
+      },
+      {
+        "label": "Descargar CV",
+        "href": "#",
+        "kind": "cv"
+      }
+    ]
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/gsalgadotoledo",
+      "kind": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "kind": "linkedin"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/gsalgadotoledo",
+      "kind": "twitter"
+    }
+  ]
+}

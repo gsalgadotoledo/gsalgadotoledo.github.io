@@ -31,7 +31,7 @@ con la etiqueta "Portfolio <año>" y hay captura.
 - [x] 2021 — pastel · redondo · Manrope — hecho (crema, blobs pastel, radios enormes, stats bento, Sora + Manrope)
 - [x] 2022 — brutal · negro · Playfair — hecho (papel, bordes negros de 3 px, sombras duras, amarillo ácido + Very Peri, hero tipográfico, Playfair Display + Inter)
 - [x] 2023 — aurora · vidrio · Sora — hecho (malla aurora violeta/cian/magenta fija, vidrio con borde de gradiente, Viva Magenta de acento, cifras en bento, Sora + DM Sans)
-- [ ] 2024 — por investigar (candidato: minimal blanco, tipografía enorme)
+- [x] 2024 — minimal · bento · Inter — hecho (blanco puro, titular enorme con tracking negativo, bento con hairlines de 1 px, Peach Fuzz de acento, grano sutil, Inter como única familia)
 - [ ] 2025 — por investigar (candidato: tema IA, oscuro con neón)
 - [ ] 2026 — por investigar (el más actual; enlaza al home 3D)
 

@@ -1,5 +1,5 @@
 import type { YearSummary } from './types'
-import { y2018, y2019, y2020, y2021, y2022, y2023 } from '../data/years'
+import { y2018, y2019, y2020, y2021, y2022, y2023, y2024 } from '../data/years'
 
 /** Los años que ya tienen página. Cada iteración agrega el suyo. */
 export const years: YearSummary[] = [
@@ -54,5 +54,13 @@ export const years: YearSummary[] = [
     swatch:
       'radial-gradient(circle at 15% 20%, rgb(167 79 255 / 0.85), transparent 55%), radial-gradient(circle at 85% 25%, rgb(34 211 238 / 0.7), transparent 50%), radial-gradient(circle at 55% 90%, rgb(190 24 93 / 0.85), transparent 55%), #12061f',
     era: 'aurora · vidrio · Sora',
+  },
+  {
+    year: 2024,
+    label: y2024.label,
+    title: y2024.title,
+    available: true,
+    swatch: 'linear-gradient(135deg, #ffffff 0 62%, #ffbe98 62% 82%, #0a0a0a 82%), #ffffff',
+    era: 'minimal · bento · Inter',
   },
 ]

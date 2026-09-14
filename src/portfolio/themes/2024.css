@@ -1,0 +1,575 @@
+/* Tema 2024 — minimal · bento · Inter. Lo que estaba de moda ese año (ROADMAP.md): blanco puro
+   y muchísimo aire, el bento grid como esqueleto de la página entera (no solo de las cifras),
+   tipografía enorme con tracking muy negativo como único espectáculo, una sola neo-grotesca
+   (Inter) en cuatro pesos, hairlines de 1 px en lugar de sombras, monocromo con un acento —el
+   Peach Fuzz de Pantone, 13-1023— y una capa de grano casi invisible para que el blanco no se
+   vea plano. Es el opuesto de 2023 (oscuro, saturado, vidrio) y no se parece a 2021 (crema,
+   blobs, radios enormes): aquí el blanco es frío y no hay un solo gradiente de fondo.
+   Todo bajo .year-2024. */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+.year-2024 {
+  --font-display: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'Inter', -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  --bg: #ffffff; /* blanco puro, frío */
+  --bg-alt: #fafaf9;
+  --surface: #ffffff;
+  --text: #0a0a0a; /* tinta */
+  --text-muted: #57534e; /* 7.4:1 sobre blanco */
+  --line: #e7e5e4; /* hairline */
+  --line-strong: #d6d3d1;
+  --primary: #0a0a0a; /* el CTA de 2024 es negro */
+  --primary-contrast: #ffffff;
+  --accent: #b45309; /* ámbar oscuro: el peach legible como texto, 5.2:1 */
+  --peach: #ffbe98; /* Pantone 13-1023 Peach Fuzz: solo fondo, nunca texto */
+  --peach-soft: #fff6ef;
+  --gradient: linear-gradient(90deg, #0a0a0a, #0a0a0a);
+  /* sombras casi invisibles: en 2024 separa el borde, no la sombra */
+  --shadow-sm: 0 1px 2px rgb(10 10 10 / 0.04);
+  --shadow-md: 0 6px 20px rgb(10 10 10 / 0.06);
+  --shadow-lg: 0 14px 40px rgb(10 10 10 / 0.08);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-pill: 999px;
+  --container: 68rem; /* contenedor angosto: el aire es el estilo */
+  --air: clamp(5rem, 9vw, 8.5rem);
+  --hair: 1px solid var(--line);
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: clip;
+}
+
+.year-2024 h1,
+.year-2024 h2,
+.year-2024 h3,
+.year-2024 h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+.year-2024 ::selection {
+  background: var(--peach);
+  color: #0a0a0a;
+}
+
+/* grano: la única textura del tema, sobre todo lo demás y sin estorbar */
+.year-2024::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* etiquetas: mayúsculas pequeñas, muy espaciadas, en la misma familia que todo */
+.year-2024 .year-label,
+.year-2024 .section__kicker,
+.year-2024 .tag,
+.year-2024 .timeline__period,
+.year-2024 .skill__level,
+.year-2024 .year-nav__link {
+  font-family: var(--font-body);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: var(--fs-xs);
+}
+.year-2024 .year-label {
+  background: var(--peach);
+  color: #0a0a0a;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: var(--sp-2) var(--sp-4);
+}
+.year-2024 .section__kicker {
+  color: var(--text-muted);
+  margin-bottom: var(--sp-3);
+}
+
+/* nav: blanco translúcido con una hairline; nada más */
+.year-2024 .nav {
+  background: rgb(255 255 255 / 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: var(--hair);
+}
+.year-2024 .nav__brand {
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-size: var(--fs-lg);
+}
+.year-2024 .nav__links a:not(.btn) {
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: color var(--dur) var(--ease);
+}
+.year-2024 .nav__links a:not(.btn):hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+/* botones: píldora de hairline; el primario es tinta sólida */
+.year-2024 .btn {
+  font-weight: 500;
+  border: var(--hair);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: none;
+  transition:
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+.year-2024 .btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-sm);
+}
+.year-2024 .btn--primary {
+  background: var(--text);
+  color: var(--primary-contrast);
+  border-color: var(--text);
+}
+.year-2024 .btn--primary:hover {
+  background: #262626;
+  border-color: #262626;
+}
+
+/* hero: una sola columna. El titular es del tamaño de la pantalla y no comparte protagonismo */
+.year-2024 .hero {
+  background: var(--bg);
+  padding-block: clamp(4rem, 8vw, 7rem) var(--air);
+  border-bottom: var(--hair);
+}
+.year-2024 .hero__inner {
+  grid-template-columns: 1fr;
+  gap: var(--sp-12);
+  align-items: start;
+}
+.year-2024 .hero__title {
+  font-size: clamp(2.9rem, 9vw, 7.5rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.93;
+  max-width: 16ch;
+  margin-bottom: var(--sp-8);
+}
+.year-2024 .hero__name {
+  font-weight: 500;
+  color: var(--text);
+}
+.year-2024 .hero__role,
+.year-2024 .hero__meta {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.year-2024 .hero__summary {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+  max-width: 52ch;
+  margin-bottom: var(--sp-8);
+}
+.year-2024 .hero__ctas {
+  margin-bottom: var(--sp-6);
+}
+/* la ilustración vive en una celda de bento ancha, como una más de la grilla */
+.year-2024 .hero__art {
+  border: var(--hair);
+  border-radius: var(--radius-lg);
+  background: var(--bg-alt);
+  padding: var(--sp-8);
+  display: grid;
+  place-items: center;
+}
+.year-2024 .hero__art .ill {
+  max-width: 34rem;
+  width: 100%;
+}
+
+/* ilustraciones compartidas: casi monocromas, con el peach de único color */
+.year-2024 .hero__art .ill,
+.year-2024 .about__art .ill,
+.year-2024 .contact__art .ill,
+.year-2024 .card__art .ill {
+  --ill-accent: #0a0a0a;
+  --ill-accent-2: #ffbe98;
+  --ill-accent-light: #f5f5f4;
+  --ill-light: #ffffff;
+  --ill-dark: #0a0a0a;
+  --ill-muted: #e7e5e4;
+  --ill-skin: #f3d9c6;
+}
+.year-2024 .ill__shadow {
+  fill: rgb(10 10 10 / 0.06);
+}
+
+/* secciones: mucho aire y una hairline que las separa */
+.year-2024 .section {
+  padding-block: var(--air);
+}
+.year-2024 .section--alt {
+  background: var(--bg-alt);
+  border-block: var(--hair);
+}
+.year-2024 .section__title {
+  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  letter-spacing: -0.04em;
+  margin-bottom: var(--sp-12);
+}
+
+/* sobre mí como bento: ilustración, texto y las cuatro cifras en una fila de cajas */
+@media (min-width: 62rem) {
+  .year-2024 .about {
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--sp-4);
+  }
+  .year-2024 .about__art {
+    grid-column: span 2;
+    grid-row: auto;
+  }
+  .year-2024 .about__text {
+    grid-column: span 4;
+  }
+  .year-2024 .stats {
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.year-2024 .about__art {
+  border: var(--hair);
+  border-radius: var(--radius-lg);
+  background: var(--peach-soft);
+  padding: var(--sp-6);
+  align-self: start;
+}
+.year-2024 .about__text {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+  max-width: 62ch;
+}
+.year-2024 .stats {
+  gap: var(--sp-4);
+}
+.year-2024 .stat {
+  background: var(--surface);
+  border: var(--hair);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+}
+.year-2024 .section--alt .stat,
+.year-2024 .section--alt .card,
+.year-2024 .section--alt .quote {
+  background: var(--surface);
+}
+.year-2024 .stat:first-child {
+  background: var(--peach);
+  border-color: var(--peach);
+}
+.year-2024 .stat:first-child .stat__label {
+  color: #3f3a35;
+}
+.year-2024 .stat__value {
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  line-height: 1.05;
+}
+.year-2024 .stat__label {
+  color: var(--text-muted);
+}
+
+/* skills: cada grupo es una caja del bento; la barra es una hairline que se llena de tinta */
+.year-2024 .skills {
+  gap: var(--sp-4);
+}
+.year-2024 .skills__group {
+  border: var(--hair);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  padding: var(--sp-8) var(--sp-6);
+}
+.year-2024 .skills__title {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  margin-bottom: var(--sp-6);
+}
+.year-2024 .skill__name {
+  color: var(--text-muted);
+}
+.year-2024 .skill__level {
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+.year-2024 .skill__bar {
+  height: 6px;
+  background: #f0efed;
+}
+.year-2024 .skill__fill {
+  background: var(--text);
+}
+
+/* experiencia: la línea se adelgaza hasta ser un pelo y el punto es un cuadrado redondeado */
+.year-2024 .timeline {
+  border-left: var(--hair);
+  gap: var(--sp-12);
+}
+.year-2024 .timeline__item::before {
+  width: 9px;
+  height: 9px;
+  left: calc(-1 * var(--sp-6) - 5px);
+  border-radius: 3px;
+  background: var(--text);
+}
+.year-2024 .timeline__period {
+  color: var(--text-muted);
+}
+.year-2024 .timeline__title {
+  font-size: var(--fs-xl);
+  letter-spacing: -0.035em;
+}
+.year-2024 .timeline__company {
+  color: var(--text-muted);
+}
+
+/* proyectos: el bento de verdad — seis celdas de ancho, cajas de 4, 2, 2, 4, 3 y 3 */
+.year-2024 .filters {
+  margin-bottom: var(--sp-12);
+}
+.year-2024 .chip {
+  border: var(--hair);
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.year-2024 .chip:hover {
+  border-color: var(--line-strong);
+  color: var(--text);
+}
+.year-2024 .chip.is-active {
+  background: var(--text);
+  border-color: var(--text);
+  color: var(--primary-contrast);
+}
+.year-2024 .grid {
+  gap: var(--sp-4);
+}
+@media (min-width: 62rem) {
+  .year-2024 .grid--projects {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .year-2024 .grid--projects > .card {
+    grid-column: span 3;
+  }
+  .year-2024 .grid--projects > .card:nth-child(6n + 1),
+  .year-2024 .grid--projects > .card:nth-child(6n + 4) {
+    grid-column: span 4;
+  }
+  .year-2024 .grid--projects > .card:nth-child(6n + 2),
+  .year-2024 .grid--projects > .card:nth-child(6n + 3) {
+    grid-column: span 2;
+  }
+  /* con los filtros puestos puede quedar una sola tarjeta: que ocupe la fila entera */
+  .year-2024 .grid--projects > .card:only-child {
+    grid-column: 1 / -1;
+  }
+}
+.year-2024 .card {
+  background: var(--surface);
+  border: var(--hair);
+  border-radius: var(--radius-lg);
+  box-shadow: none;
+  padding: var(--sp-6);
+  transition:
+    border-color var(--dur) var(--ease),
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+.year-2024 .card:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-md);
+}
+.year-2024 .card__art {
+  background: var(--bg-alt);
+  border-bottom: var(--hair);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+.year-2024 .card--featured .card__art {
+  background: var(--peach-soft);
+}
+.year-2024 .card__title {
+  font-size: var(--fs-lg);
+  letter-spacing: -0.03em;
+}
+.year-2024 .card__badge {
+  background: var(--peach);
+  color: #0a0a0a;
+  font-weight: 500;
+}
+.year-2024 .tag {
+  background: transparent;
+  border: var(--hair);
+  color: var(--text-muted);
+  border-radius: var(--radius-pill);
+  padding: var(--sp-1) var(--sp-3);
+}
+.year-2024 .card__links a {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* educación y highlights: más celdas, con el número del highlight como etiqueta */
+.year-2024 .education__list {
+  gap: var(--sp-4);
+}
+.year-2024 .education__item {
+  border: var(--hair);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+}
+.year-2024 .education__title {
+  font-size: var(--fs-md);
+}
+.year-2024 .highlights {
+  counter-reset: hl;
+  list-style: none;
+  padding-left: 0;
+  gap: var(--sp-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+}
+.year-2024 .highlights li {
+  counter-increment: hl;
+  background: var(--surface);
+  border: var(--hair);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-8) var(--sp-6);
+  color: var(--text-muted);
+}
+.year-2024 .highlights li::before {
+  content: counter(hl, decimal-leading-zero);
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: var(--sp-4);
+}
+
+/* testimonios: la comilla en peach, la caja en hairline */
+.year-2024 .quote {
+  background: var(--surface);
+  border: var(--hair);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-12) var(--sp-6) var(--sp-6);
+}
+.year-2024 .quote::before {
+  color: var(--peach);
+  opacity: 1;
+  font-family: var(--font-display);
+  font-weight: 700;
+}
+.year-2024 .quote__text {
+  font-style: normal;
+  letter-spacing: -0.02em;
+}
+
+/* contacto: un panel con un baño de peach, el último bloque claro antes del footer */
+.year-2024 #contact .contact {
+  background: linear-gradient(180deg, #ffffff, var(--peach-soft));
+  border: var(--hair);
+  border-radius: var(--radius-lg);
+  padding: clamp(var(--sp-8), 5vw, var(--sp-16));
+}
+.year-2024 .contact__blurb {
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
+}
+
+/* años, footer y botón subir */
+.year-2024 .year-nav {
+  border-top: var(--hair);
+  padding-block: var(--sp-12);
+}
+.year-2024 .year-nav__link {
+  border: var(--hair);
+  border-radius: var(--radius-pill);
+  padding: var(--sp-3) var(--sp-6);
+  color: var(--text);
+  transition:
+    border-color var(--dur) var(--ease),
+    background var(--dur) var(--ease);
+}
+.year-2024 .year-nav__link:hover {
+  text-decoration: none;
+  background: var(--bg-alt);
+  border-color: var(--line-strong);
+}
+.year-2024 .year-nav__link--off {
+  color: #78716c;
+  border-style: dashed;
+}
+.year-2024 .footer {
+  background: var(--text);
+  color: #e7e5e4;
+  border-top: var(--hair);
+}
+.year-2024 .footer a {
+  color: var(--peach);
+}
+.year-2024 .to-top {
+  background: var(--text);
+  color: var(--primary-contrast);
+  box-shadow: var(--shadow-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .year-2024 .btn,
+  .year-2024 .card,
+  .year-2024 .chip,
+  .year-2024 .year-nav__link {
+    transition: none;
+  }
+}
+
+/* móvil: el aire se recorta un poco y el bento vuelve a ser una columna */
+@media (max-width: 48rem) {
+  .year-2024 {
+    --air: 3.5rem;
+  }
+  .year-2024 .hero {
+    padding-block: var(--sp-8) var(--sp-12);
+  }
+  .year-2024 .hero__art {
+    padding: var(--sp-4);
+  }
+  .year-2024 .section__title {
+    margin-bottom: var(--sp-8);
+  }
+  .year-2024 .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .year-2024 .stat,
+  .year-2024 .card,
+  .year-2024 .highlights li,
+  .year-2024 .skills__group {
+    padding: var(--sp-4);
+  }
+  .year-2024 .highlights li {
+    padding-block: var(--sp-6);
+  }
+  .year-2024 .timeline {
+    gap: var(--sp-8);
+  }
+}
