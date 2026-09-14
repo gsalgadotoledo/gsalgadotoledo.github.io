@@ -7,7 +7,7 @@
   "hero": {
     "name": "Gustavo Salgado",
     "role": "Senior Engineer · Plataforma",
-    "location": "Remoto desde Bogotá",
+    "location": "Remoto desde Medellín",
     "availability": "En equipo, tiempo completo",
     "ctas": [
       {
@@ -123,7 +123,7 @@
       "title": "Tech Lead",
       "company": "PagaYa",
       "period": "Ene 2020",
-      "location": "Bogotá",
+      "location": "Medellín, Colombia",
       "summary": "Cierre y transición del equipo.",
       "bullets": ["Documenté la arquitectura y entregué el equipo a mi sucesor."]
     }
@@ -259,7 +259,7 @@
       },
       {
         "label": "LinkedIn",
-        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "href": "https://www.linkedin.com/in/gustavo-salgado-ai-product-manager",
         "kind": "linkedin"
       },
       {
@@ -277,7 +277,7 @@
     },
     {
       "label": "LinkedIn",
-      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "href": "https://www.linkedin.com/in/gustavo-salgado-ai-product-manager",
       "kind": "linkedin"
     },
     {

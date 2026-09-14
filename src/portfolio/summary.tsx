@@ -1,5 +1,5 @@
 import { YEARS, type YearSummary } from './types'
-import { Footer } from './ui'
+import { DemoNotice, Footer } from './ui'
 import '../design/tokens.css'
 import './summary.css'
 
@@ -12,6 +12,7 @@ export function renderSummary(years: YearSummary[]) {
       <a className="skip" href="#main">
         Saltar al contenido
       </a>
+      <DemoNotice />
       <header className="summary__hero" id="hero">
         <div className="container">
           <p className="summary__kicker">Gustavo Salgado</p>

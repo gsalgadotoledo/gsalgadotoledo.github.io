@@ -7,7 +7,7 @@
   "hero": {
     "name": "Gustavo Salgado",
     "role": "Full Stack Engineer · Product-minded",
-    "location": "Bogotá, Colombia · remoto",
+    "location": "Medellín, Colombia · remoto",
     "availability": "Abierto a proyectos freelance",
     "ctas": [
       { "label": "Ver proyectos", "href": "#projects" },
@@ -62,7 +62,7 @@
       "title": "Senior Frontend Engineer",
       "company": "PagaYa",
       "period": "Mar 2018 – Dic 2018",
-      "location": "Bogotá",
+      "location": "Medellín, Colombia",
       "summary": "Plataforma de pagos para comercios pequeños.",
       "bullets": [
         "Lideré la migración del checkout de jQuery a React: −38 % en tiempo de carga y +12 % en conversión.",
@@ -86,7 +86,7 @@
       "title": "Frontend Developer",
       "company": "Estudio Pixel",
       "period": "2015 – 2016",
-      "location": "Bogotá",
+      "location": "Medellín, Colombia",
       "summary": "Agencia digital: sitios y landings para marcas.",
       "bullets": [
         "Más de 20 sitios responsive con WordPress y JavaScript a medida.",
@@ -189,7 +189,7 @@
       { "label": "GitHub", "href": "https://github.com/gsalgadotoledo", "kind": "github" },
       {
         "label": "LinkedIn",
-        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "href": "https://www.linkedin.com/in/gustavo-salgado-ai-product-manager",
         "kind": "linkedin"
       },
       { "label": "Descargar CV", "href": "#", "kind": "cv" }
@@ -199,7 +199,7 @@
     { "label": "GitHub", "href": "https://github.com/gsalgadotoledo", "kind": "github" },
     {
       "label": "LinkedIn",
-      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "href": "https://www.linkedin.com/in/gustavo-salgado-ai-product-manager",
       "kind": "linkedin"
     },
     { "label": "Twitter", "href": "https://twitter.com/gsalgadotoledo", "kind": "twitter" }

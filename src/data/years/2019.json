@@ -7,7 +7,7 @@
   "hero": {
     "name": "Gustavo Salgado",
     "role": "Tech Lead · Full Stack",
-    "location": "Bogotá · remoto",
+    "location": "Medellín · remoto",
     "availability": "Consultoría selecta",
     "ctas": [
       {
@@ -115,7 +115,7 @@
       "title": "Tech Lead",
       "company": "PagaYa",
       "period": "Ene 2019 – Dic 2019",
-      "location": "Bogotá",
+      "location": "Medellín, Colombia",
       "summary": "Equipo de producto de pagos para comercios.",
       "bullets": [
         "Lideré la migración a servicios: 6 servicios Node, PostgreSQL y colas con Redis.",
@@ -127,7 +127,7 @@
       "title": "Docente",
       "company": "Academia Dev",
       "period": "Mar 2019 – Jun 2019",
-      "location": "Bogotá",
+      "location": "Medellín, Colombia",
       "summary": "Curso de React para 24 estudiantes.",
       "bullets": [
         "Ocho semanas, proyecto final desplegado por cada estudiante.",
@@ -266,7 +266,7 @@
       },
       {
         "label": "LinkedIn",
-        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "href": "https://www.linkedin.com/in/gustavo-salgado-ai-product-manager",
         "kind": "linkedin"
       },
       {
@@ -284,7 +284,7 @@
     },
     {
       "label": "LinkedIn",
-      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "href": "https://www.linkedin.com/in/gustavo-salgado-ai-product-manager",
       "kind": "linkedin"
     },
     {

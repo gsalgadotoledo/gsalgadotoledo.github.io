@@ -6,9 +6,9 @@
   "summary": "2026 es el año en curso y el que le puso reglas a todo lo anterior: los agentes dejaron de pedir permiso para cobrar —mandatos firmados, límites por comercio, reversión en un clic— y al mismo tiempo tuvieron que caber en un expediente que un regulador pueda leer. La plataforma de 2025 se volvió infraestructura de terceros: quien construye un agente encima ya no habla conmigo, habla con la documentación.",
   "hero": {
     "name": "Gustavo Salgado",
-    "role": "Chief AI Officer · Full Stack",
-    "location": "Remoto · Ciudad de México",
-    "availability": "Disponible para conversar sobre agentes, pagos y gobernanza",
+    "role": "AI Product Manager · Full Stack Engineer",
+    "location": "Medellín, Colombia · remoto",
+    "availability": "Product Manager en una insurtech · agentes que procesan seguros de verdad",
     "ctas": [
       {
         "label": "Ver proyectos",
@@ -147,6 +147,20 @@
   ],
   "projects": [
     {
+      "title": "agents-extractor",
+      "description": "Plataforma donde agentes LLM leen correos de brokers, extraen los datos de los PDF adjuntos y mueven solos el flujo de underwriting. Es mi proyecto público y el que mejor explica en qué trabajo hoy: LangGraph para orquestar, Claude para leer, FastAPI y React 19 para que un humano supervise.",
+      "stack": ["Python", "LangGraph", "Claude", "FastAPI", "React 19"],
+      "illustration": "ecommerce",
+      "featured": true,
+      "links": [
+        {
+          "label": "Ver el repositorio",
+          "href": "https://github.com/gsalgadotoledo/agents-extractor",
+          "kind": "repo"
+        }
+      ]
+    },
+    {
       "title": "Pagos iniciados por agentes",
       "description": "Un agente paga con una credencial acotada: mandato firmado por la persona, tope por comercio y por día, caducidad y un botón que revierte la operación entera. Abrimos el esquema y hoy lo usan agentes que no son nuestros: US$ 240 M movidos sin una sola tarjeta compartida.",
       "stack": ["TypeScript", "Mandatos", "Webhooks", "Cloud Run"],
@@ -213,19 +227,6 @@
           "kind": "web"
         }
       ]
-    },
-    {
-      "title": "Directorio de agentes",
-      "description": "Un catálogo donde los clientes publican los agentes que construyeron sobre la plataforma, con sus permisos, sus métricas de calidad y quién responde por ellos. Convirtió la API en algo que se recorre y comparó a los integradores entre sí, que resultó ser el mejor incentivo de calidad que encontramos.",
-      "stack": ["Next.js", "MCP", "OpenAPI"],
-      "illustration": "chat",
-      "links": [
-        {
-          "label": "Ver el directorio",
-          "href": "#",
-          "kind": "web"
-        }
-      ]
     }
   ],
   "education": [
@@ -277,7 +278,7 @@
       },
       {
         "label": "LinkedIn",
-        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "href": "https://www.linkedin.com/in/gustavo-salgado-ai-product-manager",
         "kind": "linkedin"
       },
       {
@@ -295,7 +296,7 @@
     },
     {
       "label": "LinkedIn",
-      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "href": "https://www.linkedin.com/in/gustavo-salgado-ai-product-manager",
       "kind": "linkedin"
     },
     {

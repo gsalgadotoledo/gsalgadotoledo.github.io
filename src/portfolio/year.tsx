@@ -4,6 +4,7 @@ import { Interactions } from './interactions'
 import { years } from './years'
 import {
   BackToTop,
+  DemoNotice,
   Footer,
   Hero,
   Nav,
@@ -44,6 +45,7 @@ export function renderYear(data: YearData, art: YearArt = {}) {
       <a className="skip" href="#main">
         Saltar al contenido
       </a>
+      <DemoNotice />
       <Nav
         brand={initials(data.hero.name)}
         links={sections}
