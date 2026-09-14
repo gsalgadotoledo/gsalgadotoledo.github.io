@@ -1,0 +1,297 @@
+{
+  "year": 2022,
+  "label": "Portfolio 2022",
+  "note": "[ejemplo] Datos moqueados con forma de hoja de vida actual; se reemplazan con la real en el paso 15.",
+  "title": "Producto con datos, y los primeros modelos en producción",
+  "summary": "En 2022 cambié de industria: Product Lead en una fintech de pagos. Un equipo de tres squads, un producto de riesgo con modelos de ML en producción y los primeros experimentos con GPT-3 y Copilot.",
+  "hero": {
+    "name": "Gustavo Salgado",
+    "role": "Product Lead · Datos y ML",
+    "location": "Remoto · Ciudad de México",
+    "availability": "Charlas y mentorías abiertas",
+    "ctas": [
+      {
+        "label": "Ver proyectos",
+        "href": "#projects"
+      },
+      {
+        "label": "Contáctame",
+        "href": "#contact"
+      }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "Este año acepté el reto de una fintech: Product Lead de Nube Pagos, a cargo de tres squads (onboarding, riesgo y conciliación) y de un roadmap que se mide en tasa de aprobación y fraude evitado.",
+      "Llevamos el primer modelo de riesgo a producción con un equipo de datos que armamos desde cero: features en dbt, entrenamiento en Vertex AI, monitoreo de drift y un panel que el negocio entiende. La aprobación subió 11 puntos sin subir el fraude.",
+      "Y empecé a jugar con GPT-3 y Copilot: un asistente que redacta respuestas de soporte y un clasificador de disputas. No son el producto todavía, pero ya cambiaron cómo trabajamos."
+    ],
+    "stats": [
+      {
+        "value": "3",
+        "label": "squads a cargo"
+      },
+      {
+        "value": "+11 pts",
+        "label": "tasa de aprobación"
+      },
+      {
+        "value": "2",
+        "label": "modelos en producción"
+      },
+      {
+        "value": "18",
+        "label": "mentorías acumuladas"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "group": "Producto",
+      "items": [
+        {
+          "name": "Estrategia y roadmap",
+          "level": 86
+        },
+        {
+          "name": "Métricas y experimentos",
+          "level": 86
+        },
+        {
+          "name": "Discovery con clientes",
+          "level": 82
+        },
+        {
+          "name": "Gestión de stakeholders",
+          "level": 80
+        }
+      ]
+    },
+    {
+      "group": "Datos y ML",
+      "items": [
+        {
+          "name": "SQL y dbt",
+          "level": 82
+        },
+        {
+          "name": "Python + scikit-learn",
+          "level": 70
+        },
+        {
+          "name": "Vertex AI / MLOps",
+          "level": 64
+        },
+        {
+          "name": "GPT-3 y prompts",
+          "level": 60
+        }
+      ]
+    },
+    {
+      "group": "Ingeniería",
+      "items": [
+        {
+          "name": "TypeScript",
+          "level": 88
+        },
+        {
+          "name": "React + Next.js",
+          "level": 86
+        },
+        {
+          "name": "Node.js",
+          "level": 84
+        },
+        {
+          "name": "GCP",
+          "level": 74
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Product Lead",
+      "company": "Nube Pagos",
+      "period": "Feb 2022 – Dic 2022",
+      "location": "Remoto",
+      "summary": "Tres squads: onboarding, riesgo y conciliación.",
+      "bullets": [
+        "Primer modelo de riesgo en producción: +11 puntos de aprobación con el fraude estable.",
+        "Equipo de datos de cero a cinco personas; dbt + Vertex AI + monitoreo de drift.",
+        "Onboarding rediseñado: de 9 pasos a 4, activación +23 %."
+      ]
+    },
+    {
+      "title": "Engineering Manager",
+      "company": "Ruta Logística",
+      "period": "Ene 2021 – Ene 2022",
+      "location": "Remoto",
+      "summary": "Producto de analítica para clientes; equipo de 8.",
+      "bullets": [
+        "Producto de analítica de cero a 14 clientes.",
+        "Experimento de precios: +9 % de margen."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Modelo de riesgo",
+      "description": "Scoring de comercios en el onboarding: features en dbt, entrenamiento y despliegue en Vertex AI, monitoreo de drift y explicación de cada decisión para el equipo de riesgo.",
+      "stack": ["Python", "scikit-learn", "Vertex AI", "dbt"],
+      "illustration": "dashboard",
+      "featured": true,
+      "links": [
+        {
+          "label": "Caso de estudio",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Onboarding en 4 pasos",
+      "description": "Rediseño del alta de comercios con verificación automática de documentos; activación +23 % y soporte con la mitad de tickets.",
+      "stack": ["Next.js", "TypeScript", "OCR"],
+      "illustration": "mobile",
+      "featured": true,
+      "links": [
+        {
+          "label": "Resumen",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Asistente de soporte con GPT-3",
+      "description": "Redacta la primera respuesta a cada ticket con el contexto de la cuenta; el agente edita y envía. Primer experimento serio con un LLM.",
+      "stack": ["Node", "OpenAI API", "Zendesk"],
+      "illustration": "chat",
+      "featured": true,
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    },
+    {
+      "title": "Conciliación automática",
+      "description": "Cruce diario de transacciones contra bancos y adquirentes, con alertas de diferencias; cierre contable de tres días a uno.",
+      "stack": ["BigQuery", "dbt", "Cloud Run"],
+      "illustration": "api",
+      "links": [
+        {
+          "label": "Resumen",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Panel de riesgo",
+      "description": "Lo que el negocio mira cada mañana: aprobación, fraude, disputas y el estado del modelo, en un tablero brutalmente simple (era 2022).",
+      "stack": ["Looker Studio", "BigQuery"],
+      "illustration": "ecommerce",
+      "links": [
+        {
+          "label": "Demo",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Clasificador de disputas",
+      "description": "Prototipo con embeddings que agrupa disputas por causa y sugiere la evidencia a presentar.",
+      "stack": ["Python", "OpenAI API", "FastAPI"],
+      "illustration": "video",
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Machine Learning Specialization",
+      "institution": "DeepLearning.AI · Coursera (ejemplo)",
+      "period": "2022",
+      "detail": "Regresión, clasificación, árboles y buenas prácticas de ML."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Professional Machine Learning Engineer",
+      "issuer": "Google Cloud",
+      "year": "2022"
+    },
+    {
+      "title": "dbt Analytics Engineering",
+      "issuer": "dbt Labs",
+      "year": "2021"
+    }
+  ],
+  "highlights": [
+    "Cambio de industria: de logística a fintech, como Product Lead.",
+    "Dos modelos de ML en producción, con monitoreo y explicación.",
+    "Primer asistente con GPT-3 en uso diario por el equipo de soporte.",
+    "Charla en Platzi Conf: \"Un PM que sabe leer un modelo\"."
+  ],
+  "testimonials": [
+    {
+      "quote": "Gustavo trajo el rigor de ingeniería a las decisiones de producto: cada apuesta venía con su métrica y su modelo.",
+      "author": "Laura Méndez",
+      "role": "CEO, Nube Pagos"
+    },
+    {
+      "quote": "Es el único PM con el que discutimos features del modelo y no solo pantallas.",
+      "author": "Andrés Quintero",
+      "role": "Lead Data Scientist, Nube Pagos"
+    }
+  ],
+  "contact": {
+    "email": "gsalgadotoledo@gmail.com",
+    "blurb": "¿Un producto que necesita datos y un poco de IA bien puesta? Escríbeme.",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/gsalgadotoledo",
+        "kind": "github"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "kind": "linkedin"
+      },
+      {
+        "label": "Descargar CV",
+        "href": "#",
+        "kind": "cv"
+      }
+    ]
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/gsalgadotoledo",
+      "kind": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "kind": "linkedin"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/gsalgadotoledo",
+      "kind": "twitter"
+    }
+  ]
+}

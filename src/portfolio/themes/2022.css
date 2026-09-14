@@ -1,0 +1,553 @@
+/* Tema 2022 — brutal · negro · Playfair. Lo que estaba de moda ese año (ROADMAP.md):
+   neo-brutalismo (Malewicz, marzo de 2022), bordes negros gruesos y sólidos, sombras duras sin
+   blur que el elemento "se come" al pulsar, colores crudos y saturados sobre papel, radios casi
+   nulos, grillas expuestas y un hero tipográfico con serifa de carácter (Playfair Display) contra
+   una sans neutra (Inter). El Pantone del año, Very Peri, entra como acento. Todo bajo .year-2022. */
+@import '@fontsource/playfair-display/700.css';
+@import '@fontsource/playfair-display/900.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+
+.year-2022 {
+  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --bg: #fffdf5; /* papel */
+  --bg-alt: #ffd60a; /* amarillo ácido a sección entera */
+  --surface: #ffffff;
+  --text: #000000;
+  --text-muted: #3d3a33; /* 12.6:1 sobre papel */
+  --line: #000000;
+  --primary: #6667ab; /* Very Peri, el Pantone 2022: 5.5:1 con blanco */
+  --primary-contrast: #ffffff;
+  --accent: #b3005e; /* rosa chicle oscurecido: 6.6:1 sobre papel */
+  --yellow: #ffd60a;
+  --pink: #ff5d8f;
+  --lime: #c6f432;
+  --sky: #7fd4ff;
+  --periwinkle: #6667ab;
+  --ink: #000000;
+  --gradient: linear-gradient(135deg, #ffd60a, #ff5d8f 55%, #6667ab);
+  /* sombras duras: sin blur, negras, desplazadas */
+  --shadow-sm: 3px 3px 0 var(--ink);
+  --shadow-md: 6px 6px 0 var(--ink);
+  --shadow-lg: 10px 10px 0 var(--ink);
+  --radius-sm: 0;
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-pill: 4px;
+  --bord: 3px solid var(--ink);
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: clip;
+}
+
+.year-2022 h1,
+.year-2022 h2,
+.year-2022 h3 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+.year-2022 .stat__value {
+  font-family: var(--font-display);
+  font-weight: 900;
+}
+
+/* nav: papel opaco con una raya negra gruesa debajo; nada de translúcido */
+.year-2022 .nav {
+  background: var(--bg);
+  border-bottom: var(--bord);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.year-2022 .nav__brand {
+  font-family: var(--font-display);
+  font-weight: 900;
+  color: var(--ink);
+  font-size: var(--fs-xl);
+  background: var(--yellow);
+  border: var(--bord);
+  padding: 0 var(--sp-3);
+  box-shadow: var(--shadow-sm);
+}
+.year-2022 .nav__links a:not(.btn) {
+  color: var(--ink);
+  font-weight: 600;
+  padding: var(--sp-2) var(--sp-3);
+  border: 3px solid transparent;
+  transition:
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.year-2022 .nav__links a:not(.btn):hover {
+  background: var(--lime);
+  border-color: var(--ink);
+  text-decoration: none;
+}
+
+/* botones: caja negra con sombra dura; al pulsar cae sobre su sombra */
+.year-2022 .btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: var(--sp-3) var(--sp-6);
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+.year-2022 .btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-lg);
+}
+.year-2022 .btn:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 0 var(--ink);
+}
+.year-2022 .btn--primary {
+  background: var(--yellow);
+  color: var(--ink);
+}
+.year-2022 .btn--sm {
+  padding: var(--sp-2) var(--sp-4);
+  box-shadow: var(--shadow-sm);
+}
+.year-2022 .btn--sm:active {
+  transform: translate(3px, 3px);
+}
+
+/* hero: tipográfico. El titular manda; la ilustración va en un sticker torcido */
+.year-2022 .hero {
+  position: relative;
+  background: var(--bg);
+  padding-block: var(--sp-16) var(--sp-16);
+  border-bottom: var(--bord);
+  isolation: isolate;
+  overflow: hidden;
+}
+/* grilla expuesta: el papel cuadriculado se ve detrás */
+.year-2022 .hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(to right, rgb(0 0 0 / 0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.07) 1px, transparent 1px);
+  background-size: 2.5rem 2.5rem;
+  pointer-events: none;
+}
+.year-2022 .hero .year-label {
+  color: var(--ink);
+  background: var(--pink);
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: var(--sp-2) var(--sp-4);
+}
+/* el nombre va subrayado a marcador amarillo: el guiño de marcador del brutalismo suave.
+   `.hero__name` es un <p> de bloque, así que el marcador se ciñe al texto con fit-content. */
+.year-2022 .hero__name {
+  color: var(--ink);
+  font-weight: 600;
+  width: fit-content;
+  max-width: 100%;
+  padding-inline: var(--sp-1);
+  background: linear-gradient(var(--yellow), var(--yellow)) 0 85% / 100% 0.45em no-repeat;
+}
+.year-2022 .hero__role,
+.year-2022 .hero__meta {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.year-2022 .hero__title {
+  font-size: clamp(2.8rem, 8.5vw, 6rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.year-2022 .hero__summary {
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+  max-width: 46ch;
+  border-left: 6px solid var(--periwinkle);
+  padding-left: var(--sp-4);
+}
+.year-2022 .hero__art {
+  position: relative;
+  min-height: 22rem;
+  display: grid;
+  place-items: center;
+}
+/* el sticker: caja blanca con borde y sombra dura, girada */
+.year-2022 .hero__art .ill {
+  position: relative;
+  z-index: 1;
+  max-width: 28rem;
+  background: var(--surface);
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--sp-4);
+  transform: rotate(-2deg);
+}
+/* dos bloques crudos detrás, sin animación: el brutalismo se queda quieto */
+.year-2022 .hero__art::before,
+.year-2022 .hero__art::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  border: var(--bord);
+  pointer-events: none;
+}
+.year-2022 .hero__art::before {
+  width: 9rem;
+  height: 9rem;
+  right: 0;
+  top: 0;
+  background: var(--lime);
+  transform: rotate(6deg);
+}
+.year-2022 .hero__art::after {
+  width: 6rem;
+  height: 6rem;
+  left: 0;
+  bottom: 1rem;
+  background: var(--periwinkle);
+  border-radius: 50%;
+}
+
+/* ilustraciones compartidas, en crudo */
+.year-2022 .hero__art .ill,
+.year-2022 .about__art .ill,
+.year-2022 .contact__art .ill,
+.year-2022 .card__art .ill {
+  --ill-accent: #6667ab;
+  --ill-accent-2: #ff5d8f;
+  --ill-accent-light: #ffd60a;
+  --ill-light: #fffdf5;
+  --ill-dark: #000000;
+  --ill-muted: #c6f432;
+  --ill-skin: #f4c3a8;
+}
+.year-2022 .ill__shadow {
+  fill: rgb(0 0 0 / 0.85);
+}
+.year-2022 .card__art {
+  background: var(--sky);
+  border-bottom: var(--bord);
+}
+.year-2022 .card:nth-child(3n + 2) .card__art {
+  background: var(--lime);
+}
+.year-2022 .card:nth-child(3n) .card__art {
+  background: var(--pink);
+}
+
+/* secciones: la alterna es amarillo pleno entre dos rayas negras; kicker en caja */
+.year-2022 .section {
+  padding-block: var(--sp-16);
+}
+.year-2022 .section--alt {
+  background: var(--bg-alt);
+  border-block: var(--bord);
+}
+.year-2022 .section__kicker {
+  display: inline-block;
+  background: var(--periwinkle);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--sp-1) var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+.year-2022 .section--alt .section__kicker {
+  background: var(--ink);
+  color: var(--yellow);
+}
+.year-2022 .section__title {
+  text-decoration: underline;
+  text-decoration-thickness: 6px;
+  text-underline-offset: 8px;
+  text-decoration-color: var(--pink);
+}
+
+/* tarjetas: blancas, borde de 3 px, sombra dura; al hover se levantan en diagonal */
+.year-2022 .card,
+.year-2022 .quote {
+  background: var(--surface);
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-md);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+.year-2022 .card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: var(--shadow-lg);
+}
+.year-2022 .card__art {
+  margin: calc(-1 * var(--sp-6)) calc(-1 * var(--sp-6)) var(--sp-6);
+  border-radius: 0;
+}
+.year-2022 .card__badge {
+  background: var(--yellow);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  font-weight: 600;
+}
+.year-2022 .tag {
+  background: var(--surface);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: var(--sp-1) var(--sp-3);
+}
+.year-2022 .chip {
+  background: var(--surface);
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+  font-weight: 600;
+}
+.year-2022 .chip:hover {
+  background: var(--lime);
+}
+.year-2022 .chip.is-active {
+  background: var(--ink);
+  color: var(--yellow);
+}
+
+/* sobre mí: las cifras como bloques crudos, cada uno de su color, sin redondear */
+.year-2022 .stats {
+  gap: var(--sp-4);
+}
+.year-2022 .stat {
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  background: var(--yellow);
+  box-shadow: var(--shadow-md);
+  transition: transform var(--dur) var(--ease);
+}
+.year-2022 .stat:nth-child(2) {
+  background: var(--lime);
+}
+.year-2022 .stat:nth-child(3) {
+  background: var(--pink);
+}
+.year-2022 .stat:nth-child(4) {
+  background: var(--sky);
+}
+.year-2022 .stat:hover {
+  transform: rotate(-2deg);
+}
+.year-2022 .stat__value {
+  color: var(--ink);
+}
+.year-2022 .stat__label {
+  color: var(--ink);
+  font-weight: 600;
+}
+.year-2022 .about__art,
+.year-2022 .contact__art {
+  background: var(--surface);
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-md);
+}
+
+/* skills: la barra es una caja negra que se llena de Very Peri */
+.year-2022 .skill__bar {
+  height: 18px;
+  background: var(--surface);
+  border: var(--bord);
+  border-radius: 0;
+  overflow: hidden;
+}
+.year-2022 .skill__fill {
+  background: var(--periwinkle);
+  border-radius: 0;
+}
+.year-2022 .section--alt .skill__bar {
+  background: #fff;
+}
+.year-2022 .skill__name,
+.year-2022 .skill__level {
+  font-weight: 600;
+}
+
+/* timeline: línea negra gruesa, puntos cuadrados */
+.year-2022 .timeline {
+  border-left: 4px solid var(--ink);
+}
+.year-2022 .timeline__item::before {
+  width: 16px;
+  height: 16px;
+  left: calc(-1 * var(--sp-6) - 10px);
+  background: var(--yellow);
+  border: 3px solid var(--ink);
+  border-radius: 0;
+  box-shadow: none;
+}
+.year-2022 .timeline__period {
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+.year-2022 .timeline__title {
+  font-family: var(--font-display);
+}
+.year-2022 .timeline__company {
+  font-weight: 600;
+}
+.year-2022 .highlights li::marker {
+  color: var(--accent);
+}
+.year-2022 .quote::before {
+  color: var(--pink);
+  opacity: 1;
+  font-family: var(--font-display);
+}
+.year-2022 .year-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: var(--bord);
+  border-radius: var(--radius-md);
+}
+
+/* contacto: bloque Very Peri a sangre, texto blanco */
+.year-2022 #contact {
+  background: var(--periwinkle);
+  border-block: var(--bord);
+  color: #fff;
+}
+.year-2022 #contact .section__title,
+.year-2022 #contact p,
+.year-2022 #contact a:not(.btn) {
+  color: #fff;
+}
+.year-2022 #contact .section__title {
+  text-decoration-color: var(--yellow);
+}
+.year-2022 #contact .section__kicker {
+  background: var(--yellow);
+  color: var(--ink);
+}
+.year-2022 #contact .contact__art {
+  background: var(--surface);
+}
+
+/* navegación entre años, footer, botón subir */
+.year-2022 .year-nav {
+  border-top: var(--bord);
+}
+.year-2022 .year-nav__link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--ink);
+  padding: var(--sp-3) var(--sp-6);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+.year-2022 .year-nav__link:hover {
+  text-decoration: none;
+  background: var(--yellow);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-md);
+}
+.year-2022 .year-nav__link--all {
+  background: var(--lime);
+}
+.year-2022 .year-nav__link--off {
+  background: transparent;
+  box-shadow: none;
+  border: 3px dashed #6b6659;
+  color: #55514a;
+}
+.year-2022 .footer {
+  background: var(--ink);
+  color: var(--bg);
+  border-top: var(--bord);
+}
+.year-2022 .footer a {
+  color: var(--yellow);
+}
+.year-2022 .to-top {
+  background: var(--yellow);
+  color: var(--ink);
+  border: var(--bord);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+/* nadie se mueve si el sistema lo pide (el tema casi no anima, pero por regla de la casa) */
+@media (prefers-reduced-motion: reduce) {
+  .year-2022 .btn,
+  .year-2022 .card,
+  .year-2022 .stat,
+  .year-2022 .year-nav__link {
+    transition: none;
+  }
+  .year-2022 .hero__art .ill {
+    transform: none;
+  }
+}
+
+/* móvil: las sombras se achican para no provocar scroll horizontal */
+@media (max-width: 48rem) {
+  .year-2022 {
+    --shadow-md: 4px 4px 0 var(--ink);
+    --shadow-lg: 6px 6px 0 var(--ink);
+  }
+  .year-2022 .hero {
+    padding-block: var(--sp-12);
+  }
+  .year-2022 .hero__art {
+    min-height: 0;
+  }
+  .year-2022 .hero__art .ill {
+    transform: none;
+    padding: var(--sp-3);
+  }
+  .year-2022 .hero__art::before,
+  .year-2022 .hero__art::after {
+    display: none;
+  }
+  .year-2022 .nav__links {
+    padding-bottom: var(--sp-4);
+  }
+  .year-2022 .card,
+  .year-2022 .quote {
+    padding: var(--sp-4);
+  }
+  .year-2022 .card__art {
+    margin: calc(-1 * var(--sp-4)) calc(-1 * var(--sp-4)) var(--sp-4);
+  }
+  .year-2022 .section__title {
+    text-decoration-thickness: 4px;
+  }
+}

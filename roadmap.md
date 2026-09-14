@@ -29,7 +29,7 @@ con la etiqueta "Portfolio <año>" y hay captura.
 - [x] 2019 — oscuro · vidrio · Inter — hecho (fondo azul-noche, tarjetas de vidrio, Living Coral, DM Sans + Inter)
 - [x] 2020 — neumórfico · azul · mono — hecho (Classic Blue, relieve neumórfico, neón teal, IBM Plex Mono + Inter, terminal en el hero)
 - [x] 2021 — pastel · redondo · Manrope — hecho (crema, blobs pastel, radios enormes, stats bento, Sora + Manrope)
-- [ ] 2022 — por investigar (candidato: brutalista)
+- [x] 2022 — brutal · negro · Playfair — hecho (papel, bordes negros de 3 px, sombras duras, amarillo ácido + Very Peri, hero tipográfico, Playfair Display + Inter)
 - [ ] 2023 — por investigar (candidato: gradientes y vidrio)
 - [ ] 2024 — por investigar (candidato: minimal blanco, tipografía enorme)
 - [ ] 2025 — por investigar (candidato: tema IA, oscuro con neón)
