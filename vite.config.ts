@@ -20,6 +20,7 @@ export default defineConfig({
         y2023: resolve(import.meta.dirname, 'portfolio/2023/index.html'),
         y2024: resolve(import.meta.dirname, 'portfolio/2024/index.html'),
         y2025: resolve(import.meta.dirname, 'portfolio/2025/index.html'),
+        y2026: resolve(import.meta.dirname, 'portfolio/2026/index.html'),
       },
     },
   },

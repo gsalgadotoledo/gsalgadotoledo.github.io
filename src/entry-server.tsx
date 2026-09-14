@@ -9,6 +9,7 @@ import { page as y2022 } from './pages/portfolio/2022'
 import { page as y2023 } from './pages/portfolio/2023'
 import { page as y2024 } from './pages/portfolio/2024'
 import { page as y2025 } from './pages/portfolio/2025'
+import { page as y2026 } from './pages/portfolio/2026'
 
 /** Ruta publicada → árbol. scripts/prerender.mjs recorre esto tras el build. */
 export const pages: Record<string, () => ReactNode> = {
@@ -21,6 +22,7 @@ export const pages: Record<string, () => ReactNode> = {
   '/portfolio/2023/': y2023,
   '/portfolio/2024/': y2024,
   '/portfolio/2025/': y2025,
+  '/portfolio/2026/': y2026,
 }
 
 export function render(path: string): string {

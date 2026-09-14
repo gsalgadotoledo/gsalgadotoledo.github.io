@@ -33,7 +33,9 @@ con la etiqueta "Portfolio <año>" y hay captura.
 - [x] 2023 — aurora · vidrio · Sora — hecho (malla aurora violeta/cian/magenta fija, vidrio con borde de gradiente, Viva Magenta de acento, cifras en bento, Sora + DM Sans)
 - [x] 2024 — minimal · bento · Inter — hecho (blanco puro, titular enorme con tracking negativo, bento con hairlines de 1 px, Peach Fuzz de acento, grano sutil, Inter como única familia)
 - [x] 2025 — glow · agéntico · mono — hecho (near-black neutro, malla de 1 px en CSS, un solo acento verde que ilumina los bordes, Mocha Mousse de neutro cálido, consola de agente en el hero, barra de scroll nativa, Manrope + IBM Plex Mono)
-- [ ] 2026 — por investigar (el más actual; enlaza al home 3D)
+- [x] 2026 — sereno · reglado · Fraunces — hecho (Cloud Dancer `#f0eee9`, el Pantone del año; monocromo cálido sin acento de color, radio 0 y cero sombras, cajas pegadas por un hilo de 1 px, tipografía cinética con `animation-timeline`, hero sin ilustración, Fraunces Variable + Hanken Grotesk + IBM Plex Mono; enlaza al home 3D en `/`)
+
+**Las nueve páginas existen: ninguna tarjeta dice "próximamente".**
 
 ## Después
 

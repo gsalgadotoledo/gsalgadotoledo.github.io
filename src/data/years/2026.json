@@ -1,0 +1,307 @@
+{
+  "year": 2026,
+  "label": "Portfolio 2026",
+  "note": "[ejemplo] Datos moqueados con forma de hoja de vida actual; se reemplazan con la real en el paso 15.",
+  "title": "El año en que los agentes aprendieron a pagar",
+  "summary": "2026 es el año en curso y el que le puso reglas a todo lo anterior: los agentes dejaron de pedir permiso para cobrar —mandatos firmados, límites por comercio, reversión en un clic— y al mismo tiempo tuvieron que caber en un expediente que un regulador pueda leer. La plataforma de 2025 se volvió infraestructura de terceros: quien construye un agente encima ya no habla conmigo, habla con la documentación.",
+  "hero": {
+    "name": "Gustavo Salgado",
+    "role": "Chief AI Officer · Full Stack",
+    "location": "Remoto · Ciudad de México",
+    "availability": "Disponible para conversar sobre agentes, pagos y gobernanza",
+    "ctas": [
+      {
+        "label": "Ver proyectos",
+        "href": "#projects"
+      },
+      {
+        "label": "Ir al inicio",
+        "href": "/"
+      }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "Después de un año dejando que los agentes cerraran casos, la pregunta dejó de ser si podían decidir y pasó a ser si podían gastar. Un agente que mueve dinero necesita tres cosas que un chat no necesita: un mandato que alguien firmó, un límite que no puede saltarse y una forma de deshacer lo que hizo. Construimos esas tres y las abrimos como protocolo: hoy un agente ajeno paga en nuestra red con una credencial acotada y cada movimiento queda atado a la instrucción humana que lo autorizó.",
+      "El otro trabajo del año fue menos vistoso y más importante: convertir en expediente lo que ya hacíamos. Registro de sistemas, evaluación de riesgo por caso de uso, trazas que sobreviven a una auditoría y una ficha técnica por modelo que se genera sola con cada despliegue. Nada de esto mejora una métrica de producto; todo esto decide si el producto puede existir en Europa y si un banco nos deja acercarnos.",
+      "Y una lección que no esperaba: cuanto más autónomo es el sistema, más importa la interfaz de la persona que lo vigila. La consola de 2025 se rehizo entera este año alrededor de una idea —entender en cinco segundos qué está a punto de pasar y poder detenerlo— y esa pantalla, no el modelo, es lo que hace que operaciones duerma tranquila."
+    ],
+    "stats": [
+      {
+        "value": "US$ 11.2 M",
+        "label": "ARR de la plataforma"
+      },
+      {
+        "value": "31",
+        "label": "clientes con agentes propios"
+      },
+      {
+        "value": "US$ 240 M",
+        "label": "pagados por agentes"
+      },
+      {
+        "value": "38",
+        "label": "personas en el equipo"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "group": "Producto con IA",
+      "items": [
+        {
+          "name": "Estrategia de plataforma y agentes",
+          "level": 96
+        },
+        {
+          "name": "Gobernanza y cumplimiento de IA",
+          "level": 92
+        },
+        {
+          "name": "Autonomía, mandatos y riesgo",
+          "level": 94
+        },
+        {
+          "name": "Unit economics de IA",
+          "level": 92
+        }
+      ]
+    },
+    {
+      "group": "IA e ingeniería de datos",
+      "items": [
+        {
+          "name": "Protocolos de agentes (MCP, pagos)",
+          "level": 93
+        },
+        {
+          "name": "Modelos de razonamiento y enrutado",
+          "level": 91
+        },
+        {
+          "name": "Evals, simulación y trazas",
+          "level": 92
+        },
+        {
+          "name": "Modelos abiertos y en el borde",
+          "level": 85
+        }
+      ]
+    },
+    {
+      "group": "Ingeniería",
+      "items": [
+        {
+          "name": "TypeScript",
+          "level": 94
+        },
+        {
+          "name": "React + Next.js",
+          "level": 90
+        },
+        {
+          "name": "Node.js y APIs públicas",
+          "level": 92
+        },
+        {
+          "name": "GCP, Cloud Run y Terraform",
+          "level": 85
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Chief AI Officer",
+      "company": "Nube Pagos",
+      "period": "Ene 2026 – hoy",
+      "location": "Remoto",
+      "summary": "La IA como infraestructura de la empresa y como producto que otros integran.",
+      "bullets": [
+        "Pagos iniciados por agentes: US$ 240 M movidos con mandato firmado y reversión en un clic.",
+        "Plataforma a US$ 11.2 M de ARR y 31 clientes que construyen sus propios agentes encima.",
+        "Programa de gobernanza listo para el AI Act: registro, fichas de modelo y trazas auditables.",
+        "Equipo de 22 a 38 personas, con una función de riesgo de IA que reporta fuera de producto.",
+        "Consola de supervisión rehecha: detener un agente pasó de tres pantallas a una tecla."
+      ]
+    },
+    {
+      "title": "VP of AI Product",
+      "company": "Nube Pagos",
+      "period": "Mar 2025 – Dic 2025",
+      "location": "Remoto",
+      "summary": "Agentes que cierran trabajo de punta a punta y una API que se vende sola.",
+      "bullets": [
+        "Siete flujos autónomos y 1.9 M de casos cerrados sin intervención humana.",
+        "Servidores MCP para riesgo, comercios y contratos; enrutador de modelos por dificultad."
+      ]
+    },
+    {
+      "title": "Head of AI Product",
+      "company": "Nube Pagos",
+      "period": "Jun 2024 – Feb 2025",
+      "location": "Remoto",
+      "summary": "Una sola plataforma de agentes para toda la empresa.",
+      "bullets": ["Nueve casos de uso sobre un runtime común y coste por consulta -71 %."]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Pagos iniciados por agentes",
+      "description": "Un agente paga con una credencial acotada: mandato firmado por la persona, tope por comercio y por día, caducidad y un botón que revierte la operación entera. Abrimos el esquema y hoy lo usan agentes que no son nuestros: US$ 240 M movidos sin una sola tarjeta compartida.",
+      "stack": ["TypeScript", "Mandatos", "Webhooks", "Cloud Run"],
+      "illustration": "ecommerce",
+      "featured": true,
+      "links": [
+        {
+          "label": "Especificación",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Expediente de IA automático",
+      "description": "Cada despliegue genera su ficha: datos de entrenamiento, evaluaciones, límites de uso, incidentes y responsables. El registro de sistemas y la clasificación de riesgo dejaron de ser una hoja de cálculo que alguien actualiza tarde y pasaron a salir del mismo pipeline que publica el modelo.",
+      "stack": ["Python", "OpenTelemetry", "BigQuery", "AI Act"],
+      "illustration": "dashboard",
+      "featured": true,
+      "links": [
+        {
+          "label": "Cómo funciona",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Consola de supervisión v2",
+      "description": "La pantalla donde operaciones ve qué va a hacer cada agente antes de que lo haga: intención, coste estimado, riesgo y un atajo para detenerlo. Se rehízo alrededor de un objetivo medible —entender la situación en cinco segundos— y el tiempo hasta detener un agente bajó de 41 a 6 segundos.",
+      "stack": ["Next.js", "Streaming", "Web Components"],
+      "illustration": "video",
+      "featured": true,
+      "links": [
+        {
+          "label": "Demo",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Simulador de agentes",
+      "description": "Antes de tocar producción, cada cambio corre contra diez mil casos históricos y un banco de escenarios adversarios: comercios que mienten, documentos falsos, instrucciones inyectadas en un PDF. Ningún agente se enciende sin pasar por aquí, y tres incidentes del año se quedaron en el simulador.",
+      "stack": ["Python", "Evals", "Red teaming"],
+      "illustration": "api",
+      "links": [
+        {
+          "label": "Notas técnicas",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Modelos propios en el borde",
+      "description": "El scoring de riesgo que antes viajaba a un modelo grande hoy corre en un modelo pequeño afinado por nosotros, dentro de nuestra nube y a veces en el propio dispositivo del comercio. Menos latencia, menos factura y datos que no salen del país: tres argumentos distintos para la misma decisión.",
+      "stack": ["Modelos abiertos", "Fine-tuning", "ONNX"],
+      "illustration": "mobile",
+      "links": [
+        {
+          "label": "Resumen",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Directorio de agentes",
+      "description": "Un catálogo donde los clientes publican los agentes que construyeron sobre la plataforma, con sus permisos, sus métricas de calidad y quién responde por ellos. Convirtió la API en algo que se recorre y comparó a los integradores entre sí, que resultó ser el mejor incentivo de calidad que encontramos.",
+      "stack": ["Next.js", "MCP", "OpenAPI"],
+      "illustration": "chat",
+      "links": [
+        {
+          "label": "Ver el directorio",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Gobernanza de IA y regulación (programa ejecutivo)",
+      "institution": "IAPP (ejemplo)",
+      "period": "2026",
+      "detail": "Clasificación de riesgo, obligaciones de transparencia y documentación técnica de sistemas de IA."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Professional Machine Learning Engineer",
+      "issuer": "Google Cloud",
+      "year": "2022"
+    },
+    {
+      "title": "Generative AI with Large Language Models",
+      "issuer": "DeepLearning.AI · AWS",
+      "year": "2023"
+    }
+  ],
+  "highlights": [
+    "Los agentes empezaron a pagar: US$ 240 M con mandato firmado y reversión en un clic.",
+    "La plataforma llegó a US$ 11.2 M de ARR y a 31 clientes con agentes propios.",
+    "El expediente de IA se genera solo: auditoría y AI Act dejaron de frenar despliegues.",
+    "Ascenso a Chief AI Officer y una función de riesgo de IA independiente de producto."
+  ],
+  "testimonials": [
+    {
+      "quote": "Gustavo entendió antes que nadie que el problema no era que la máquina decidiera, sino que pudiera gastar. Hoy vendemos eso.",
+      "author": "Laura Méndez",
+      "role": "CEO, Nube Pagos"
+    },
+    {
+      "quote": "Es la primera vez que un proveedor nos entrega la documentación de cumplimiento sin que tengamos que pedirla dos veces.",
+      "author": "Sofía Duarte",
+      "role": "Chief Risk Officer, banco aliado"
+    }
+  ],
+  "contact": {
+    "email": "gsalgadotoledo@gmail.com",
+    "blurb": "Si estás pensando en agentes que gastan dinero, en cómo demostrar que se portan bien, o en cómo se ve la pantalla de quien los vigila: escríbeme.",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/gsalgadotoledo",
+        "kind": "github"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "kind": "linkedin"
+      },
+      {
+        "label": "Descargar CV",
+        "href": "#",
+        "kind": "cv"
+      }
+    ]
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/gsalgadotoledo",
+      "kind": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "kind": "linkedin"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/gsalgadotoledo",
+      "kind": "twitter"
+    }
+  ]
+}
