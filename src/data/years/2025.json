@@ -1,0 +1,307 @@
+{
+  "year": 2025,
+  "label": "Portfolio 2025",
+  "note": "[ejemplo] Datos moqueados con forma de hoja de vida actual; se reemplazan con la real en el paso 15.",
+  "title": "El año en que los agentes se pusieron a trabajar",
+  "summary": "2025 fue dejar de hablar de copilotos y poner agentes a cerrar trabajo de punta a punta: disputas, conciliaciones y altas de comercio que empiezan y terminan sin una persona en medio. La plataforma de 2024 se abrió con MCP, los modelos de razonamiento entraron donde el coste lo permitía y la API dejó de ser un experimento para volverse una línea de negocio.",
+  "hero": {
+    "name": "Gustavo Salgado",
+    "role": "VP of AI Product · Full Stack",
+    "location": "Remoto · Ciudad de México",
+    "availability": "Abierto a construir plataformas de agentes",
+    "ctas": [
+      {
+        "label": "Ver proyectos",
+        "href": "#projects"
+      },
+      {
+        "label": "Contáctame",
+        "href": "#contact"
+      }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "El asistente que sugiere y la persona que decide fue un buen trato durante dos años. En 2025 dejó de serlo: si el agente ya arma el expediente, propone la evidencia y conoce el resultado de sus últimas diez mil decisiones, pedirle a alguien que apriete el botón es teatro. Pasamos siete flujos a ejecución autónoma con su umbral, su presupuesto y su botón de apagado, y medimos lo único que importa: cuántos casos se cierran solos y cuántos se rompen.",
+      "El cambio técnico del año fue conectar la plataforma por MCP. Dejamos de escribir un adaptador por herramienta y empezamos a exponer servidores: el motor de riesgo, el catálogo de comercios, el buscador de contratos. Cualquier agente —el nuestro o el del cliente— habla el mismo protocolo, y los permisos y las trazas viven en un solo sitio en vez de repartidos por nueve integraciones.",
+      "Lo demás fue economía. Los modelos de razonamiento resuelven casos que antes escalaban a una persona, pero cuestan y tardan; los pequeños abiertos resuelven el 70 % del volumen por centavos. Armé el enrutador que decide cuál entra en cada caso y lo dejé atado al panel de coste: hoy la conversación difícil y la barata usan modelos distintos, y ninguna de las dos requiere que yo esté en la sala."
+    ],
+    "stats": [
+      {
+        "value": "1.9 M",
+        "label": "casos cerrados sin humano"
+      },
+      {
+        "value": "7",
+        "label": "flujos autónomos"
+      },
+      {
+        "value": "US$ 3.4 M",
+        "label": "ARR de la API"
+      },
+      {
+        "value": "22",
+        "label": "personas en el equipo"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "group": "Producto con IA",
+      "items": [
+        {
+          "name": "Estrategia de plataforma y agentes",
+          "level": 94
+        },
+        {
+          "name": "Autonomía, umbrales y riesgo",
+          "level": 92
+        },
+        {
+          "name": "Evals y calidad en producción",
+          "level": 92
+        },
+        {
+          "name": "Unit economics de IA",
+          "level": 90
+        }
+      ]
+    },
+    {
+      "group": "IA e ingeniería de datos",
+      "items": [
+        {
+          "name": "Modelos de razonamiento y enrutado",
+          "level": 90
+        },
+        {
+          "name": "MCP y herramientas para agentes",
+          "level": 90
+        },
+        {
+          "name": "RAG, memoria y contexto largo",
+          "level": 88
+        },
+        {
+          "name": "Modelos abiertos y fine-tuning",
+          "level": 82
+        }
+      ]
+    },
+    {
+      "group": "Ingeniería",
+      "items": [
+        {
+          "name": "TypeScript",
+          "level": 93
+        },
+        {
+          "name": "React + Next.js",
+          "level": 89
+        },
+        {
+          "name": "Node.js y APIs públicas",
+          "level": 90
+        },
+        {
+          "name": "GCP, Cloud Run y Terraform",
+          "level": 83
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "VP of AI Product",
+      "company": "Nube Pagos",
+      "period": "Mar 2025 – Dic 2025",
+      "location": "Remoto",
+      "summary": "La plataforma de agentes como línea de negocio y como forma de operar la empresa.",
+      "bullets": [
+        "Siete flujos en ejecución autónoma: 1.9 M de casos cerrados sin intervención humana.",
+        "API de IA de un contrato a US$ 3.4 M de ARR con catorce clientes y SLA de latencia.",
+        "Servidores MCP para riesgo, comercios y contratos: un protocolo en vez de nueve adaptadores.",
+        "Enrutador de modelos por dificultad (abiertos, rápidos y de razonamiento) con presupuesto por caso.",
+        "Equipo de 14 a 22 personas y una guardia de calidad que apaga agentes sin pedir permiso."
+      ]
+    },
+    {
+      "title": "Head of AI Product",
+      "company": "Nube Pagos",
+      "period": "Jun 2024 – Feb 2025",
+      "location": "Remoto",
+      "summary": "Una sola plataforma de agentes para toda la empresa.",
+      "bullets": [
+        "Nueve casos de uso sobre un runtime común y coste por consulta -71 %.",
+        "Primera API de IA vendida fuera, con evals propios y contrato de latencia."
+      ]
+    },
+    {
+      "title": "AI Product Manager",
+      "company": "Nube Pagos",
+      "period": "Ene 2023 – May 2024",
+      "location": "Remoto",
+      "summary": "Asistentes en producción, RAG y la práctica de evaluación.",
+      "bullets": ["Tres asistentes y 1.2 M de consultas; la práctica de evals levantada de cero."]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Agentes autónomos de disputas",
+      "description": "El agente recibe el caso, reúne la evidencia, decide y responde al banco. Tres umbrales: actúa, consulta o escala. Cerró 1.9 M de casos sin que nadie apretara un botón y su tasa de reversión es más baja que la del equipo humano que lo entrenó.",
+      "stack": ["TypeScript", "Razonamiento", "Evals", "Cloud Run"],
+      "illustration": "api",
+      "featured": true,
+      "links": [
+        {
+          "label": "Caso de estudio",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Servidores MCP de la plataforma",
+      "description": "Riesgo, catálogo de comercios y contratos expuestos como servidores MCP: herramientas declaradas una vez, permisos por rol y trazas en un solo sitio. Los clientes conectan sus propios agentes sin que escribamos una integración más.",
+      "stack": ["MCP", "Node.js", "OpenAPI", "OAuth"],
+      "illustration": "chat",
+      "featured": true,
+      "links": [
+        {
+          "label": "Documentación",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Enrutador de modelos",
+      "description": "Cada caso entra por el modelo que le corresponde: uno abierto y pequeño para el 70 % del volumen, uno rápido para el resto y uno de razonamiento cuando el caso vale la espera. El presupuesto por caso es un parámetro de producto, no una sorpresa de fin de mes.",
+      "stack": ["Python", "vLLM", "BigQuery"],
+      "illustration": "dashboard",
+      "featured": true,
+      "links": [
+        {
+          "label": "Notas técnicas",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Consola de agentes",
+      "description": "La pantalla donde el equipo de operaciones ve qué está haciendo cada agente ahora mismo: la traza en vivo, la herramienta que llamó, el coste corrido y un botón rojo. Convirtió la autonomía en algo que se supervisa en vez de algo que se teme.",
+      "stack": ["Next.js", "Streaming", "OpenTelemetry"],
+      "illustration": "video",
+      "links": [
+        {
+          "label": "Demo",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Alta de comercios en una sesión",
+      "description": "El agente lee los documentos, llama al motor de riesgo, pide solo lo que falta y deja al comercio cobrando el mismo día. Lo que en 2023 era un asistente que sugería, en 2025 es un flujo que termina.",
+      "stack": ["React Native", "MCP", "OCR"],
+      "illustration": "mobile",
+      "links": [
+        {
+          "label": "Demo",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Reglas de autonomía",
+      "description": "Un documento corto que define cuándo un agente puede actuar solo: qué decisiones son reversibles, qué umbral de confianza hace falta, quién responde si falla y cómo se apaga. Lo firmaron legal, riesgo y seguridad antes de encender el primer flujo.",
+      "stack": ["Política", "Riesgo", "Seguridad"],
+      "illustration": "ecommerce",
+      "links": [
+        {
+          "label": "Resumen",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Agentes en producción (programa ejecutivo)",
+      "institution": "DeepLearning.AI (ejemplo)",
+      "period": "2025",
+      "detail": "Orquestación, evaluación y operación de sistemas con varios modelos y herramientas."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Professional Machine Learning Engineer",
+      "issuer": "Google Cloud",
+      "year": "2022"
+    },
+    {
+      "title": "Generative AI with Large Language Models",
+      "issuer": "DeepLearning.AI · AWS",
+      "year": "2023"
+    }
+  ],
+  "highlights": [
+    "Siete flujos pasaron de sugerir a decidir: 1.9 M de casos cerrados solos.",
+    "La API de IA llegó a US$ 3.4 M de ARR: la plataforma se paga sola.",
+    "MCP en toda la casa: un protocolo en vez de nueve integraciones a medida.",
+    "Ascenso a VP of AI Product y equipo de 14 a 22 personas."
+  ],
+  "testimonials": [
+    {
+      "quote": "Gustavo nos hizo escribir en una página qué puede decidir una máquina en esta empresa. Ese documento vale más que cualquier modelo que hayamos comprado.",
+      "author": "Laura Méndez",
+      "role": "CEO, Nube Pagos"
+    },
+    {
+      "quote": "Conectamos nuestro agente a sus servidores MCP en una tarde. Llevábamos meses esperando una integración como esa de otros proveedores.",
+      "author": "Andrés Kaplan",
+      "role": "CTO, cliente de la API"
+    }
+  ],
+  "contact": {
+    "email": "gsalgadotoledo@gmail.com",
+    "blurb": "¿Agentes que de verdad cierren trabajo, con coste, calidad y un botón de apagado? Es la conversación que más disfruto.",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/gsalgadotoledo",
+        "kind": "github"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "kind": "linkedin"
+      },
+      {
+        "label": "Descargar CV",
+        "href": "#",
+        "kind": "cv"
+      }
+    ]
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/gsalgadotoledo",
+      "kind": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "kind": "linkedin"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/gsalgadotoledo",
+      "kind": "twitter"
+    }
+  ]
+}

@@ -1,0 +1,156 @@
+/* La consola de agente del hero 2025. Los colores llegan del tema por --ac-*; los valores por
+   defecto la dejan usable fuera de él. */
+.ac {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.7;
+  width: 100%;
+  max-width: 36rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--ac-bg, #0a0f14);
+  border: 1px solid var(--ac-line, rgb(255 255 255 / 0.1));
+  box-shadow: var(--ac-shadow, 0 30px 60px -30px rgb(0 0 0 / 0.9));
+}
+
+.ac__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--ac-line, rgb(255 255 255 / 0.1));
+  background: var(--ac-bar, rgb(255 255 255 / 0.03));
+}
+.ac__id {
+  color: var(--ac-muted, #7d8da0);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.ac__state {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ac-neon, #4ade80);
+}
+.ac__pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ac-neon, #4ade80);
+  box-shadow: 0 0 10px var(--ac-neon, #4ade80);
+  animation: ac-pulse 1.6s ease-in-out infinite;
+}
+
+.ac__body {
+  padding: var(--sp-4);
+}
+.ac__goal {
+  margin: 0 0 var(--sp-4);
+  color: var(--ac-text, #d7e2ee);
+}
+.ac__caret-in {
+  color: var(--ac-neon, #4ade80);
+  margin-right: var(--sp-2);
+}
+
+.ac__steps {
+  list-style: none;
+  margin: 0 0 var(--sp-4);
+  padding: 0;
+  display: grid;
+  gap: var(--sp-2);
+}
+.ac__step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--sp-2) var(--sp-3);
+  align-items: baseline;
+  padding-left: var(--sp-1);
+}
+.ac__mark {
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  border: 1px solid var(--ac-neon, #4ade80);
+  background: var(--ac-neon, #4ade80);
+  transform: translateY(1px);
+}
+.ac__step--run .ac__mark {
+  background: transparent;
+  animation: ac-pulse 1.2s ease-in-out infinite;
+}
+.ac__tool {
+  color: var(--ac-tool, #7dd3fc);
+  overflow-wrap: anywhere;
+}
+.ac__result {
+  grid-column: 2;
+  color: var(--ac-muted, #7d8da0);
+  font-size: var(--fs-xs);
+}
+
+.ac__answer {
+  margin: 0;
+  padding-top: var(--sp-4);
+  border-top: 1px dashed var(--ac-line, rgb(255 255 255 / 0.1));
+  color: var(--ac-text, #d7e2ee);
+}
+.ac__cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.05em;
+  margin-left: 0.2em;
+  vertical-align: -0.18em;
+  background: var(--ac-neon, #4ade80);
+  animation: ac-blink 1.1s steps(1) infinite;
+}
+
+.ac__foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-4);
+  padding: var(--sp-3) var(--sp-4);
+  border-top: 1px solid var(--ac-line, rgb(255 255 255 / 0.1));
+  background: var(--ac-bar, rgb(255 255 255 / 0.03));
+  font-size: var(--fs-xs);
+  color: var(--ac-muted, #7d8da0);
+}
+.ac__auto {
+  margin-left: auto;
+  color: var(--ac-neon, #4ade80);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+@keyframes ac-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+@keyframes ac-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ac__pulse,
+  .ac__cursor,
+  .ac__step--run .ac__mark {
+    animation: none;
+  }
+}
