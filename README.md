@@ -6,10 +6,18 @@ Todo es estático: Vite genera HTML real por página, sin servidor.
 ## Qué hay
 
 - `/` — el home (T-2 · Mr. Portfolio).
-- `/portfolio/` — resumen del portafolio por años, con una página por año en
-  `/portfolio/2018/` … `/portfolio/2026/` (T-3 · Portafolio anual).
+- **[`/portfolio/`](https://gsalgadotoledo.github.io/portfolio/)** — resumen del portafolio por
+  años, con una página por año en `/portfolio/2018/` … `/portfolio/2026/`, cada una con el estilo
+  web de su época (T-3 · Portafolio anual).
 
 Progreso: ver [roadmap.md](roadmap.md) — un checkbox por paso y por año.
+
+## Publicación
+
+GitHub Pages con **Source = GitHub Actions**: `.github/workflows/pages.yml` construye y despliega
+en cada push a `main` (la rama por defecto) y a `task/T-3-portfolio-anual`. La rama `legacy-2021`
+guarda el sitio anterior. El workflow corre lint, build y la auditoría de cohesión antes de subir
+`dist/`, así que una página que se salga de la familia no llega a publicarse.
 
 <!-- screenshot: pendiente hasta que exista la primera página -->
 

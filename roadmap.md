@@ -25,7 +25,7 @@ Cada año: su JSON de datos, su tema (`src/portfolio/themes/<año>.css`), su ent
 tarjeta activa en `/portfolio/`. Se da por hecho cuando `dist/portfolio/<año>/index.html` existe
 con la etiqueta "Portfolio <año>" y hay captura.
 
-- [x] 2018 — gradientes · flat · Poppins — **publicado** (en `dist/`; Pages llega en el paso 13)
+- [x] 2018 — gradientes · flat · Poppins — hecho (gradiente violeta→coral, ilustraciones flat, cortes diagonales, Poppins + Open Sans)
 - [x] 2019 — oscuro · vidrio · Inter — hecho (fondo azul-noche, tarjetas de vidrio, Living Coral, DM Sans + Inter)
 - [x] 2020 — neumórfico · azul · mono — hecho (Classic Blue, relieve neumórfico, neón teal, IBM Plex Mono + Inter, terminal en el hero)
 - [x] 2021 — pastel · redondo · Manrope — hecho (crema, blobs pastel, radios enormes, stats bento, Sora + Manrope)
@@ -35,11 +35,12 @@ con la etiqueta "Portfolio <año>" y hay captura.
 - [x] 2025 — glow · agéntico · mono — hecho (near-black neutro, malla de 1 px en CSS, un solo acento verde que ilumina los bordes, Mocha Mousse de neutro cálido, consola de agente en el hero, barra de scroll nativa, Manrope + IBM Plex Mono)
 - [x] 2026 — sereno · reglado · Fraunces — hecho (Cloud Dancer `#f0eee9`, el Pantone del año; monocromo cálido sin acento de color, radio 0 y cero sombras, cajas pegadas por un hilo de 1 px, tipografía cinética con `animation-timeline`, hero sin ilustración, Fraunces Variable + Hanken Grotesk + IBM Plex Mono; enlaza al home 3D en `/`)
 
-**Las nueve páginas existen: ninguna tarjeta dice "próximamente".**
+**Las nueve páginas existen y están en línea: ninguna tarjeta dice "próximamente".**
+→ https://gsalgadotoledo.github.io/portfolio/
 
 ## Después
 
-- [ ] 13. Pulido 1 — cohesión de las nueve páginas y publicación en GitHub Pages. · URL pública de `/portfolio/`; Lighthouse ≥ 90 / ≥ 95 en tres páginas.
+- [x] 13. Pulido 1 — cohesión de las diez páginas y publicación en GitHub Pages. · **en línea en https://gsalgadotoledo.github.io/portfolio/**; Lighthouse 100/100/100/100 en escritorio en el resumen, 2018 y 2026.
 - [ ] 14. Hoja de vida real (la entrega Gustavo). · los nueve JSON con contenido real, o decidido qué años quedan de ejemplo.
 - [ ] 15. Contenido real en los nueve JSON, capturas y enlaces. · ningún `[ejemplo]` en `src/data/years` ni en `dist/portfolio`.
 - [ ] 16. Pulido final: OG image por año, enlaces desde el home y el README de perfil, PR a `main`. · capturas finales de las nueve.
