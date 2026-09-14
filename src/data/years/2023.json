@@ -1,0 +1,306 @@
+{
+  "year": 2023,
+  "label": "Portfolio 2023",
+  "note": "[ejemplo] Datos moqueados con forma de hoja de vida actual; se reemplazan con la real en el paso 15.",
+  "title": "El año en que la IA dejó de ser un experimento",
+  "summary": "En 2023 pasé de Product Lead a AI Product Manager: GPT-4 en marzo lo cambió todo y lo que en 2022 era un prototipo de soporte terminó siendo el producto. Tres asistentes en producción, un RAG sobre la documentación del banco y un equipo que aprendió a evaluar modelos como quien evalúa una feature.",
+  "hero": {
+    "name": "Gustavo Salgado",
+    "role": "AI Product Manager · Full Stack",
+    "location": "Remoto · Ciudad de México",
+    "availability": "Abierto a producto con IA",
+    "ctas": [
+      {
+        "label": "Ver proyectos",
+        "href": "#projects"
+      },
+      {
+        "label": "Contáctame",
+        "href": "#contact"
+      }
+    ]
+  },
+  "about": {
+    "paragraphs": [
+      "Marzo de 2023: sale GPT-4 y el roadmap que habíamos firmado en enero deja de tener sentido. Lo reescribimos en dos semanas y me quedé con un título nuevo, AI Product Manager, y con la pregunta que me ocupó el resto del año: qué de esto es producto y qué es demo.",
+      "La respuesta fue medir. Montamos un set de evaluación con casos reales del soporte, un panel de calidad que el negocio revisa cada semana y la regla de que ningún asistente sale a producción sin su baseline. Suena aburrido, pero es lo que convirtió tres prototipos en tres productos.",
+      "También me tocó volver al código: el RAG sobre la documentación interna lo escribí yo en TypeScript con embeddings y pgvector, porque el equipo de datos estaba en otra cosa y quería entender el problema desde dentro antes de pedirle a alguien que lo mantuviera."
+    ],
+    "stats": [
+      {
+        "value": "3",
+        "label": "asistentes en producción"
+      },
+      {
+        "value": "-38 %",
+        "label": "tiempo de primera respuesta"
+      },
+      {
+        "value": "1.2 M",
+        "label": "consultas atendidas"
+      },
+      {
+        "value": "6",
+        "label": "personas en el equipo"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "group": "Producto con IA",
+      "items": [
+        {
+          "name": "Discovery y roadmap de IA",
+          "level": 90
+        },
+        {
+          "name": "Evaluación de modelos (evals)",
+          "level": 84
+        },
+        {
+          "name": "Diseño de prompts y contexto",
+          "level": 88
+        },
+        {
+          "name": "Métricas y experimentos",
+          "level": 88
+        }
+      ]
+    },
+    {
+      "group": "IA e ingeniería de datos",
+      "items": [
+        {
+          "name": "LLMs (GPT-4, Claude)",
+          "level": 86
+        },
+        {
+          "name": "RAG y embeddings",
+          "level": 82
+        },
+        {
+          "name": "LangChain y orquestación",
+          "level": 74
+        },
+        {
+          "name": "pgvector y Postgres",
+          "level": 78
+        }
+      ]
+    },
+    {
+      "group": "Ingeniería",
+      "items": [
+        {
+          "name": "TypeScript",
+          "level": 90
+        },
+        {
+          "name": "React + Next.js",
+          "level": 88
+        },
+        {
+          "name": "Node.js",
+          "level": 86
+        },
+        {
+          "name": "GCP y Cloud Run",
+          "level": 78
+        }
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "AI Product Manager",
+      "company": "Nube Pagos",
+      "period": "Ene 2023 – Dic 2023",
+      "location": "Remoto",
+      "summary": "Dueño del producto de IA: asistentes, RAG y la práctica de evaluación.",
+      "bullets": [
+        "Tres asistentes en producción (soporte, disputas y documentación interna) con 1.2 M de consultas en el año.",
+        "Tiempo de primera respuesta de soporte -38 % sin bajar la satisfacción.",
+        "Práctica de evals de cero: set de casos reales, baseline por release y panel semanal de calidad.",
+        "Política interna de uso de LLMs (datos, PII y proveedores) aprobada por legal y seguridad."
+      ]
+    },
+    {
+      "title": "Product Lead",
+      "company": "Nube Pagos",
+      "period": "Feb 2022 – Dic 2022",
+      "location": "Remoto",
+      "summary": "Tres squads: onboarding, riesgo y conciliación.",
+      "bullets": [
+        "Primer modelo de riesgo en producción: +11 puntos de aprobación con el fraude estable.",
+        "Equipo de datos de cero a cinco personas; dbt + Vertex AI + monitoreo de drift."
+      ]
+    },
+    {
+      "title": "Engineering Manager",
+      "company": "Ruta Logística",
+      "period": "Ene 2021 – Ene 2022",
+      "location": "Remoto",
+      "summary": "Producto de analítica para clientes; equipo de 8.",
+      "bullets": ["Producto de analítica de cero a 14 clientes."]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Copiloto de soporte",
+      "description": "El experimento de 2022 convertido en producto: redacta, cita la política que aplica y escala solo lo que no sabe. Con GPT-4 dejó de necesitar que un agente reescribiera cada respuesta.",
+      "stack": ["GPT-4", "TypeScript", "Zendesk", "Evals"],
+      "illustration": "chat",
+      "featured": true,
+      "links": [
+        {
+          "label": "Caso de estudio",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "RAG sobre la documentación interna",
+      "description": "Búsqueda semántica sobre políticas, contratos y manuales: embeddings en pgvector, reranking y respuestas con la fuente citada. Escrito a mano en TypeScript para entender el problema antes de delegarlo.",
+      "stack": ["pgvector", "TypeScript", "OpenAI Embeddings", "Postgres"],
+      "illustration": "api",
+      "featured": true,
+      "links": [
+        {
+          "label": "Repo",
+          "href": "https://github.com/gsalgadotoledo",
+          "kind": "github"
+        }
+      ]
+    },
+    {
+      "title": "Panel de evals",
+      "description": "Lo que hizo creíble a la IA dentro de la empresa: cada release corre contra un set de casos reales y el panel muestra exactitud, alucinación y coste por consulta antes de salir.",
+      "stack": ["Python", "BigQuery", "Next.js"],
+      "illustration": "dashboard",
+      "featured": true,
+      "links": [
+        {
+          "label": "Resumen",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Resolución de disputas asistida",
+      "description": "El clasificador de 2022 con un LLM encima: agrupa la disputa, arma el expediente y propone la evidencia. El analista aprueba o corrige, y esa corrección vuelve al set de evaluación.",
+      "stack": ["GPT-4", "FastAPI", "Postgres"],
+      "illustration": "ecommerce",
+      "links": [
+        {
+          "label": "Resumen",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Onboarding conversacional",
+      "description": "El alta de comercios como una conversación: el asistente lee los documentos, pregunta solo lo que falta y deja el expediente listo para riesgo.",
+      "stack": ["Next.js", "GPT-4 Vision", "OCR"],
+      "illustration": "mobile",
+      "links": [
+        {
+          "label": "Demo",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    },
+    {
+      "title": "Taller \"IA para equipos de producto\"",
+      "description": "Cuatro sesiones grabadas para los PM de la empresa: qué es un token, cómo se escribe un eval y por qué una demo bonita no es un producto. Terminó abierto a toda la comunidad.",
+      "stack": ["Notion", "Loom", "Prompting"],
+      "illustration": "video",
+      "links": [
+        {
+          "label": "Notas",
+          "href": "#",
+          "kind": "web"
+        }
+      ]
+    }
+  ],
+  "education": [
+    {
+      "title": "Generative AI with Large Language Models",
+      "institution": "DeepLearning.AI · AWS (ejemplo)",
+      "period": "2023",
+      "detail": "Ciclo de vida de un LLM, fine-tuning, RLHF y despliegue."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Professional Machine Learning Engineer",
+      "issuer": "Google Cloud",
+      "year": "2022"
+    },
+    {
+      "title": "LangChain for LLM Application Development",
+      "issuer": "DeepLearning.AI",
+      "year": "2023"
+    }
+  ],
+  "highlights": [
+    "De Product Lead a AI Product Manager tres meses después de que saliera GPT-4.",
+    "Tres asistentes en producción y 1.2 M de consultas atendidas en el año.",
+    "La práctica de evals se volvió el estándar de la empresa para cualquier feature con IA.",
+    "Taller de IA para PM: 120 personas inscritas, abierto a la comunidad."
+  ],
+  "testimonials": [
+    {
+      "quote": "Gustavo fue el que bajó la IA de la nube del hype al backlog: cada asistente llegó con su métrica y su umbral para apagarlo.",
+      "author": "Laura Méndez",
+      "role": "CEO, Nube Pagos"
+    },
+    {
+      "quote": "Es raro encontrar a alguien que discuta el diseño del retriever por la mañana y el pricing del producto por la tarde.",
+      "author": "Andrés Quintero",
+      "role": "Lead Data Scientist, Nube Pagos"
+    }
+  ],
+  "contact": {
+    "email": "gsalgadotoledo@gmail.com",
+    "blurb": "¿Un producto con IA que tiene que funcionar de verdad, con métricas y no con demos? Escríbeme.",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/gsalgadotoledo",
+        "kind": "github"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://www.linkedin.com/in/gsalgadotoledo",
+        "kind": "linkedin"
+      },
+      {
+        "label": "Descargar CV",
+        "href": "#",
+        "kind": "cv"
+      }
+    ]
+  },
+  "social": [
+    {
+      "label": "GitHub",
+      "href": "https://github.com/gsalgadotoledo",
+      "kind": "github"
+    },
+    {
+      "label": "LinkedIn",
+      "href": "https://www.linkedin.com/in/gsalgadotoledo",
+      "kind": "linkedin"
+    },
+    {
+      "label": "Twitter",
+      "href": "https://twitter.com/gsalgadotoledo",
+      "kind": "twitter"
+    }
+  ]
+}
