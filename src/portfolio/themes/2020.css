@@ -1,0 +1,452 @@
+/* Tema 2020 — neumórfico · azul · mono. Lo que estaba de moda ese año (ROADMAP.md): neumorfismo
+   (soft UI: relieve con doble sombra del color del fondo, botones hundidos), modo oscuro con neón,
+   Classic Blue (Pantone 2020), monoespaciadas fuera del código, terminal y trabajo remoto.
+   El relieve necesita un fondo uniforme: --bg-alt = --bg. Fijo: no mira prefers-color-scheme.
+   Todo bajo .year-2020. */
+@import '@fontsource/ibm-plex-mono/500.css';
+@import '@fontsource/ibm-plex-mono/600.css';
+@import '@fontsource/inter/400.css';
+
+.year-2020 {
+  --font-display: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --bg: #1b2745;
+  --bg-alt: #1b2745;
+  --surface: #1b2745;
+  --text: #e8edf8;
+  --text-muted: #a9b6d3; /* 7.6:1 sobre #1b2745 */
+  --line: rgb(255 255 255 / 0.08);
+  --primary: #5eead4; /* teal neón claro: 10:1 sobre #1b2745 */
+  --primary-contrast: #0b1b1a;
+  --accent: #5eead4;
+  --neon: #2dd4bf;
+  --blue: #0f4c81; /* Classic Blue */
+  --gradient: linear-gradient(135deg, #2dd4bf, #60a5fa);
+  /* relieve: luz arriba-izquierda, sombra abajo-derecha, del color del fondo */
+  --raise: -8px -8px 18px rgb(58 80 132 / 0.55), 10px 10px 22px rgb(9 14 30 / 0.7);
+  --raise-sm: -4px -4px 10px rgb(58 80 132 / 0.5), 5px 5px 12px rgb(9 14 30 / 0.65);
+  --sunk: inset -4px -4px 10px rgb(58 80 132 / 0.45), inset 5px 5px 12px rgb(9 14 30 / 0.7);
+  --shadow-sm: var(--raise-sm);
+  --shadow-md: var(--raise);
+  --shadow-lg: -10px -10px 24px rgb(58 80 132 / 0.6), 14px 14px 30px rgb(9 14 30 / 0.75);
+  --radius-md: 18px;
+  --radius-lg: 26px;
+  /* la terminal del hero */
+  --term-bg: #121b33;
+  --term-bar: #172242;
+  --term-text: #d5deef;
+  --term-muted: #7f8db0;
+  --term-accent: #5eead4;
+  --term-shadow: var(--raise);
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: clip;
+}
+
+.year-2020 h1,
+.year-2020 h2,
+.year-2020 h3,
+.year-2020 .stat__value,
+.year-2020 .nav__brand {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.year-2020 a {
+  color: var(--primary);
+}
+.year-2020 :focus-visible {
+  outline-color: var(--neon);
+}
+
+/* nav: misma superficie, separada por una línea hundida */
+.year-2020 .nav {
+  background: rgb(27 39 69 / 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(9 14 30 / 0.6);
+  box-shadow: 0 1px 0 rgb(58 80 132 / 0.35);
+}
+.year-2020 .nav__brand {
+  color: var(--primary);
+  font-size: var(--fs-lg);
+}
+.year-2020 .nav__brand::before {
+  content: '~/';
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.year-2020 .nav__links a:not(.btn) {
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+.year-2020 .nav__links a:not(.btn):hover {
+  color: #fff;
+  text-decoration: none;
+}
+.year-2020 .nav__burger span {
+  background: var(--text);
+}
+
+/* botones: en relieve; al pulsar se hunden. El primario va hundido con texto neón */
+.year-2020 .btn {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  border: 0;
+  background: var(--bg);
+  color: var(--text);
+  box-shadow: var(--raise-sm);
+  transition:
+    box-shadow var(--dur) var(--ease),
+    color var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+.year-2020 .btn:hover {
+  transform: none;
+  color: #fff;
+  box-shadow: var(--raise);
+}
+.year-2020 .btn:active {
+  box-shadow: var(--sunk);
+}
+.year-2020 .btn--primary {
+  background: var(--bg);
+  color: var(--primary);
+  box-shadow: var(--sunk);
+  text-shadow: 0 0 12px rgb(45 212 191 / 0.6);
+}
+.year-2020 .btn--primary:hover {
+  color: #fff;
+  box-shadow: var(--sunk);
+  text-shadow: 0 0 16px rgb(45 212 191 / 0.9);
+}
+
+/* hero: fondo uniforme, un resplandor neón tenue detrás de la terminal */
+.year-2020 .hero {
+  position: relative;
+  background: var(--bg);
+  color: var(--text);
+  padding-block: var(--sp-24) var(--sp-16);
+  isolation: isolate;
+  overflow: hidden;
+}
+.year-2020 .hero::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 36rem;
+  height: 36rem;
+  right: -8rem;
+  top: -6rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgb(45 212 191 / 0.18), transparent 60%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+.year-2020 .hero .year-label {
+  color: var(--primary);
+  border: 0;
+  box-shadow: var(--sunk);
+  padding: var(--sp-2) var(--sp-4);
+}
+.year-2020 .hero .year-label::before {
+  content: '> ';
+}
+.year-2020 .hero__name,
+.year-2020 .hero__meta,
+.year-2020 .hero__role {
+  color: var(--text-muted);
+}
+.year-2020 .hero__name {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+.year-2020 .hero__title {
+  color: #fff;
+  font-size: clamp(2.2rem, 5.6vw, 4rem);
+  line-height: 1.08;
+}
+.year-2020 .hero__title::after {
+  /* cursor de bloque al final del titular */
+  content: '';
+  display: inline-block;
+  width: 0.5em;
+  height: 0.85em;
+  margin-left: 0.15em;
+  vertical-align: -0.05em;
+  background: var(--neon);
+  box-shadow: 0 0 14px rgb(45 212 191 / 0.8);
+  animation: cursor-2020 1s steps(2, start) infinite;
+}
+.year-2020 .hero__summary {
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+}
+.year-2020 .hero__art {
+  position: relative;
+  min-height: 0;
+  display: grid;
+  justify-items: center;
+  animation: hover-2020 8s ease-in-out infinite;
+}
+
+/* ilustraciones compartidas, recoloreadas para el azul */
+.year-2020 .about__art .ill,
+.year-2020 .contact__art .ill,
+.year-2020 .card__art .ill {
+  --ill-accent: #5eead4;
+  --ill-accent-2: #60a5fa;
+  --ill-accent-light: #b6e9e2;
+  --ill-light: rgb(255 255 255 / 0.05);
+  --ill-dark: #0f4c81;
+  --ill-muted: #3b5486;
+  --ill-skin: #f2b89b;
+}
+.year-2020 .ill__white {
+  fill: #dfe7f5;
+}
+.year-2020 .ill__shadow {
+  fill: rgb(9 14 30 / 0.5);
+}
+.year-2020 .about__art,
+.year-2020 .contact__art {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--sunk);
+  padding: var(--sp-6);
+}
+.year-2020 .card__art {
+  background: rgb(9 14 30 / 0.25);
+  box-shadow: inset 0 -1px 0 rgb(58 80 132 / 0.4);
+}
+
+/* secciones: mismo fondo; se separan con una línea hundida; kicker tipo comentario de código */
+.year-2020 .section {
+  padding-block: var(--sp-16);
+  position: relative;
+}
+.year-2020 .section--alt {
+  background: var(--bg);
+}
+.year-2020 .section::before {
+  content: '';
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  top: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: rgb(9 14 30 / 0.7);
+  box-shadow: 0 1px 0 rgb(58 80 132 / 0.45);
+}
+.year-2020 .section__kicker {
+  color: var(--primary);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.year-2020 .section__kicker::before {
+  content: '# ';
+  color: var(--text-muted);
+}
+.year-2020 .section__title {
+  color: #fff;
+}
+
+/* tarjetas y cifras en relieve; el hover levanta el relieve, no la tarjeta */
+.year-2020 .card,
+.year-2020 .stat,
+.year-2020 .quote {
+  background: var(--bg);
+  border: 0;
+  border-radius: var(--radius-md);
+  box-shadow: var(--raise);
+  transition: box-shadow var(--dur) var(--ease);
+}
+.year-2020 .card:hover {
+  transform: none;
+  box-shadow: var(--shadow-lg);
+}
+.year-2020 .stat {
+  padding: var(--sp-6) var(--sp-4);
+}
+.year-2020 .card__title,
+.year-2020 .quote__author,
+.year-2020 .skills__title,
+.year-2020 .education__title,
+.year-2020 .education__sub,
+.year-2020 .timeline__title {
+  color: #fff;
+}
+.year-2020 .card__text,
+.year-2020 .stat__label,
+.year-2020 .quote__author span,
+.year-2020 .timeline__text,
+.year-2020 .timeline__bullets,
+.year-2020 .timeline__company,
+.year-2020 .education__where,
+.year-2020 .education__detail,
+.year-2020 .skill__level,
+.year-2020 .contact__blurb {
+  color: var(--text-muted);
+}
+.year-2020 .card__badge {
+  background: var(--bg);
+  color: var(--primary);
+  box-shadow: var(--raise-sm);
+  font-family: var(--font-mono);
+}
+.year-2020 .tag {
+  background: var(--bg);
+  color: var(--text-muted);
+  box-shadow: var(--sunk);
+  border: 0;
+  padding: var(--sp-1) var(--sp-3);
+}
+.year-2020 .chip {
+  background: var(--bg);
+  border: 0;
+  box-shadow: var(--raise-sm);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.year-2020 .chip:hover {
+  color: #fff;
+}
+.year-2020 .chip.is-active {
+  background: var(--bg);
+  color: var(--primary);
+  box-shadow: var(--sunk);
+  text-shadow: 0 0 10px rgb(45 212 191 / 0.6);
+}
+
+/* cifras neón; barras hundidas con relleno que brilla */
+.year-2020 .stat__value {
+  color: var(--primary);
+  text-shadow: 0 0 18px rgb(45 212 191 / 0.55);
+}
+.year-2020 .skill__bar {
+  height: 12px;
+  background: var(--bg);
+  box-shadow: var(--sunk);
+  padding: 3px;
+}
+.year-2020 .skill__fill {
+  background: var(--gradient);
+  box-shadow: 0 0 12px rgb(45 212 191 / 0.7);
+}
+
+/* timeline: línea hundida, puntos en relieve con centro neón */
+.year-2020 .timeline {
+  border-left: 0;
+  box-shadow:
+    inset 2px 0 0 rgb(9 14 30 / 0.7),
+    inset 3px 0 0 rgb(58 80 132 / 0.45);
+}
+.year-2020 .timeline__item::before {
+  width: 16px;
+  height: 16px;
+  left: calc(-1 * var(--sp-6) - 9px);
+  background: var(--bg);
+  box-shadow:
+    var(--raise-sm),
+    inset 0 0 0 4px var(--bg),
+    inset 0 0 0 8px var(--neon);
+}
+.year-2020 .timeline__period,
+.year-2020 .year-label {
+  font-family: var(--font-mono);
+  color: var(--primary);
+}
+.year-2020 .highlights li::marker {
+  color: var(--neon);
+}
+.year-2020 .quote {
+  padding: var(--sp-12) var(--sp-6) var(--sp-6);
+}
+.year-2020 .quote::before {
+  color: var(--neon);
+  opacity: 0.5;
+}
+
+/* contacto: panel hundido con los botones en relieve */
+.year-2020 #contact .container {
+  border-radius: var(--radius-lg);
+  box-shadow: var(--sunk);
+  padding: var(--sp-12) var(--gutter);
+}
+
+/* navegación entre años, footer, botón subir */
+.year-2020 .year-nav {
+  border-top: 0;
+  box-shadow:
+    inset 0 2px 0 rgb(9 14 30 / 0.7),
+    inset 0 3px 0 rgb(58 80 132 / 0.45);
+}
+.year-2020 .year-nav__link {
+  border: 0;
+  box-shadow: var(--raise-sm);
+  color: var(--text);
+  font-weight: 600;
+}
+.year-2020 .year-nav__link:hover {
+  text-decoration: none;
+  color: var(--primary);
+}
+.year-2020 .year-nav__link--all {
+  color: var(--text-muted);
+}
+.year-2020 .year-nav__link--off {
+  color: #6f7ea3;
+  box-shadow: none;
+  border: 1px dashed rgb(255 255 255 / 0.15);
+}
+.year-2020 .footer {
+  background: #121b33;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+.year-2020 .to-top {
+  background: var(--bg);
+  color: var(--primary);
+  box-shadow: var(--raise);
+}
+.year-2020 .skip {
+  background: var(--neon);
+  color: #0b1b1a;
+}
+
+@keyframes cursor-2020 {
+  to {
+    visibility: hidden;
+  }
+}
+@keyframes hover-2020 {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -12px;
+  }
+}
+
+/* móvil */
+@media (max-width: 48rem) {
+  .year-2020 .hero {
+    padding-block: var(--sp-12);
+  }
+  .year-2020 .nav__links {
+    padding-bottom: var(--sp-4);
+  }
+  .year-2020 #contact .container {
+    padding: var(--sp-8) var(--sp-6);
+  }
+  .year-2020 .about__art,
+  .year-2020 .contact__art {
+    padding: var(--sp-4);
+  }
+}

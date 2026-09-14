@@ -32,20 +32,23 @@ export function Interactions() {
   return null
 }
 
-/** Cuenta de 0 al número que hay en el texto ("6+" → 0…6+), en ~1.2 s. */
+/** Cuenta de 0 al número que hay en el texto ("6+" → 0…6+, "99.95 %" → 0.00…99.95 %), en
+ *  ~1.2 s. Conserva los decimales y lo que rodea al número. */
 function countUp(el: HTMLElement) {
   const text = el.dataset.count ?? el.textContent ?? ''
-  const m = text.match(/^(\D*)(\d[\d\s.,]*)(.*)$/)
+  const m = text.match(/^(\D*)(\d+(?:[.,]\d+)?)(.*)$/)
   if (!m) return
   const [, pre, num, post] = m
-  const target = Number(num.replace(/[^\d]/g, ''))
+  const sep = num.includes(',') ? ',' : '.'
+  const decimals = num.split(/[.,]/)[1]?.length ?? 0
+  const target = Number(num.replace(',', '.'))
   if (!Number.isFinite(target)) return
   const start = performance.now()
   const dur = 1200
   const tick = (now: number) => {
     const t = Math.min(1, (now - start) / dur)
     const eased = 1 - Math.pow(1 - t, 3)
-    el.textContent = `${pre}${Math.round(target * eased)}${post}`
+    el.textContent = `${pre}${(target * eased).toFixed(decimals).replace('.', sep)}${post}`
     if (t < 1) requestAnimationFrame(tick)
     else el.textContent = text
   }

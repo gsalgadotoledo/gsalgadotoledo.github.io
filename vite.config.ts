@@ -14,6 +14,7 @@ export default defineConfig({
         portfolio: resolve(import.meta.dirname, 'portfolio/index.html'),
         y2018: resolve(import.meta.dirname, 'portfolio/2018/index.html'),
         y2019: resolve(import.meta.dirname, 'portfolio/2019/index.html'),
+        y2020: resolve(import.meta.dirname, 'portfolio/2020/index.html'),
       },
     },
   },
