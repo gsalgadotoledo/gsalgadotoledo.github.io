@@ -28,7 +28,7 @@ con la etiqueta "Portfolio <año>" y hay captura.
 - [x] 2018 — gradientes · flat · Poppins — **publicado** (en `dist/`; Pages llega en el paso 13)
 - [x] 2019 — oscuro · vidrio · Inter — hecho (fondo azul-noche, tarjetas de vidrio, Living Coral, DM Sans + Inter)
 - [x] 2020 — neumórfico · azul · mono — hecho (Classic Blue, relieve neumórfico, neón teal, IBM Plex Mono + Inter, terminal en el hero)
-- [ ] 2021 — por investigar (candidato: pastel y tarjetas grandes)
+- [x] 2021 — pastel · redondo · Manrope — hecho (crema, blobs pastel, radios enormes, stats bento, Sora + Manrope)
 - [ ] 2022 — por investigar (candidato: brutalista)
 - [ ] 2023 — por investigar (candidato: gradientes y vidrio)
 - [ ] 2024 — por investigar (candidato: minimal blanco, tipografía enorme)

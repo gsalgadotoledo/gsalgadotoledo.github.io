@@ -1,0 +1,454 @@
+/* Tema 2021 — pastel · redondo · Manrope. Lo que estaba de moda ese año (ROADMAP.md): colores
+   cómodos y apagados sobre crema, radios enormes y sombras difusas de color, blobs orgánicos,
+   módulos tipo bento con una cifra cada uno, tipografía amable (Sora + Manrope). El primer
+   año claro después de dos oscuros. Todo bajo .year-2021. */
+@import '@fontsource/sora/700.css';
+@import '@fontsource/manrope/400.css';
+@import '@fontsource/manrope/600.css';
+
+.year-2021 {
+  --font-display: 'Sora', 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --bg: #fbf7f2;
+  --bg-alt: #f3ecfa;
+  --surface: #ffffff;
+  --text: #2b2438;
+  --text-muted: #625a73; /* 6.6:1 sobre crema */
+  --line: #ece5f3;
+  --primary: #6d4fc2; /* 6.2:1 sobre crema */
+  --primary-contrast: #ffffff;
+  --accent: #2f8f6f; /* salvia oscura: 4.6:1 sobre crema */
+  --lavender: #e9defa;
+  --peach: #ffe1d1;
+  --sage: #d9f0e3;
+  --sky: #dbeafe;
+  --butter: #fff3c4;
+  --gradient: linear-gradient(135deg, #6d4fc2, #2f8f6f);
+  --shadow-sm: 0 2px 8px rgb(109 79 194 / 0.06);
+  --shadow-md: 0 18px 40px rgb(109 79 194 / 0.12);
+  --shadow-lg: 0 28px 60px rgb(109 79 194 / 0.18);
+  --radius-md: 28px;
+  --radius-lg: 36px;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: clip;
+}
+
+.year-2021 h1,
+.year-2021 h2,
+.year-2021 h3,
+.year-2021 .stat__value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+/* nav: crema translúcida, marca y enlaces en píldoras */
+.year-2021 .nav {
+  background: rgb(251 247 242 / 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 0;
+}
+.year-2021 .nav__brand {
+  font-family: var(--font-display);
+  color: var(--primary);
+  font-size: var(--fs-xl);
+}
+.year-2021 .nav__links a:not(.btn) {
+  color: var(--text-muted);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-pill);
+  transition:
+    background var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+.year-2021 .nav__links a:not(.btn):hover {
+  background: var(--lavender);
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* botones: píldoras gordas; el primario lleva sombra de su color */
+.year-2021 .btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: var(--sp-4) var(--sp-8);
+  border: 0;
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow-sm);
+}
+.year-2021 .btn:hover {
+  box-shadow: var(--shadow-md);
+}
+.year-2021 .btn--primary {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 12px 28px rgb(109 79 194 / 0.35);
+}
+.year-2021 .btn--primary:hover {
+  box-shadow: 0 18px 36px rgb(109 79 194 / 0.45);
+}
+.year-2021 .btn--sm {
+  padding: var(--sp-2) var(--sp-4);
+}
+
+/* hero: crema con blobs pastel flotando detrás de la ilustración */
+.year-2021 .hero {
+  position: relative;
+  background: var(--bg);
+  padding-block: var(--sp-24) var(--sp-16);
+  isolation: isolate;
+  overflow: hidden;
+}
+.year-2021 .hero .year-label {
+  color: var(--primary);
+  border: 0;
+  background: var(--lavender);
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: var(--sp-2) var(--sp-4);
+}
+.year-2021 .hero__name {
+  color: var(--text);
+}
+.year-2021 .hero__role,
+.year-2021 .hero__meta {
+  color: var(--text-muted);
+}
+.year-2021 .hero__title {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  line-height: 1.02;
+}
+.year-2021 .hero__title::first-letter {
+  color: var(--primary);
+}
+.year-2021 .hero__summary {
+  color: var(--text-muted);
+  font-size: var(--fs-lg);
+}
+.year-2021 .hero__art {
+  position: relative;
+  min-height: 24rem;
+  display: grid;
+  place-items: center;
+}
+.year-2021 .hero__art::before,
+.year-2021 .hero__art::after,
+.year-2021 .hero__inner::before,
+.year-2021 .hero__inner::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  animation: blob-2021 14s ease-in-out infinite;
+}
+.year-2021 .hero__inner {
+  position: relative;
+}
+.year-2021 .hero__art::before {
+  /* lavanda grande */
+  width: 24rem;
+  height: 22rem;
+  right: -2rem;
+  top: -1rem;
+  background: var(--lavender);
+  border-radius: 62% 38% 55% 45% / 48% 60% 40% 52%;
+}
+.year-2021 .hero__art::after {
+  /* durazno */
+  width: 14rem;
+  height: 13rem;
+  left: -1rem;
+  bottom: 0;
+  background: var(--peach);
+  border-radius: 45% 55% 40% 60% / 60% 42% 58% 40%;
+  animation-delay: -5s;
+  animation-duration: 17s;
+}
+.year-2021 .hero__inner::before {
+  /* salvia, junto al texto */
+  width: 9rem;
+  height: 9rem;
+  left: -4rem;
+  top: -3rem;
+  background: var(--sage);
+  border-radius: 55% 45% 60% 40% / 45% 55% 45% 55%;
+  animation-delay: -9s;
+}
+.year-2021 .hero__inner::after {
+  /* mantequilla, abajo */
+  width: 6rem;
+  height: 6rem;
+  left: 46%;
+  bottom: -2rem;
+  background: var(--butter);
+  border-radius: 50% 50% 40% 60% / 55% 45% 55% 45%;
+  animation-delay: -3s;
+  animation-duration: 11s;
+}
+
+/* ilustraciones compartidas, en pastel */
+.year-2021 .hero__art .ill,
+.year-2021 .about__art .ill,
+.year-2021 .contact__art .ill,
+.year-2021 .card__art .ill {
+  --ill-accent: #8b6fd6;
+  --ill-accent-2: #5fb59a;
+  --ill-accent-light: #ece5fa;
+  --ill-light: #fff;
+  --ill-dark: #3d3355;
+  --ill-muted: #e6ddf2;
+  --ill-skin: #f4c3a8;
+}
+.year-2021 .hero__art .ill {
+  position: relative;
+  z-index: 1;
+  max-width: 30rem;
+  filter: drop-shadow(0 20px 30px rgb(109 79 194 / 0.15));
+}
+.year-2021 .ill__shadow {
+  fill: rgb(109 79 194 / 0.1);
+}
+.year-2021 .card__art {
+  background: var(--sky);
+}
+.year-2021 .card:nth-child(3n + 2) .card__art {
+  background: var(--peach);
+}
+.year-2021 .card:nth-child(3n) .card__art {
+  background: var(--sage);
+}
+
+/* secciones: alternan crema y lavanda pálida, sin cortes; kicker en píldora */
+.year-2021 .section {
+  padding-block: var(--sp-16);
+}
+.year-2021 .section--alt {
+  background: var(--bg-alt);
+  border-radius: var(--radius-lg);
+  margin-inline: var(--gutter);
+}
+.year-2021 .section__kicker {
+  display: inline-block;
+  background: var(--sage);
+  color: #1f6b52;
+  font-family: var(--font-body);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-pill);
+  padding: var(--sp-1) var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+.year-2021 .section--alt .section__kicker {
+  background: var(--peach);
+  color: #8a3f1f;
+}
+
+/* tarjetas: blancas, radio enorme, sombra de color; hover que levanta */
+.year-2021 .card,
+.year-2021 .quote {
+  background: var(--surface);
+  border: 0;
+  border-radius: var(--radius-md);
+  padding: var(--sp-8);
+  box-shadow: var(--shadow-sm);
+}
+.year-2021 .card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+.year-2021 .card__art {
+  margin: calc(-1 * var(--sp-8)) calc(-1 * var(--sp-8)) var(--sp-6);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+.year-2021 .card__badge {
+  background: var(--butter);
+  color: #6b4d00;
+}
+.year-2021 .tag {
+  background: var(--lavender);
+  color: var(--primary);
+  font-family: var(--font-body);
+  font-weight: 600;
+  padding: var(--sp-1) var(--sp-3);
+}
+.year-2021 .chip {
+  background: var(--surface);
+  border: 0;
+  box-shadow: var(--shadow-sm);
+  color: var(--text-muted);
+}
+.year-2021 .chip.is-active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* sobre mí: las cifras como módulos bento, cada uno de un pastel */
+.year-2021 .stats {
+  gap: var(--sp-4);
+}
+.year-2021 .stat {
+  border-radius: var(--radius-md);
+  padding: var(--sp-6);
+  background: var(--lavender);
+  box-shadow: none;
+  transition: transform var(--dur) var(--ease);
+}
+.year-2021 .stat:nth-child(2) {
+  background: var(--peach);
+}
+.year-2021 .stat:nth-child(3) {
+  background: var(--sage);
+}
+.year-2021 .stat:nth-child(4) {
+  background: var(--sky);
+}
+.year-2021 .stat:hover {
+  transform: rotate(-2deg) scale(1.03);
+}
+.year-2021 .stat__value {
+  color: var(--text);
+}
+.year-2021 .stat__label {
+  color: var(--text-muted);
+}
+.year-2021 .about__art,
+.year-2021 .contact__art {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-6);
+  box-shadow: var(--shadow-sm);
+}
+
+/* skills: pistas pastel, relleno violeta */
+.year-2021 .skill__bar {
+  height: 12px;
+  background: var(--lavender);
+}
+.year-2021 .skill__fill {
+  background: var(--primary);
+}
+.year-2021 .section--alt .skill__bar {
+  background: #fff;
+}
+
+/* timeline: línea pastel, puntos grandes de color */
+.year-2021 .timeline {
+  border-left: 4px solid var(--lavender);
+}
+.year-2021 .timeline__item::before {
+  width: 18px;
+  height: 18px;
+  left: calc(-1 * var(--sp-6) - 11px);
+  background: var(--primary);
+  border: 4px solid var(--bg);
+  box-shadow: 0 0 0 2px var(--lavender);
+}
+.year-2021 .timeline__period {
+  color: var(--accent);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+.year-2021 .highlights li::marker {
+  color: var(--primary);
+}
+.year-2021 .quote::before {
+  color: var(--primary);
+  opacity: 0.2;
+}
+.year-2021 .year-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+/* contacto: bloque lavanda grande con los botones encima */
+.year-2021 #contact {
+  background: var(--lavender);
+}
+.year-2021 #contact .section__kicker {
+  background: #fff;
+  color: var(--primary);
+}
+.year-2021 #contact .contact__art {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* navegación entre años, footer, botón subir */
+.year-2021 .year-nav {
+  border-top: 0;
+}
+.year-2021 .year-nav__link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border: 0;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--primary);
+  padding: var(--sp-3) var(--sp-6);
+}
+.year-2021 .year-nav__link:hover {
+  text-decoration: none;
+  box-shadow: var(--shadow-md);
+}
+.year-2021 .year-nav__link--all {
+  color: var(--text-muted);
+}
+.year-2021 .year-nav__link--off {
+  background: transparent;
+  box-shadow: none;
+  border: 2px dashed var(--line);
+  color: #8a8399;
+}
+.year-2021 .footer {
+  background: var(--text);
+  color: #e9e2f3;
+}
+.year-2021 .to-top {
+  background: var(--primary);
+  box-shadow: 0 12px 28px rgb(109 79 194 / 0.35);
+}
+
+@keyframes blob-2021 {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(1rem, -1.2rem) rotate(6deg);
+  }
+  66% {
+    transform: translate(-0.8rem, 0.8rem) rotate(-4deg);
+  }
+}
+
+/* móvil */
+@media (max-width: 48rem) {
+  .year-2021 .hero {
+    padding-block: var(--sp-12);
+  }
+  .year-2021 .hero__art {
+    min-height: 0;
+  }
+  .year-2021 .hero__inner::before {
+    left: -3rem;
+    top: -2rem;
+  }
+  .year-2021 .section--alt {
+    margin-inline: var(--sp-2);
+    border-radius: var(--radius-md);
+  }
+  .year-2021 .nav__links {
+    padding-bottom: var(--sp-4);
+  }
+  .year-2021 .card,
+  .year-2021 .quote {
+    padding: var(--sp-6);
+  }
+  .year-2021 .card__art {
+    margin: calc(-1 * var(--sp-6)) calc(-1 * var(--sp-6)) var(--sp-4);
+  }
+}
