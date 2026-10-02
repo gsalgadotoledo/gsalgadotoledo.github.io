@@ -1,22 +1,164 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gustavo Salgado</title>
+    <title>Gustavo Salgado · AI Engineer</title>
     <meta
       name="description"
-      content="Gustavo Salgado — AI Product Manager | Full Stack Engineer."
+      content="Gustavo Salgado — AI Engineer. Agents in the cloud and on the desktop, tools on the server and on the client, full stack on AWS."
     />
+    <link rel="canonical" href="https://gsalgadotoledo.github.io/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Gustavo Salgado" />
+    <meta property="og:title" content="Gustavo Salgado · AI Engineer" />
+    <meta
+      property="og:description"
+      content="Agents in the cloud and on the desktop, tools on the server and on the client, full stack on AWS."
+    />
+    <meta property="og:url" content="https://gsalgadotoledo.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="theme-color" content="#111827" />
     <link rel="stylesheet" href="/src/design/tokens.css" />
+    <style>
+      .home {
+        padding-block: var(--sp-16) var(--sp-24);
+      }
+      .home h1 {
+        font-size: clamp(var(--fs-2xl), 6vw, var(--fs-4xl));
+        letter-spacing: -0.02em;
+        margin-bottom: var(--sp-2);
+      }
+      .home .role {
+        font-size: var(--fs-lg);
+        color: var(--text-muted);
+        margin-bottom: var(--sp-8);
+      }
+      .home .lead {
+        font-size: var(--fs-lg);
+        max-width: 42rem;
+      }
+      .home h2 {
+        font-size: var(--fs-xl);
+        margin-top: var(--sp-16);
+      }
+      .grid {
+        display: grid;
+        gap: var(--sp-4);
+        grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .card {
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: var(--sp-6);
+        background: var(--surface);
+      }
+      .card h3 {
+        font-size: var(--fs-md);
+        margin-bottom: var(--sp-2);
+      }
+      .card p {
+        color: var(--text-muted);
+        font-size: var(--fs-sm);
+        margin: 0;
+      }
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--sp-2);
+        padding: 0;
+        margin: 0;
+        list-style: none;
+      }
+      .tags li {
+        font-family: var(--font-mono);
+        font-size: var(--fs-xs);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-pill);
+        padding: var(--sp-1) var(--sp-3);
+        background: var(--bg-alt);
+      }
+      .links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--sp-6);
+        margin-top: var(--sp-12);
+      }
+    </style>
   </head>
   <body>
-    <!-- El home lo construye T-2 · Mr. Portfolio. Mientras tanto, un enlace al portafolio. -->
-    <main class="container" style="padding-block: var(--sp-24)">
+    <main class="container home">
       <h1>Gustavo Salgado</h1>
-      <p>AI Product Manager · Full Stack Engineer.</p>
-      <p><a href="/portfolio/">Ver el portafolio por años →</a></p>
+      <p class="role">AI Engineer · Agents in the cloud and on the desktop · Full Stack</p>
+      <p class="lead">
+        I build AI agents that do real work: they run on a server or on the user's own computer,
+        call tools on both sides, and stay observable and under control. 13+ years shipping
+        software, mostly JavaScript/TypeScript, also Python and Go, on AWS with infrastructure as
+        code.
+      </p>
+
+      <h2>What I work on</h2>
+      <ul class="grid">
+        <li class="card">
+          <h3>Agent runtimes</h3>
+          <p>
+            The same agent design in TypeScript and Python behind one contract: turn state machine,
+            idempotent tool calls, questions back to the human, replayable event streams.
+          </p>
+        </li>
+        <li class="card">
+          <h3>Multi-provider</h3>
+          <p>
+            Anthropic, OpenAI and others behind one Models port. Swap the model, keep the agent.
+          </p>
+        </li>
+        <li class="card">
+          <h3>Cloud and local</h3>
+          <p>
+            Node server, Lambda, or an Electron app on the user's machine. Tools run on the server
+            and on the client: files, apps, shell.
+          </p>
+        </li>
+        <li class="card">
+          <h3>Infrastructure and product</h3>
+          <p>
+            AWS (ECS, EKS, Lambda), Terraform, CI/CD. Also a Product Manager: I write the
+            definitions, not only the code.
+          </p>
+        </li>
+      </ul>
+
+      <h2>Stack</h2>
+      <ul class="tags">
+        <li>TypeScript</li>
+        <li>Node.js</li>
+        <li>React</li>
+        <li>Electron</li>
+        <li>Python</li>
+        <li>Go</li>
+        <li>Anthropic</li>
+        <li>OpenAI</li>
+        <li>LangGraph</li>
+        <li>MCP</li>
+        <li>AWS</li>
+        <li>ECS</li>
+        <li>EKS</li>
+        <li>Lambda</li>
+        <li>Terraform</li>
+        <li>GitHub Actions</li>
+        <li>PostgreSQL</li>
+      </ul>
+
+      <p class="links">
+        <a href="/portfolio/">Portfolio, one page per year →</a>
+        <a href="https://github.com/gsalgadotoledo">GitHub</a>
+        <a href="https://www.linkedin.com/in/gustavo-salgado-javascript-developer/">LinkedIn</a>
+        <a href="mailto:gsalgadotoledo@gmail.com">gsalgadotoledo@gmail.com</a>
+      </p>
     </main>
   </body>
 </html>
