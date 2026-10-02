@@ -1,0 +1,758 @@
+/* /resume/ — dark, monospaced, one accent. The page is a story read top to bottom:
+   a prompt that types, a trace that fills line by line, a diagram that draws itself,
+   jobs that stack as cards, a manifest with bars. Only the accent is colored. */
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
+.resume {
+  --bg: #0b0d10;
+  --bg-alt: #0f1216;
+  --surface: #11151a;
+  --text: #e7e9ec;
+  --text-muted: #8b929c;
+  --line: #1e242b;
+  --accent: #7ee2a8;
+  --accent-dim: rgb(126 226 168 / 0.14);
+  --font-body: 'Inter', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --container: 64rem;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: clip;
+}
+.resume a {
+  color: inherit;
+}
+.resume a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+.resume ::selection {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+/* ---------- chrome ---------- */
+.skip {
+  position: absolute;
+  left: var(--sp-4);
+  top: -3rem;
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--accent);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  z-index: 10;
+}
+.skip:focus {
+  top: var(--sp-4);
+}
+.top {
+  position: fixed;
+  inset: 0 0 auto 0;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--gutter);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(var(--bg) 40%, transparent);
+}
+.top a {
+  pointer-events: auto;
+}
+.top__home {
+  color: var(--text);
+  font-weight: 500;
+}
+.top__path {
+  flex: 1;
+}
+.rail {
+  position: fixed;
+  right: var(--gutter);
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  gap: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  z-index: 5;
+}
+.rail a {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  color: var(--text-muted);
+  opacity: 0.55;
+  transition:
+    opacity 300ms var(--ease),
+    color 300ms var(--ease);
+}
+.rail__l {
+  opacity: 0;
+  translate: 4px 0;
+  transition: inherit;
+}
+.rail a.on,
+.rail a:hover {
+  color: var(--accent);
+  opacity: 1;
+}
+.rail a.on .rail__l,
+.rail a:hover .rail__l {
+  opacity: 1;
+  translate: 0 0;
+}
+@media (max-width: 56rem) {
+  .rail {
+    display: none;
+  }
+}
+
+.resume section {
+  width: min(100% - 2 * var(--gutter), var(--container));
+  margin-inline: auto;
+  padding-block: clamp(5rem, 14vh, 9rem);
+  border-top: 1px solid var(--line);
+}
+.resume section.hero {
+  border-top: 0;
+}
+
+/* ---------- type ---------- */
+.prompt,
+.meta,
+.stackline,
+.note,
+.head__n,
+.trace,
+.manifest,
+.card__dates,
+.also__row dt,
+.point dt,
+.node__t,
+.stat dt,
+.contact__links,
+.foot {
+  font-family: var(--font-mono);
+}
+.prompt {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.prompt__ps {
+  color: var(--accent);
+}
+.head {
+  margin-bottom: var(--sp-12);
+}
+.head__n {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-4);
+}
+.head__slash {
+  color: var(--accent);
+}
+.head__title {
+  font-size: clamp(var(--fs-xl), 3.6vw, var(--fs-3xl));
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  max-width: 26ch;
+  text-wrap: balance;
+}
+.lead {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+  max-width: 60ch;
+  margin-bottom: var(--sp-12);
+}
+.stackline {
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+.note {
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+  margin-top: var(--sp-8);
+}
+.note::before {
+  content: '// ';
+  color: var(--accent);
+}
+
+/* ---------- hero ---------- */
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  align-content: center;
+  position: relative;
+}
+.hero__out {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  min-height: 1.6em;
+  margin-bottom: var(--sp-8);
+}
+.hero__out.typing::after {
+  content: '▍';
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.hero__title {
+  font-size: clamp(2.4rem, 8vw, 6.5rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 0.98;
+  max-width: 12ch;
+  margin-bottom: var(--sp-8);
+}
+.hero__sub {
+  font-size: var(--fs-lg);
+  color: var(--text-muted);
+  max-width: 48ch;
+  text-wrap: pretty;
+}
+.hero__meta {
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+.hero__scroll {
+  position: absolute;
+  left: 0;
+  bottom: var(--sp-8);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+.hero__line {
+  display: block;
+  width: 3rem;
+  height: 1px;
+  background: var(--line);
+  overflow: hidden;
+  position: relative;
+}
+.hero__line::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  animation: sweep 1.8s var(--ease) infinite;
+}
+@keyframes sweep {
+  from {
+    translate: -100% 0;
+  }
+  to {
+    translate: 100% 0;
+  }
+}
+
+/* ---------- 01 now ---------- */
+.now__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: var(--sp-12);
+  align-items: start;
+}
+.now__side {
+  position: sticky;
+  top: 6rem;
+}
+.meta {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin-bottom: var(--sp-6);
+}
+.meta strong {
+  color: var(--text);
+  font-weight: 500;
+}
+.stats {
+  display: grid;
+  gap: var(--sp-4);
+  margin: var(--sp-8) 0 0;
+}
+.stat {
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+}
+.stat dt {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+.stat dd {
+  margin: 0;
+  font-size: var(--fs-2xl);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+.trace {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  overflow: hidden;
+}
+.trace__bar {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--line);
+  color: var(--text-muted);
+  font-size: var(--fs-xs);
+}
+.trace__bar span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--line);
+}
+.trace__bar em {
+  font-style: normal;
+  margin-left: auto;
+}
+.trace__lines {
+  list-style: none;
+  margin: 0;
+  padding: var(--sp-4);
+  display: grid;
+  gap: var(--sp-2);
+}
+.trace__line {
+  display: grid;
+  grid-template-columns: 4ch 1fr;
+  column-gap: var(--sp-4);
+}
+.trace__t {
+  color: var(--text-muted);
+  opacity: 0.6;
+}
+.trace__k {
+  color: var(--accent);
+}
+.trace__v {
+  grid-column: 2;
+  color: var(--text-muted);
+}
+@media (min-width: 40rem) {
+  .trace__line {
+    grid-template-columns: 5ch 14ch 1fr;
+  }
+  .trace__v {
+    grid-column: auto;
+  }
+}
+.trace__line:last-child .trace__k {
+  color: var(--text);
+}
+.bullets {
+  margin: var(--sp-12) 0 var(--sp-6);
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--sp-3);
+  max-width: 64ch;
+  color: var(--text-muted);
+}
+.bullets li::before {
+  content: '— ';
+  color: var(--accent);
+}
+@media (max-width: 56rem) {
+  .now__grid {
+    grid-template-columns: 1fr;
+  }
+  .now__side {
+    position: static;
+  }
+}
+
+/* ---------- 02 agents ---------- */
+.diagram {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  margin-bottom: var(--sp-12);
+}
+.node {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-4);
+  font-size: var(--fs-sm);
+}
+.node--core {
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px var(--accent-dim),
+    0 0 48px var(--accent-dim);
+}
+.node__t {
+  color: var(--accent);
+  margin-bottom: var(--sp-2);
+}
+.node--core .node__t {
+  color: var(--text);
+}
+.node ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--text-muted);
+  display: grid;
+  gap: var(--sp-1);
+}
+.wire {
+  display: none;
+}
+@media (min-width: 56rem) {
+  .diagram {
+    grid-template-columns: 1fr 1.2fr 1.1fr 1.2fr 1fr;
+  }
+  .wire {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 7rem;
+    align-self: center;
+  }
+  .wire__p {
+    fill: none;
+    stroke: var(--line);
+    stroke-width: 1.5;
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+  }
+  .wire__p2 {
+    stroke: var(--accent);
+    opacity: 0.6;
+  }
+  .wire__dot {
+    fill: var(--accent);
+    offset-path: path('M0 60 C 80 60, 120 20, 200 20 S 320 60, 400 60');
+    animation: ride 3.2s var(--ease) infinite;
+  }
+  .wire__dot2 {
+    offset-path: path('M0 60 C 80 60, 120 100, 200 100 S 320 60, 400 60');
+    animation-delay: 1.6s;
+    animation-direction: reverse;
+  }
+  @keyframes ride {
+    from {
+      offset-distance: 0%;
+      opacity: 0;
+    }
+    15%,
+    85% {
+      opacity: 1;
+    }
+    to {
+      offset-distance: 100%;
+      opacity: 0;
+    }
+  }
+  /* the wires draw themselves as the diagram scrolls into view */
+  @supports (animation-timeline: view()) {
+    @media not (prefers-reduced-motion: reduce) {
+      .wire__p {
+        animation: draw linear both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 55%;
+      }
+    }
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @supports not (animation-timeline: view()) {
+    .wire__p {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+@media (max-width: 56rem) {
+  .diagram {
+    grid-template-columns: 1fr;
+    gap: var(--sp-3);
+  }
+}
+.points {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--sp-6) var(--sp-8);
+  margin: 0;
+}
+.point {
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-3);
+}
+.point dt {
+  font-size: var(--fs-sm);
+  color: var(--accent);
+  margin-bottom: var(--sp-1);
+}
+.point dd {
+  margin: 0;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+}
+
+/* ---------- 03 before: cards that stack ---------- */
+.cards {
+  display: grid;
+  gap: var(--sp-6);
+}
+.card {
+  position: sticky;
+  top: calc(5rem + var(--i) * 1.25rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--sp-8);
+  box-shadow: 0 -12px 40px rgb(0 0 0 / 0.5);
+}
+.card__dates {
+  color: var(--accent);
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-2);
+}
+.card__role {
+  font-size: var(--fs-xl);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-1);
+}
+.card__co {
+  color: var(--text-muted);
+  margin-bottom: var(--sp-6);
+}
+.card__text {
+  max-width: 64ch;
+  color: var(--text-muted);
+}
+.card__text::first-letter {
+  color: var(--text);
+}
+@supports (animation-timeline: view()) {
+  @media not (prefers-reduced-motion: reduce) {
+    .card {
+      animation: settle linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+    }
+  }
+}
+@keyframes settle {
+  from {
+    scale: 0.96;
+    opacity: 0.4;
+  }
+  to {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+/* ---------- 04 stack: the manifest ---------- */
+.manifest {
+  margin: 0;
+  padding: var(--sp-6);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+  overflow-x: auto;
+}
+.m__p {
+  color: var(--text-muted);
+}
+.m__k {
+  color: var(--text);
+}
+.m__n {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.m__line {
+  position: relative;
+  display: block;
+}
+.m__bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0.9em;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0 60%, var(--accent-dim) 60%, var(--accent) 100%);
+  transform-origin: right;
+  scale: calc(var(--w) * 0.4) 1;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* ---------- 05 also ---------- */
+.also__list {
+  margin: 0;
+  display: grid;
+  gap: var(--sp-6);
+}
+.also__row {
+  display: grid;
+  grid-template-columns: 10rem 1fr;
+  gap: var(--sp-4);
+  border-top: 1px solid var(--line);
+  padding-top: var(--sp-4);
+}
+.also__row dt {
+  color: var(--accent);
+  font-size: var(--fs-sm);
+}
+.also__row dd {
+  margin: 0;
+  color: var(--text-muted);
+  max-width: 64ch;
+}
+@media (max-width: 40rem) {
+  .also__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- 06 contact ---------- */
+.contact {
+  min-height: 70vh;
+  display: grid;
+  align-content: center;
+}
+.contact__mail {
+  display: inline-block;
+  font-size: clamp(1.4rem, 5vw, 4rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  margin: var(--sp-4) 0 var(--sp-8);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line);
+  transition: border-color 300ms var(--ease);
+}
+.contact__mail:hover {
+  border-color: var(--accent);
+}
+.contact__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-6);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+}
+.foot {
+  width: min(100% - 2 * var(--gutter), var(--container));
+  margin-inline: auto;
+  padding: var(--sp-8) 0;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-6);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+/* ---------- motion: armed by html.js, released by the observer ---------- */
+.js .reveal {
+  opacity: 0;
+  translate: 0 18px;
+  transition:
+    opacity 700ms var(--ease),
+    translate 700ms var(--ease);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.js .reveal.in {
+  opacity: 1;
+  translate: 0 0;
+}
+.js .trace__line {
+  translate: -8px 0;
+}
+.js .trace__line.in {
+  translate: 0 0;
+}
+/* the hero recedes as you leave it */
+@supports (animation-timeline: scroll()) {
+  @media not (prefers-reduced-motion: reduce) {
+    .hero__title,
+    .hero__sub,
+    .hero__out {
+      animation: recede linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 0 80vh;
+    }
+    .hero__sub {
+      animation-range: 0 60vh;
+    }
+  }
+}
+@keyframes recede {
+  to {
+    opacity: 0;
+    translate: 0 -40px;
+    letter-spacing: -0.02em;
+  }
+}
+
+@media print {
+  .resume {
+    background: #fff;
+    color: #111;
+    --text: #111;
+    --text-muted: #444;
+    --surface: #fff;
+    --line: #ccc;
+    --accent: #0a7a44;
+  }
+  .top,
+  .rail,
+  .hero__scroll,
+  .foot,
+  .wire {
+    display: none;
+  }
+  .resume section {
+    padding-block: 2rem;
+    break-inside: avoid;
+  }
+  .hero {
+    min-height: 0;
+  }
+  .card {
+    position: static;
+    box-shadow: none;
+  }
+}

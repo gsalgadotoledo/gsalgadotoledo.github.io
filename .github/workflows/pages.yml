@@ -6,7 +6,7 @@ name: pages
 
 on:
   push:
-    branches: [main, task/T-3-portfolio-anual]
+    branches: [main]
   workflow_dispatch:
 
 # Solo lectura del repo; el token de Pages lo piden los pasos de deploy.
@@ -32,8 +32,8 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-      - name: Auditoría de cohesión de las diez páginas
-        run: npm run audit:cohesion
+      - name: Audit the published pages
+        run: npm run audit
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

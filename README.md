@@ -1,61 +1,61 @@
 # gsalgadotoledo.github.io
 
-El sitio personal de Gustavo Salgado, publicado en GitHub Pages en `https://gsalgadotoledo.github.io`.
-Todo es estático: Vite genera HTML real por página, sin servidor.
+Gustavo Salgado's site, on GitHub Pages at `https://gsalgadotoledo.github.io`. All static: Vite
+builds real HTML per page, prerendered, no server.
 
-## Qué hay
+## Pages
 
-- `/` — el home (T-2 · Mr. Portfolio).
-- **[`/portfolio/`](https://gsalgadotoledo.github.io/portfolio/)** — resumen del portafolio por
-  años, con una página por año en `/portfolio/2018/` … `/portfolio/2026/`, cada una con el estilo
-  web de su época (T-3 · Portafolio anual).
+- `/` — the home: who I am, what I work on, the stack.
+- **[`/resume/`](https://gsalgadotoledo.github.io/resume/)** — the resume as a story read top to
+  bottom: a prompt that types, the agent's trace filling line by line, the runtime diagram drawing
+  itself, the jobs stacking as cards, the stack as a manifest. Dark, monospaced, one accent.
 
-Progreso: ver [roadmap.md](roadmap.md) — un checkbox por paso y por año.
+## Publishing
 
-## Publicación
+GitHub Pages with **Source = GitHub Actions**: `.github/workflows/pages.yml` builds and deploys on
+every push to `main`. The workflow runs lint, build and the audit before uploading `dist/`, so a
+page missing its skeleton (meta, canonical, one `<h1>`, skip link, prerendered content) never
+ships.
 
-GitHub Pages con **Source = GitHub Actions**: `.github/workflows/pages.yml` construye y despliega
-en cada push a `main` (la rama por defecto) y a `task/T-3-portfolio-anual`. La rama `legacy-2021`
-guarda el sitio anterior. El workflow corre lint, build y la auditoría de cohesión antes de subir
-`dist/`, así que una página que se salga de la familia no llega a publicarse.
-
-<!-- screenshot: pendiente hasta que exista la primera página -->
-
-## Cómo está hecho
+## How it is made
 
 ```
-index.html                    el home (T-2)
-portfolio/index.html          /portfolio/  — el resumen, nueve tarjetas
-portfolio/<año>/index.html    /portfolio/<año>/ — una página por año
-src/design/tokens.css         tokens del sistema de diseño (los temas los sobreescriben)
-src/portfolio/ui/             componentes compartidos: Hero, Section, ProjectCard, Timeline, YearNav, Footer
-src/portfolio/year.tsx        renderYear(data): arma la página de un año
-src/portfolio/themes/<año>.css  el tema de cada año
-src/data/years/<año>.json     el contenido de cada año
-src/entries/<página>.tsx      hidratan el HTML en el navegador
-src/entry-server.tsx          ruta → página, para el prerender
-scripts/prerender.mjs         tras el build, escribe el HTML ya pintado en dist/
+index.html                 the home, plain HTML
+resume/index.html          /resume/ — the shell; the prerender fills #root
+src/resume/data.ts         the resume content: one file to edit
+src/resume/Resume.tsx      the sections
+src/resume/resume.css      the theme and the scroll choreography (CSS scroll-driven animations)
+src/resume/motion.tsx      reveals, typing, counters, the rail — progressive, honors reduced motion
+src/design/tokens.css      base tokens
+src/entries/resume.tsx     hydrates the HTML in the browser
+src/entry-server.tsx       route → page, for the prerender
+scripts/prerender.mjs      after the build, writes the painted HTML into dist/
+scripts/audit.mjs          the skeleton check over dist/
 ```
 
-`npm run build` = `tsc` → build cliente → build SSR → prerender. El resultado en `dist/` es HTML
-con contenido real (se lee sin JavaScript); React hidrata encima.
+`npm run build` = `tsc` → client build → SSR build → prerender. `dist/` is HTML with real
+content (readable without JavaScript); React hydrates on top.
 
-## Correr
+## Run
 
 ```sh
 npm install
 npm run dev      # http://localhost:5173
 npm run build    # dist/
+npm run audit    # over dist/
 npm run lint
 npm run format
 ```
 
-## Decisiones
+## Decisions
 
-| Decisión              | Alternativas                                                | Elegida                                                 | Por qué                                                                               |
-| --------------------- | ----------------------------------------------------------- | ------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| Cómo se publica       | Next.js/SSR · SPA con rutas · páginas estáticas             | Páginas estáticas en GitHub Pages                       | No hace falta backend; cada URL es un HTML real, sin trucos de 404                    |
-| Generador             | Astro · Vite multi-page · CRA                               | Vite multi-page con React + TypeScript                  | Un `index.html` por página, mismo stack que el home                                   |
-| Lint y formato        | ESLint + Prettier · oxlint + Prettier                       | oxlint (lo trae la plantilla de Vite) + Prettier        | Rápido, sin config que mantener                                                       |
-| HTML con contenido    | cascarón vacío que pinta React · prerender en build · Astro | prerender en build con `react-dom/server` + hidratación | páginas estáticas de verdad: se leen sin JS, SEO, la etiqueta del año está en el HTML |
-| Textos del portafolio | en JSX · JSON por año                                       | `src/data/years/<año>.json`                             | Cambiar contenido es editar JSON                                                      |
+| Decision        | Alternatives                                  | Chosen                                              | Why                                                                           |
+| --------------- | --------------------------------------------- | --------------------------------------------------- | ----------------------------------------------------------------------------- |
+| How it ships    | Next.js/SSR · SPA with routes · static pages  | Static pages on GitHub Pages                        | No backend needed; every URL is a real HTML file                              |
+| Generator       | Astro · Vite multi-page · CRA                 | Vite multi-page with React + TypeScript             | One `index.html` per page                                                     |
+| Content in HTML | empty shell React paints · prerender · Astro  | prerender with `react-dom/server` + hydration       | Readable without JS, SEO, fast first paint                                    |
+| Scroll motion   | GSAP/ScrollTrigger · Framer Motion · CSS + IO | CSS scroll-driven animations + IntersectionObserver | Zero dependencies, 60 fps, degrades to a static page, respects reduced motion |
+| Resume content  | in JSX · JSON · a TS module                   | `src/resume/data.ts`                                | Typed, one file to edit                                                       |
+
+The earlier portfolio — one page per year, 2018–2026, each in the style of its time — lives in
+the git history and in the `task/T-3-portfolio-anual` branch.
